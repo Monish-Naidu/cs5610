@@ -44,3 +44,8 @@ a:hover {
 .no-nav-top {
   padding-top: 70px;
 }
+
+.small-padding {
+  padding-top: 20px;
+
+}

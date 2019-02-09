@@ -14,28 +14,34 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+
+
+
+
+<!---- top navbar --->
+
+<nav class="navbar navbar-default navbar-light bg-light navbar-fixed-top">
   <div class="container-fluid row">
 
-    <div class="navbar-text pull-left">
-      <a href="page-list.html" class="cl-text-black cl-icon-padding">
-          <span class="glyphicon glyphicon-chevron-left">
-          </span>
+    <div class="navbar-text float-left">
+      <a href="page-list.html" class="text-black icon-padding">
+        <i class="fas fa-chevron-left fontawsome_icon"></i>
+      </a>
+      <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
+        Page Edit
       </a>
     </div>
-    <div class="navbar-text pull-right">
-      <a href="page-list.html" class="cl-icon-padding cl-text-black">
-          <span class="glyphicon glyphicon-ok">
-          </span>
+    <div class="navbar-text float-right">
+      <a href="page-list.html" class="icon-padding text-black">
+        <i class="fas fa-plus fontawsome_icon"></i>
       </a>
     </div>
-    <a class="navbar-brand cl-text-white cl-text-bold" href="#">
-      Edit Page
-    </a>
   </div>
 </nav>
 
-<div class="container">
+
+
+<div class="container small-padding">
   <form>
     <div class="form-group">
       <label for="page-name">Name</label>
@@ -50,12 +56,12 @@
 </div>
 
 
-<!----Bottom navbar (blue)------>
-<nav class="navbar fixed-bottom float-right col-12">
+<!----Bottom navbar (grey)------>
+<nav class="navbar fixed-bottom float-right col-12  bg-light">
   <div class="container col-12">
     <div class="row navbar-text float-right col-12">
       <a href="profile.html" class="float-right">
-        <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
+        <i class="fas fa-user fontawsome_icon float-right col-12"></i>
       </a>
     </div>
   </div>
