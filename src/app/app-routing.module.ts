@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LoginComponent} from './views/usr/login/login.component';
-import {RegisterComponent} from './views/usr/register/register.component';
-import {ProfileComponent} from './views/usr/profile/profile.component';
+import {LoginComponent} from './views/user/login/login.component';
+import {RegisterComponent} from './views/user/register/register.component';
+import {ProfileComponent} from './views/user/profile/profile.component';
 
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'profile', component: ProfileComponent },
+  {path: 'profile/:userId', component: ProfileComponent },
   {path: 'register', component: RegisterComponent},
 ];
 
@@ -19,3 +19,5 @@ const appRoutes: Routes = [
 export class AppRoutingModule { }
 
 export const routing = RouterModule.forRoot(appRoutes);
+
+
