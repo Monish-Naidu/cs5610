@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ViewChild } from '@angular/core';
+
 
 import {UserService} from '../../../services/user.service.client';
 import {User} from '../../../models/user.model.client';
-
-import {NgForm} from '@angular/forms';
-import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,9 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('f') myloginForm: NgForm;
+
+  @ViewChild('f') loginForm: NgForm;
+
   username: String; // see usage as two-way data binding
   password: String; // see usage as two-way data binding
 
@@ -21,33 +23,32 @@ export class LoginComponent implements OnInit {
   errorMsg = 'Invalid username or password !';
 
   constructor(private userService: UserService, private router: Router) {
-    this.username = "hello world!";
+    this.errorFlag = false;
   }
 
-  /*login(username: String, password: String) {
-    //alert('username: ' + username);
-   // if (username === 'alice' && password == "qqq") {
-      const user: User = this.userService.findUserByCredential(username, password);
-      if (user) {
-        this.router.navigate(['/profile', user._id ]);
-      }
-   // }
-  }*/
+  login () {
 
-  login() {
-    this.username = this.myloginForm.value.username;
-    this.password = this.myloginForm.value.password;
-    alert(this.username);
+    this.username = this.loginForm.value.username;
+    this.password = this.loginForm.value.password;
+
+    console.log(this.username);
+    console.log(this.password);
+
+    /*if(this.password !== 'alice')
+    {
+      this.errorFlag=true;
+    }
+    else {
+      this.router.navigate(['/user', '111']);
+    }*/
 
     const user: User = this.userService.findUserByCredential(this.username, this.password);
     if (user) {
-      this.router.navigate(['/profile', user._id]);
+      this.router.navigate(['/user', user._id]);
     }
   }
 
   ngOnInit() {
-    //this.users = UserService.getAllUser();
-    console.log('login page!' + this.username);
   }
 
 }
