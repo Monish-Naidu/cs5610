@@ -13,3 +13,6 @@ export class WidgetYoutubeComponent implements OnInit {
   }
 
 }
+
+export class YoutubeComponent {
+}

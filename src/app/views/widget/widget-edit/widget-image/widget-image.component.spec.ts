@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetIamgeComponent } from './widget-iamge.component';
+import { WidgetImageComponent } from './widget-image.component';
 
-describe('WidgetIamgeComponent', () => {
-  let component: WidgetIamgeComponent;
-  let fixture: ComponentFixture<WidgetIamgeComponent>;
+describe('WidgetImageComponent', () => {
+  let component: WidgetImageComponent;
+  let fixture: ComponentFixture<WidgetImageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetIamgeComponent ]
+      declarations: [ WidgetImageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetIamgeComponent);
+    fixture = TestBed.createComponent(WidgetImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

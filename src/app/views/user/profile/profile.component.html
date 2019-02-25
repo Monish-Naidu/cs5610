@@ -3,7 +3,7 @@
     <a class=" navbar-brand cl-text-bold text-white float-left" href="#">
       Profile
     </a>
-    <a href="profile.html" class="navbar-link float-left text-white">
+    <a routerLink="/user/:uid" class="navbar-link float-left text-white">
       <i class="fas fa-check fontawsome_icon"></i>
     </a>
   </div>
@@ -31,9 +31,9 @@
     </div>
   </form>
   <a class="btn btn-primary btn-block"
-     href="website-list.html">Websites</a>
+     routerLink="/user/:uid/website">Websites</a>
   <a class="btn btn-danger  btn-block"
-     href="login.html">Logout</a>
+     routerLink="/login">Logout</a>
   <h1></h1>
 </div>
 
@@ -42,7 +42,7 @@
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container col-12">
     <div class="row navbar-text float-right col-12">
-      <a href="profile.html" class="float-right">
+      <a routerLink="/user/:uid" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
       </a>
     </div>

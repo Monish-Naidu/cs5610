@@ -19,7 +19,7 @@ import { WidgetChooserComponent } from './views/widget/widget-chooser/widget-cho
 import { WidgetEditComponent } from './views/widget/widget-edit/widget-edit.component';
 import { WidgetListComponent } from './views/widget/widget-list/widget-list.component';
 import { WidgetHeaderComponent } from './views/widget/widget-edit/widget-header/widget-header.component';
-import { WidgetIamgeComponent } from './views/widget/widget-edit/widget-image/widget-iamge.component';
+import { WidgetImageComponent } from './views/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtub
     WidgetEditComponent,
     WidgetListComponent,
     WidgetHeaderComponent,
-    WidgetIamgeComponent,
+    WidgetImageComponent,
     WidgetYoutubeComponent
   ],
   imports: [
