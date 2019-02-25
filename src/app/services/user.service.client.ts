@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model.client';
-//import 'rxjs/Rx';
-//import {Router} from '@angular/router';
+
 
 
 @Injectable()
