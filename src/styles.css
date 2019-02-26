@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+header {
+  background-color: steelblue;
+  position: center;
+  color: white;
+  padding-top: 0px;
+}
+.navbar {
+  background-color: steelblue;
+  border-color: white;
+  color: white;
+}
+.above-below-space{
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+.box{
+  display: none;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.text-white{
+  color: white;
+}
+a.blue-color a:hover{
+  text-decoration: none;
+}
+a:hover {
+  color: grey;
+  text-decoration: none;
+}
+.visited {
+  color:grey;
+  text-decoration:none;
+}
+
+.no-nav-bar {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.centered-index {
+  text-align: center;
+}
+
+input.form-control {
+  margin-bottom: 5px;
+}

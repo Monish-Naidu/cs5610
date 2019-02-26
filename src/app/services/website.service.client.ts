@@ -15,7 +15,7 @@ export class WebsiteService {
   ];
 
 
-  createWebsite(userId: String, website: Website) {
+  createWebsite(userId: string, website: Website) {
 
 
     const new_website: Website = {

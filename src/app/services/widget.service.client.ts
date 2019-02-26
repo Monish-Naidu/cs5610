@@ -63,7 +63,7 @@ export  class WidgetService {
   }
 
   deleteWidget(widgetId) {
-    for (const i in this.widgets){
+    for (const i in this.widgets) {
       if (this.widgets[i]._id == widgetId) {
         const j = +i;
         this.widgets.splice(j,1);

@@ -12,7 +12,7 @@ import {PageEditComponent} from './views/page/page-edit/page-edit.component';
 import {WidgetListComponent} from './views/widget/widget-list/widget-list.component';
 import {WidgetChooserComponent} from './views/widget/widget-chooser/widget-chooser.component';
 import {WidgetEditComponent} from './views/widget/widget-edit/widget-edit.component';
-import {WidgetYoutubeComponent, YoutubeComponent} from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
+import {WidgetYoutubeComponent} from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
 import {WidgetHeaderComponent} from './views/widget/widget-edit/widget-header/widget-header.component';
 import {WidgetImageComponent} from './views/widget/widget-edit/widget-image/widget-image.component';
 
@@ -39,11 +39,10 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
 
-export const routing = RouterModule.forRoot(appRoutes);
 
 

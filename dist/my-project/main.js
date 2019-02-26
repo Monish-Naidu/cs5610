@@ -27,43 +27,78 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
   \***************************************/
-/*! exports provided: AppRoutingModule, routing */
+/*! exports provided: AppRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routing", function() { return routing; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _views_usr_login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/usr/login/login.component */ "./src/app/views/usr/login/login.component.ts");
-/* harmony import */ var _views_usr_register_register_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/usr/register/register.component */ "./src/app/views/usr/register/register.component.ts");
-/* harmony import */ var _views_usr_profile_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/usr/profile/profile.component */ "./src/app/views/usr/profile/profile.component.ts");
+/* harmony import */ var _views_user_login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/user/login/login.component */ "./src/app/views/user/login/login.component.ts");
+/* harmony import */ var _views_user_register_register_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/user/register/register.component */ "./src/app/views/user/register/register.component.ts");
+/* harmony import */ var _views_user_profile_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/user/profile/profile.component */ "./src/app/views/user/profile/profile.component.ts");
+/* harmony import */ var _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/website/website-list/website-list.component */ "./src/app/views/website/website-list/website-list.component.ts");
+/* harmony import */ var _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/website/website-new/website-new.component */ "./src/app/views/website/website-new/website-new.component.ts");
+/* harmony import */ var _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/website/website-edit/website-edit.component */ "./src/app/views/website/website-edit/website-edit.component.ts");
+/* harmony import */ var _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/page/page-list/page-list.component */ "./src/app/views/page/page-list/page-list.component.ts");
+/* harmony import */ var _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/page/page-new/page-new.component */ "./src/app/views/page/page-new/page-new.component.ts");
+/* harmony import */ var _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/page/page-edit/page-edit.component */ "./src/app/views/page/page-edit/page-edit.component.ts");
+/* harmony import */ var _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/widget/widget-list/widget-list.component */ "./src/app/views/widget/widget-list/widget-list.component.ts");
+/* harmony import */ var _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/widget/widget-chooser/widget-chooser.component */ "./src/app/views/widget/widget-chooser/widget-chooser.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-edit.component */ "./src/app/views/widget/widget-edit/widget-edit.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-youtube/widget-youtube.component */ "./src/app/views/widget/widget-edit/widget-youtube/widget-youtube.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-header/widget-header.component */ "./src/app/views/widget/widget-edit/widget-header/widget-header.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_image_widget_image_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-image/widget-image.component */ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.ts");
 
 
 
 
 
 
-var appRoutes = [
-    { path: 'login', component: _views_usr_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
-    { path: 'profile', component: _views_usr_profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
-    { path: 'register', component: _views_usr_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"] },
+
+
+
+
+
+
+
+
+
+
+
+
+var routes = [
+    { path: '', component: _views_user_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
+    { path: 'login', component: _views_user_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
+    { path: 'user/:uid', component: _views_user_profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
+    { path: 'register', component: _views_user_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"] },
+    { path: 'user/:uid/website', component: _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_6__["WebsiteListComponent"] },
+    { path: 'user/:uid/website/new', component: _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_7__["WebsiteNewComponent"] },
+    { path: 'user/:uid/website/:wid', component: _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_8__["WebsiteEditComponent"] },
+    { path: 'user/:uid/website/:wid/page', component: _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_9__["PageListComponent"] },
+    { path: 'user/:uid/website/:wid/page/new', component: _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_10__["PageNewComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid', component: _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_11__["PageEditComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget', component: _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_12__["WidgetListComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget/new', component: _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_13__["WidgetChooserComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget/:wgid', component: _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_14__["WidgetEditComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:header', component: _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_16__["WidgetHeaderComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:image', component: _views_widget_widget_edit_widget_image_widget_image_component__WEBPACK_IMPORTED_MODULE_17__["WidgetImageComponent"] },
+    { path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:youtube', component: _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_15__["WidgetYoutubeComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes)],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
 }());
 
-var routing = _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes);
 
 
 /***/ }),
@@ -86,7 +121,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to Monish's Website!\n  </h1>\n\n\n<a routerLink=\"/login\">Login</a>\n<a routerLink=\"/register\">Register</a>\n<a routerLink=\"/profile\">Profile</a>\n<router-outlet></router-outlet>\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -135,23 +170,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _views_usr_login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/usr/login/login.component */ "./src/app/views/usr/login/login.component.ts");
-/* harmony import */ var _views_usr_register_register_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/usr/register/register.component */ "./src/app/views/usr/register/register.component.ts");
-/* harmony import */ var _views_usr_profile_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/usr/profile/profile.component */ "./src/app/views/usr/profile/profile.component.ts");
-/* harmony import */ var _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/website/website-new/website-new.component */ "./src/app/views/website/website-new/website-new.component.ts");
-/* harmony import */ var _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/website/website-edit/website-edit.component */ "./src/app/views/website/website-edit/website-edit.component.ts");
-/* harmony import */ var _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/website/website-list/website-list.component */ "./src/app/views/website/website-list/website-list.component.ts");
-/* harmony import */ var _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/page/page-new/page-new.component */ "./src/app/views/page/page-new/page-new.component.ts");
-/* harmony import */ var _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/page/page-edit/page-edit.component */ "./src/app/views/page/page-edit/page-edit.component.ts");
-/* harmony import */ var _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/page/page-list/page-list.component */ "./src/app/views/page/page-list/page-list.component.ts");
-/* harmony import */ var _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/widget/widget-chooser/widget-chooser.component */ "./src/app/views/widget/widget-chooser/widget-chooser.component.ts");
-/* harmony import */ var _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-edit.component */ "./src/app/views/widget/widget-edit/widget-edit.component.ts");
-/* harmony import */ var _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/widget/widget-list/widget-list.component */ "./src/app/views/widget/widget-list/widget-list.component.ts");
-/* harmony import */ var _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-header/widget-header.component */ "./src/app/views/widget/widget-edit/widget-header/widget-header.component.ts");
-/* harmony import */ var _views_widget_widget_edit_widget_image_widget_iamge_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-image/widget-iamge.component */ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.ts");
-/* harmony import */ var _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-youtube/widget-youtube.component */ "./src/app/views/widget/widget-edit/widget-youtube/widget-youtube.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _views_user_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/user/login/login.component */ "./src/app/views/user/login/login.component.ts");
+/* harmony import */ var _views_user_register_register_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/user/register/register.component */ "./src/app/views/user/register/register.component.ts");
+/* harmony import */ var _views_user_profile_profile_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/user/profile/profile.component */ "./src/app/views/user/profile/profile.component.ts");
+/* harmony import */ var _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/website/website-new/website-new.component */ "./src/app/views/website/website-new/website-new.component.ts");
+/* harmony import */ var _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/website/website-edit/website-edit.component */ "./src/app/views/website/website-edit/website-edit.component.ts");
+/* harmony import */ var _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/website/website-list/website-list.component */ "./src/app/views/website/website-list/website-list.component.ts");
+/* harmony import */ var _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/page/page-new/page-new.component */ "./src/app/views/page/page-new/page-new.component.ts");
+/* harmony import */ var _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/page/page-edit/page-edit.component */ "./src/app/views/page/page-edit/page-edit.component.ts");
+/* harmony import */ var _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/page/page-list/page-list.component */ "./src/app/views/page/page-list/page-list.component.ts");
+/* harmony import */ var _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/widget/widget-chooser/widget-chooser.component */ "./src/app/views/widget/widget-chooser/widget-chooser.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-edit.component */ "./src/app/views/widget/widget-edit/widget-edit.component.ts");
+/* harmony import */ var _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/widget/widget-list/widget-list.component */ "./src/app/views/widget/widget-list/widget-list.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-header/widget-header.component */ "./src/app/views/widget/widget-edit/widget-header/widget-header.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_image_widget_image_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-image/widget-image.component */ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.ts");
+/* harmony import */ var _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./views/widget/widget-edit/widget-youtube/widget-youtube.component */ "./src/app/views/widget/widget-edit/widget-youtube/widget-youtube.component.ts");
+/* harmony import */ var _services_user_service_client__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/user.service.client */ "./src/app/services/user.service.client.ts");
+/* harmony import */ var _services_website_service_client__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./services/website.service.client */ "./src/app/services/website.service.client.ts");
+/* harmony import */ var _services_page_service_client__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/page.service.client */ "./src/app/services/page.service.client.ts");
+/* harmony import */ var _services_widget_service_client__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./services/widget.service.client */ "./src/app/services/widget.service.client.ts");
+
+
+
+
+
 
 
 
@@ -178,32 +223,437 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _views_usr_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"],
-                _views_usr_register_register_component__WEBPACK_IMPORTED_MODULE_6__["RegisterComponent"],
-                _views_usr_profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"],
-                _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_8__["WebsiteNewComponent"],
-                _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_9__["WebsiteEditComponent"],
-                _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_10__["WebsiteListComponent"],
-                _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_11__["PageNewComponent"],
-                _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_12__["PageEditComponent"],
-                _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_13__["PageListComponent"],
-                _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_14__["WidgetChooserComponent"],
-                _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_15__["WidgetEditComponent"],
-                _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_16__["WidgetListComponent"],
-                _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_17__["WidgetHeaderComponent"],
-                _views_widget_widget_edit_widget_image_widget_iamge_component__WEBPACK_IMPORTED_MODULE_18__["WidgetIamgeComponent"],
-                _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_19__["WidgetYoutubeComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _views_user_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
+                _views_user_register_register_component__WEBPACK_IMPORTED_MODULE_7__["RegisterComponent"],
+                _views_user_profile_profile_component__WEBPACK_IMPORTED_MODULE_8__["ProfileComponent"],
+                _views_website_website_new_website_new_component__WEBPACK_IMPORTED_MODULE_9__["WebsiteNewComponent"],
+                _views_website_website_edit_website_edit_component__WEBPACK_IMPORTED_MODULE_10__["WebsiteEditComponent"],
+                _views_website_website_list_website_list_component__WEBPACK_IMPORTED_MODULE_11__["WebsiteListComponent"],
+                _views_page_page_new_page_new_component__WEBPACK_IMPORTED_MODULE_12__["PageNewComponent"],
+                _views_page_page_edit_page_edit_component__WEBPACK_IMPORTED_MODULE_13__["PageEditComponent"],
+                _views_page_page_list_page_list_component__WEBPACK_IMPORTED_MODULE_14__["PageListComponent"],
+                _views_widget_widget_chooser_widget_chooser_component__WEBPACK_IMPORTED_MODULE_15__["WidgetChooserComponent"],
+                _views_widget_widget_edit_widget_edit_component__WEBPACK_IMPORTED_MODULE_16__["WidgetEditComponent"],
+                _views_widget_widget_list_widget_list_component__WEBPACK_IMPORTED_MODULE_17__["WidgetListComponent"],
+                _views_widget_widget_edit_widget_header_widget_header_component__WEBPACK_IMPORTED_MODULE_18__["WidgetHeaderComponent"],
+                _views_widget_widget_edit_widget_image_widget_image_component__WEBPACK_IMPORTED_MODULE_19__["WidgetImageComponent"],
+                _views_widget_widget_edit_widget_youtube_widget_youtube_component__WEBPACK_IMPORTED_MODULE_20__["WidgetYoutubeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
             ],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            providers: [_services_user_service_client__WEBPACK_IMPORTED_MODULE_21__["UserService"], _services_website_service_client__WEBPACK_IMPORTED_MODULE_22__["WebsiteService"], _services_page_service_client__WEBPACK_IMPORTED_MODULE_23__["PageService"], _services_widget_service_client__WEBPACK_IMPORTED_MODULE_24__["WidgetService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/page.model.client.ts":
+/*!*********************************************!*\
+  !*** ./src/app/models/page.model.client.ts ***!
+  \*********************************************/
+/*! exports provided: Page */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page", function() { return Page; });
+var Page = /** @class */ (function () {
+    function Page(id, name, websiteId, description) {
+        this._id = id;
+        this.name = name;
+        this.websiteId = websiteId;
+        this.description = description;
+    }
+    return Page;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.model.client.ts":
+/*!*********************************************!*\
+  !*** ./src/app/models/user.model.client.ts ***!
+  \*********************************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+var User = /** @class */ (function () {
+    function User(_id, username, password, firstName, lastName) {
+        this._id = _id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/website.model.client.ts":
+/*!************************************************!*\
+  !*** ./src/app/models/website.model.client.ts ***!
+  \************************************************/
+/*! exports provided: Website */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Website", function() { return Website; });
+var Website = /** @class */ (function () {
+    function Website(id, name, devloperId, description) {
+        this._id = id;
+        this.name = name;
+        this.developerId = devloperId;
+        this.description = description;
+    }
+    return Website;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/widget.model.client.ts":
+/*!***********************************************!*\
+  !*** ./src/app/models/widget.model.client.ts ***!
+  \***********************************************/
+/*! exports provided: Widget */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Widget", function() { return Widget; });
+var Widget = /** @class */ (function () {
+    function Widget(_id, type, pageId, size, text, width, url) {
+        if (size === void 0) { size = '1'; }
+        if (text === void 0) { text = 'text'; }
+        if (width === void 0) { width = '100%'; }
+        if (url === void 0) { url = 'url'; }
+        this._id = _id;
+        this.widgetType = type;
+        this.pageId = pageId;
+        this.size = size;
+        this.url = url;
+        this.width = width;
+    }
+    return Widget;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/page.service.client.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/page.service.client.ts ***!
+  \*************************************************/
+/*! exports provided: PageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageService", function() { return PageService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_page_model_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/page.model.client */ "./src/app/models/page.model.client.ts");
+
+
+
+var PageService = /** @class */ (function () {
+    function PageService() {
+        this.pages = [
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_2__["Page"]('321', 'Post 1', '456', 'Lorem'),
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_2__["Page"]('432', 'Post 2', '456', 'Lorem'),
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_2__["Page"]('543', 'Post 3', '456', 'Lorem'),
+        ];
+    }
+    PageService.prototype.createWebsite = function (websiteId, page) {
+        var new_page = {
+            _id: (new Date()).getTime() + '',
+            name: page.name,
+            websiteId: page.websiteId,
+            description: page.description
+        };
+        this.pages.push(new_page);
+    };
+    PageService.prototype.findPageByWebsiteId = function (websiteId) {
+        var resultSet = [];
+        for (var i in this.pages) {
+            if (this.pages[i].websiteId === websiteId) {
+                resultSet.push(this.pages[i]);
+            }
+        }
+        return resultSet;
+    };
+    PageService.prototype.findPageByWebsiteId2 = function (websiteId) {
+        return this.pages.filter(function (page) {
+            return page.websiteId === websiteId;
+        });
+    };
+    PageService.prototype.findPageById = function (pageId) {
+        return this.pages.find(function (page) {
+            return page._id === pageId;
+        });
+    };
+    PageService.prototype.updatePage = function (pageId, page) {
+        for (var i in this.pages) {
+            if (this.pages[i]._id === pageId) {
+                this.pages[i].name = page.name;
+                this.pages[i].description = page.description;
+            }
+        }
+    };
+    PageService.prototype.deleteWebsite = function (pageId) {
+        for (var i in this.pages) {
+            if (this.pages[i]._id === pageId) {
+                var j = +i;
+                this.pages.splice(j, 1);
+            }
+        }
+    };
+    PageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], PageService);
+    return PageService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.client.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/user.service.client.ts ***!
+  \*************************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/user.model.client */ "./src/app/models/user.model.client.ts");
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService() {
+        this.users = [
+            new _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__["User"]('123', 'alice', 'qq', 'alice', 'alice'),
+            new _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__["User"]('234', 'bob', 'qq', 'bob', 'bob'),
+            new _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__["User"]('345', 'charlie', 'qq', 'charlie', 'charlie'),
+            new _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__["User"]('456', 'john', 'good4u', 'john', 'smith')
+        ];
+    }
+    UserService.prototype.createUser = function (user) {
+        this.users.push(new _models_user_model_client__WEBPACK_IMPORTED_MODULE_2__["User"](user._id, user.username, user.password, user.firstName, user.lastName));
+    };
+    UserService.prototype.findUserByCredential = function (username, password) {
+        return this.users.find(function (user) {
+            return user.username === username && user.password === password;
+        });
+    };
+    UserService.prototype.findUserById = function (userId) {
+        return this.users.find(function (user) {
+            return user._id === userId;
+        });
+    };
+    UserService.prototype.updateUser = function (user) {
+        for (var i = 0; i < this.users.length; i++) {
+            if (this.users[i]._id === user._id) {
+                this.users[i].firstName = user.firstName;
+                this.users[i].lastName = user.lastName;
+                return this.users[i];
+            }
+        }
+    };
+    UserService.prototype.deleteUserById = function (userId) {
+        for (var i in this.users) {
+            if (this.users[i]._id === userId) {
+                var j = +i;
+                this.users.splice(j, 1);
+            }
+        }
+    };
+    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], UserService);
+    return UserService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/website.service.client.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/website.service.client.ts ***!
+  \****************************************************/
+/*! exports provided: WebsiteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebsiteService", function() { return WebsiteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/website.model.client */ "./src/app/models/website.model.client.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+
+var WebsiteService = /** @class */ (function () {
+    function WebsiteService() {
+        this.websites = [
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('123', 'Facebook', '456', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('234', 'Tweeter', '456', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('456', 'Gizmodo', '456', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('890', 'Go', '123', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('567', 'Tic Tac Toe', '123', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('678', 'Checkers', '123', 'Lorem'),
+            new _models_website_model_client__WEBPACK_IMPORTED_MODULE_1__["Website"]('789', 'Chess', '234', 'Lorem')
+        ];
+    }
+    WebsiteService.prototype.createWebsite = function (userId, website) {
+        var new_website = {
+            _id: (new Date()).getTime() + '',
+            name: website.name,
+            developerId: userId,
+            description: website.description
+        };
+        this.websites.push(new_website);
+    };
+    WebsiteService.prototype.findWebsitesByUser = function (userId) {
+        return this.websites.filter(function (website) {
+            return website.developerId === userId;
+        });
+    };
+    WebsiteService.prototype.findWebsiteById = function (websiteId) {
+        for (var i in this.websites) {
+            if (this.websites[i]._id === websiteId) {
+                return this.websites[i];
+            }
+        }
+    };
+    WebsiteService.prototype.updateWebsite = function (websiteId, website) {
+        for (var i in this.websites) {
+            if (this.websites[i]._id === websiteId) {
+                this.websites[i].name = website.name;
+                this.websites[i].description = website.description;
+            }
+        }
+    };
+    WebsiteService.prototype.deleteWebsite = function (websiteId) {
+        for (var i in this.websites) {
+            if (this.websites[i]._id === websiteId) {
+                var j = +i;
+                this.websites.splice(j, 1);
+            }
+        }
+    };
+    WebsiteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+    ], WebsiteService);
+    return WebsiteService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/widget.service.client.ts":
+/*!***************************************************!*\
+  !*** ./src/app/services/widget.service.client.ts ***!
+  \***************************************************/
+/*! exports provided: WidgetService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetService", function() { return WidgetService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/widget.model.client */ "./src/app/models/widget.model.client.ts");
+
+
+
+var WidgetService = /** @class */ (function () {
+    function WidgetService() {
+        // constructor(_id:String, type:String, pageId:String, size= '1', text = 'text', url = 'url', width = '100%')
+        this.widgets = [
+            new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__["Widget"]('123', 'HEADER', '321', '2', 'GIZMODO'),
+            new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__["Widget"]('123', 'HEADER', '321', '2', 'GIZMODO'),
+            new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__["Widget"]('123', 'IMAGE', '321', '2', 'text', '100%', 'http://lorempixel.com/400/200/'),
+            new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__["Widget"]('123', 'HTML', '321', '2', '<p>blalbla</p>'),
+            new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_2__["Widget"]('123', 'YOUTUBE', '321', '2', 'text', '100%', 'https://youtube.com/token'),
+        ];
+    }
+    WidgetService.prototype.createWidget = function (pageId, widget) {
+        this.widgets.push(widget);
+    };
+    WidgetService.prototype.findWidgetByPageId = function (pageId) {
+        return this.widgets.filter(function (widget) {
+            return widget.pageId === pageId;
+        });
+    };
+    WidgetService.prototype.findWidgetById = function (widgetId) {
+        for (var i = 0; i < this.widgets.length; i++) {
+            if (this.widgets[i]._id === widgetId) {
+                return this.widgets[i];
+            }
+        }
+    };
+    WidgetService.prototype.updateWidget = function (widgetId, widget) {
+        for (var i in this.widgets) {
+            if (this.widgets[i]._id === widgetId) {
+                switch (widget.widgetType) {
+                    case 'HEADER':
+                        this.widgets[i].text = widget.text;
+                        this.widgets[i].size = widget.size;
+                        return true;
+                    case 'IMAGE':
+                        this.widgets[i].text = widget.text;
+                        this.widgets[i].url = widget.url;
+                        this.widgets[i].width = widget.width;
+                        return true;
+                    case 'YOUTUBE':
+                        this.widgets[i].text = widget.text;
+                        this.widgets[i].url = widget.url;
+                        this.widgets[i].width = widget.width;
+                        return true;
+                }
+            }
+        }
+        return false;
+    };
+    WidgetService.prototype.deleteWidget = function (widgetId) {
+        for (var i in this.widgets) {
+            if (this.widgets[i]._id == widgetId) {
+                var j = +i;
+                this.widgets.splice(j, 1);
+            }
+        }
+    };
+    WidgetService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], WidgetService);
+    return WidgetService;
 }());
 
 
@@ -228,7 +678,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-edit works!\n</p>\n"
+module.exports = "\n<!---- top navbar --->\n\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a href=\"page-list.html\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Page Edit\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a href=\"page-list.html\" class=\"icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"container small-padding\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"page-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-name\" placeholder=\"Page Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"page-title\">Title</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-title\" placeholder=\"Page Title\">\n    </div>\n  </form>\n  <a class=\"btn btn-danger  btn-block\" href=\"page-list.html\">Delete</a>\n</div>\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
 
 /***/ }),
 
@@ -284,7 +734,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-list works!\n</p>\n"
+module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a href=\"website-list.html\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Pages\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a href=\"page-new.html\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid container-padding\">\n  <ul class=\"list-group list-group-flush list-group-borderless\">\n    <li class=\"list-group-item list-item-borderless\">\n      <a href=\"page-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"widget-list.html\">Blog Post</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a href=\"page-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"widget-list.html\">Blogs</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a href=\"page-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"widget-list.html\">Home</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a href=\"page-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"widget-list.html\">About</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a href=\"page-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"widget-list.html\">Contact Us</a>\n    </li>\n  </ul>\n</div>\n\n\n\n\n\n\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
 
 /***/ }),
 
@@ -340,7 +790,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-new works!\n</p>\n"
+module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a href=\"page-list.html\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        New Page\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a href=\"page-list.html\" class=\"icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n<div class=\"container small-padding\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"page-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-name\" placeholder=\"Page Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"page-title\">Title</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-title\" placeholder=\"Page Title\">\n    </div>\n  </form>\n</div>\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
 
 /***/ }),
 
@@ -378,32 +828,32 @@ var PageNewComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/views/usr/login/login.component.css":
-/*!*****************************************************!*\
-  !*** ./src/app/views/usr/login/login.component.css ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3Vzci9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/views/usr/login/login.component.html":
+/***/ "./src/app/views/user/login/login.component.css":
 /*!******************************************************!*\
-  !*** ./src/app/views/usr/login/login.component.html ***!
+  !*** ./src/app/views/user/login/login.component.css ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"errorFlag\"\n     class=\"alert alert-danger\">\n  {{errorMsg}}\n\n</div>\n\n\n<form (ngSubmit) = \"login()\" #f=\"ngForm\">\n  <label>Username</label>\n  <input   placeholder=\"username\" name=\"username\" type=\"text\" class=\"form-control\"\n           ngModel required #username=\"ngModel\"/>\n\n  <label>Password</label>\n  <input   placeholder=\"password\" name=\"password\" type=\"text\" class=\"form-control\"\n           ngModel required #password=\"ngModel\"/>\n\n  <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n        Please enter username!\n  </span>\n  <button class=\"btn btn-primary btn-block\" type=\"submit\" [disabled]=\"!f.valid\">Login</button>\n\n  {{f.valid}}\n\n</form>\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3VzZXIvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
-/***/ "./src/app/views/usr/login/login.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/views/usr/login/login.component.ts ***!
-  \****************************************************/
+/***/ "./src/app/views/user/login/login.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/views/user/login/login.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<!--<div class=\"container\">\n  <h1>Login</h1>\n  <input [(ngModel)]=\"username\" type=\"text\"\n         class=\"form-control\"\n         placeholder=\"username\"/>\n  <input [(ngModel)]=\"password\" type=\"password\"\n         class=\"form-control\"\n         placeholder=\"password\"/>\n  <a class=\"btn btn-primary btn-block\"\n     (click)=\"login()\">Login</a>\n  <a class=\"btn btn-success btn-block\"\n     routerLink=\"/register\">Register</a>\n</div>-->\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\" class=\"alert alert-danger\">\n    {{errorMsg}}\n  </div>\n\n\n  <form (ngSubmit)=\"login()\" #f=\"ngForm\">\n\n    <div class=\"form-group\">\n      <input type=\"text\" name=\"username\" placeholder=\"username\" class=\"form-control\" ngModel required #username=\"ngModel\">\n    </div>\n    <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n    </span>\n\n    <div class=\"form-group\">\n      <input type=\"password\" name=\"password\" placeholder=\"password\" class=\"form-control\" ngModel required #password=\"ngModel\">\n    </div>\n    <span class=\"help-block\" *ngIf=\"!password.valid && password.touched\">\n      Please enter password!\n    </span>\n\n    <div class=\"form-group\">\n      <button [disabled]=\"!f.valid\" class=\"btn btn-primary btn-block\" type=\"submit\">Login</button>\n    </div>\n\n    <div class=\"form-group\">\n      <a routerLink=\"/register\" class=\"btn btn-success btn-block\">Register</a>\n    </div>\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/views/user/login/login.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/views/user/login/login.component.ts ***!
+  \*****************************************************/
 /*! exports provided: LoginComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -412,20 +862,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_user_service_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/user.service.client */ "./src/app/services/user.service.client.ts");
+
+
+
+
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent() {
+    function LoginComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
+        this.errorMsg = 'Invalid username or password !';
+        this.errorFlag = false;
     }
+    LoginComponent.prototype.login = function () {
+        this.username = this.loginForm.value.username;
+        this.password = this.loginForm.value.password;
+        console.log(this.username);
+        console.log(this.password);
+        /*if(this.password !== 'alice')
+        {
+          this.errorFlag=true;
+        }
+        else {
+          this.router.navigate(['/user', '111']);
+        }*/
+        var user = this.userService.findUserByCredential(this.username, this.password);
+        if (user) {
+            this.router.navigate(['/user', user._id]);
+        }
+    };
     LoginComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"])
+    ], LoginComponent.prototype, "loginForm", void 0);
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-login',
-            template: __webpack_require__(/*! ./login.component.html */ "./src/app/views/usr/login/login.component.html"),
-            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/views/usr/login/login.component.css")]
+            template: __webpack_require__(/*! ./login.component.html */ "./src/app/views/user/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/views/user/login/login.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_user_service_client__WEBPACK_IMPORTED_MODULE_4__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -434,32 +916,32 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/views/usr/profile/profile.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/views/usr/profile/profile.component.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3Vzci9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/views/usr/profile/profile.component.html":
+/***/ "./src/app/views/user/profile/profile.component.css":
 /*!**********************************************************!*\
-  !*** ./src/app/views/usr/profile/profile.component.html ***!
+  !*** ./src/app/views/user/profile/profile.component.css ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  profile works!\n</p>\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3VzZXIvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/views/usr/profile/profile.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/views/usr/profile/profile.component.ts ***!
-  \********************************************************/
+/***/ "./src/app/views/user/profile/profile.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/views/user/profile/profile.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-fixed-top cl-blue-navbar \">\n  <div class=\"container-fluid\">\n    <a class=\" navbar-brand cl-text-bold text-white float-left\" href=\"#\">\n      Profile\n    </a>\n    <a routerLink=\"/user/:uid\" class=\"navbar-link float-left text-white\">\n      <i class=\"fas fa-check fontawsome_icon\"></i>\n    </a>\n  </div>\n</nav>\n\n<div class=\"container above-below-space\">\n  <header>\n  </header>\n  <form>\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"alice@wonderland.com\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"first-name\" placeholder=\"Alice\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"last-name\" placeholder=\"Wonderland\">\n    </div>\n  </form>\n  <a class=\"btn btn-primary btn-block\"\n     routerLink=\"/user/:uid/website\">Websites</a>\n  <a class=\"btn btn-danger  btn-block\"\n     routerLink=\"/login\">Logout</a>\n  <h1></h1>\n</div>\n\n\n<!----Bottom navbar (blue)------>\n<nav class=\"navbar fixed-bottom float-right col-12\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a routerLink=\"/user/:uid\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right text-white col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
+
+/***/ }),
+
+/***/ "./src/app/views/user/profile/profile.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/views/user/profile/profile.component.ts ***!
+  \*********************************************************/
 /*! exports provided: ProfileComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -468,20 +950,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/user.service.client */ "./src/app/services/user.service.client.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
 
 
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent() {
+    function ProfileComponent(userService, activatedRoute) {
+        this.userService = userService;
+        this.activatedRoute = activatedRoute;
     }
     ProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.uid = params['uid'];
+            console.log('user id:' + _this.uid);
+        });
+        this.user = this.userService.findUserById(this.uid);
+        this.username = this.user['username'];
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"])
+    ], ProfileComponent.prototype, "profileForm", void 0);
     ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-profile',
-            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/views/usr/profile/profile.component.html"),
-            styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/views/usr/profile/profile.component.css")]
+            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/views/user/profile/profile.component.html"),
+            styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/views/user/profile/profile.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_user_service_client__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -490,32 +991,32 @@ var ProfileComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/views/usr/register/register.component.css":
-/*!***********************************************************!*\
-  !*** ./src/app/views/usr/register/register.component.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3Vzci9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/views/usr/register/register.component.html":
+/***/ "./src/app/views/user/register/register.component.css":
 /*!************************************************************!*\
-  !*** ./src/app/views/usr/register/register.component.html ***!
+  !*** ./src/app/views/user/register/register.component.css ***!
   \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  register works!\n</p>\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3VzZXIvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
-/***/ "./src/app/views/usr/register/register.component.ts":
-/*!**********************************************************!*\
-  !*** ./src/app/views/usr/register/register.component.ts ***!
-  \**********************************************************/
+/***/ "./src/app/views/user/register/register.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/views/user/register/register.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container no-nav-top\">\n  <h1>Register</h1>\n  <input type=\"text\"\n         class=\"form-control\"\n         placeholder=\"username\"/>\n  <input type=\"password\"\n         class=\"form-control\"\n         placeholder=\"password\"/>\n  <input type=\"password\"\n         class=\"form-control\"\n         placeholder=\"verify password\"/>\n  <a class=\"btn btn-primary btn-block\"\n     routerLink=\"/user/{{uid}}\">Register</a>\n  <a class=\"btn btn-danger  btn-block\"\n     href=\"login.html\">Cancel</a>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/views/user/register/register.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/views/user/register/register.component.ts ***!
+  \***********************************************************/
 /*! exports provided: RegisterComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -534,8 +1035,8 @@ var RegisterComponent = /** @class */ (function () {
     RegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-register',
-            template: __webpack_require__(/*! ./register.component.html */ "./src/app/views/usr/register/register.component.html"),
-            styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/views/usr/register/register.component.css")]
+            template: __webpack_require__(/*! ./register.component.html */ "./src/app/views/user/register/register.component.html"),
+            styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/views/user/register/register.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], RegisterComponent);
@@ -564,7 +1065,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  website-edit works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-fixed-top cl-blue-navbar\">\n  <div class=\"col-md-4 d-none d-md-block container-fluid\">\n    <a href=\"website-list.html\" class=\"navbar-link text-white\">\n      <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n    </a>\n    <a class=\"text-white navbar-brand font-weight-bold\" href=\"#\">\n      Websites\n    </a>\n    <a href=\"website-new.html\" class=\"navbar-link navbar-text float-right text-white cl-icon-padding\">\n      <i class=\"fas fa-plus fontawsome_icon\"></i>\n    </a>\n  </div>\n  <div class=\"col-md-8 container-fluid\">\n    <a class=\"text-white navbar-brand font-weight-bold\" href=\"#\">\n      Edit Websites\n    </a>\n    <a href=\"website-list.html\" class=\"navbar-link navbar-text float-right text-white cl-icon-padding\">\n      <i class=\"fas fa-check fontawsome_icon\"></i>\n    </a>\n  </div>\n</nav>\n\n<div class=\"row contain-fluid pt-2 px-3\">\n  <div class=\"col-md-4 d-none d-md-block border-right\">\n    <ul class=\"list-group list-group-flush\">\n      <li class=\"list-group-item\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Blogging App</a>\n      </li>\n      <li class=\"list-group-item\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Address Book App</a>\n      </li>\n      <li class=\"list-group-item\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Script Testing App</a>\n      </li>\n      <li class=\"list-group-item\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Blogger</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"col-md-8\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"website-name\">Website Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"website-name\" placeholder=\"Blogger\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"website-description\">Website Description</label>\n        <textarea id=\"website-description\" class=\"form-control\" rows=\"5\"\n                  placeholder=\"Blog is a blog-publishing service.\"></textarea>\n      </div>\n      <a class=\"btn btn-danger  btn-block\" href=\"website-list.html\">Delete</a>\n    </form>\n  </div>\n</div>\n\n<nav class=\"navbar fixed-bottom float-right col-12\">\n  <div class=\"container-fluid col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right text-white col-12\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -620,7 +1121,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  website-list works!\n</p>\n"
+module.exports = "\n<!------Top Navbar------>\n\n<nav class=\"navbar navbar-fixed-top cl-blue-navbar\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-brand float-left\">\n      <a href=\"profile.html\" class=\"navbar-brand text-white\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"text-white navbar-brand cl-text-bold\" href=\"#\">\n        Websites\n      </a>\n    </div>\n    <a href=\"website-new.html\" class=\"navbar-brand navbar-text pull-right text-white cl-icon-padding\">\n      <i class=\"fas fa-plus fontawsome_icon\"></i>\n    </a>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container no-nav-top\">\n  <ul class=\"list-group cl-list-group-borderless\">\n    <li class=\"list-group-item cl-list-item-borderless\">\n      <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"page-list.html\">Address Book App</a>\n    </li>\n    <li class=\"list-group-item cl-list-item-borderless\">\n      <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"page-list.html\">Blogger</a>\n    </li>\n    <li class=\"list-group-item cl-list-item-borderless\">\n      <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"page-list.html\">Blogging App</a>\n    </li>\n    <li class=\"list-group-item cl-list-item-borderless\">\n      <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a href=\"page-list.html\">Script Testing App</a>\n    </li>\n  </ul>\n</div>\n\n\n<!------Bottom Navbar------>\n\n<nav class=\"navbar fixed-bottom float-right col-12\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right text-white col-12\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -676,7 +1177,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  website-new works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-fixed-top cl-blue-navbar\">\n  <div class=\"col-md-4 d-none d-md-block container-fluid\">\n    <a href=\"profile.html\" class=\"navbar-link text-white\">\n      <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n    </a>\n    <a class=\"text-white navbar-brand font-weight-bold\" href=\"#\">\n      Websites\n    </a>\n    <a href=\"#\" class=\"navbar-link navbar-text float-right text-white cl-icon-padding\">\n      <i class=\"fas fa-plus fontawsome_icon\"></i>\n    </a>\n  </div>\n  <div class=\"col-md-8 container-fluid\">\n    <a class=\"text-white navbar-brand font-weight-bold\" href=\"#\">\n      New Websites\n    </a>\n    <a href=\"website-list.html\" class=\"navbar-link navbar-text float-right text-white cl-icon-padding\">\n      <i class=\"fas fa-check fontawsome_icon\"></i>\n    </a>\n  </div>\n</nav>\n\n<div class=\"row container-fluid pt-2\">\n  <div class=\"col-md-4 d-none d-md-block border-right\">\n    <ul class=\"list-group cl-list-group-borderless\">\n      <li class=\"list-group-item cl-list-item-borderless\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Blogging App</a>\n      </li>\n      <li class=\"list-group-item cl-list-item-borderless\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Address Book App</a>\n      </li>\n      <li class=\"list-group-item cl-list-item-borderless\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Script Testing App</a>\n      </li>\n      <li class=\"list-group-item cl-list-item-borderless\">\n        <a href=\"website-edit.html\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n        <a href=\"page-list.html\">Blogger</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"col-md-8\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"website-name\">Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"website-name\" placeholder=\"Name\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"website-description\">Description</label>\n        <textarea id=\"website-description\" class=\"form-control\" rows=\"5\" placeholder=\"Description\"></textarea>\n      </div>\n    </form>\n  </div>\n</div>\n\n<nav class=\"navbar fixed-bottom float-right col-12\">\n  <div class=\"container-fluid col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a href=\"profile.html\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right text-white col-12\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -732,7 +1233,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-chooser works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a href=\"widget-list.html\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Choose Widget\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container-fluid cl-container-padding\">\n  <ul class=\"list-group list-group-flush\">\n    <li class=\"list-group-item\">\n      <a href=\"widget-heading.html\">Header</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Label</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">HTML</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Text Input</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Link</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Button</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"widget-image.html\">Image</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"widget-youtube.html\">YouTube</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Data Table</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Repeater</a>\n    </li>\n  </ul>\n</div>\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a href=\"profile.html icon-padding\"><i class=\"fas fa-user fontawsome_icon float-right \"></i></a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -844,7 +1345,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-header works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a href=\"widget-list.html\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Widgets Edit\n      </a>\n    </div>\n    <div class=\"navbar-text pull-right\">\n      <a href=\"widget-list.html\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-check fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"heading-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"heading-name\" placeholder=\"Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"heading-text\">Text</label>\n      <input type=\"text\" class=\"form-control\" id=\"heading-text\" placeholder=\"Text\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"heading-size\">Size</label>\n      <input type=\"text\" class=\"form-control\" id=\"heading-size\" placeholder=\"3\">\n    </div>\n  </form>\n  <a class=\"btn btn-danger  btn-block\" href=\"widget-list.html\">Delete</a>\n</div>\n\n<!----Bottom navbar--->\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a href=\"profile.html icon-padding\"><i class=\"fas fa-user fontawsome_icon float-right\"></i></a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -852,12 +1353,13 @@ module.exports = "<p>\n  widget-header works!\n</p>\n"
 /*!***********************************************************************************!*\
   !*** ./src/app/views/widget/widget-edit/widget-header/widget-header.component.ts ***!
   \***********************************************************************************/
-/*! exports provided: WidgetHeaderComponent */
+/*! exports provided: WidgetHeaderComponent, HeadingComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetHeaderComponent", function() { return WidgetHeaderComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeadingComponent", function() { return HeadingComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
@@ -878,60 +1380,66 @@ var WidgetHeaderComponent = /** @class */ (function () {
     return WidgetHeaderComponent;
 }());
 
+var HeadingComponent = /** @class */ (function () {
+    function HeadingComponent() {
+    }
+    return HeadingComponent;
+}());
+
 
 
 /***/ }),
 
-/***/ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.css":
+/***/ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.css":
 /*!**********************************************************************************!*\
-  !*** ./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.css ***!
+  !*** ./src/app/views/widget/widget-edit/widget-image/widget-image.component.css ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3dpZGdldC93aWRnZXQtZWRpdC93aWRnZXQtaW1hZ2Uvd2lkZ2V0LWlhbWdlLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3dpZGdldC93aWRnZXQtZWRpdC93aWRnZXQtaW1hZ2Uvd2lkZ2V0LWltYWdlLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.html":
+/***/ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.html":
 /*!***********************************************************************************!*\
-  !*** ./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.html ***!
+  !*** ./src/app/views/widget/widget-edit/widget-image/widget-image.component.html ***!
   \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-iamge works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a href=\"widget-list.html\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Widgets Edit\n      </a>\n    </div>\n    <div class=\"navbar-text pull-right\">\n      <a href=\"widget-list.html\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-check fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"container small-padding\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"image-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"image-name\" placeholder=\"Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"image-text\">Text</label>\n      <input type=\"text\" class=\"form-control\" id=\"image-text\" placeholder=\"Text\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"image-URL\">URL</label>\n      <input type=\"text\" class=\"form-control\" id=\"image-URL\" placeholder=\"URL\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"image-width\">Width</label>\n      <input type=\"text\" class=\"form-control\" id=\"image-width\" placeholder=\"100%\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputFile\">Upload</label>\n      <input type=\"file\" class=\"form-control\" id=\"exampleInputFile\">\n    </div>\n  </form>\n  <a class=\"btn btn-primary btn-block\" href=\"#\">Upload Image</a>\n  <a class=\"btn btn-danger  btn-block\" href=\"widget-list.html\">Delete</a>\n</div>\n\n\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a href=\"profile.html\"><i class=\"fas fa-user fontawsome_icon float-right\"></i></a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
-/***/ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.ts":
+/***/ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.ts":
 /*!*********************************************************************************!*\
-  !*** ./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.ts ***!
+  !*** ./src/app/views/widget/widget-edit/widget-image/widget-image.component.ts ***!
   \*********************************************************************************/
-/*! exports provided: WidgetIamgeComponent */
+/*! exports provided: WidgetImageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetIamgeComponent", function() { return WidgetIamgeComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetImageComponent", function() { return WidgetImageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-var WidgetIamgeComponent = /** @class */ (function () {
-    function WidgetIamgeComponent() {
+var WidgetImageComponent = /** @class */ (function () {
+    function WidgetImageComponent() {
     }
-    WidgetIamgeComponent.prototype.ngOnInit = function () {
+    WidgetImageComponent.prototype.ngOnInit = function () {
     };
-    WidgetIamgeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    WidgetImageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-widget-iamge',
-            template: __webpack_require__(/*! ./widget-iamge.component.html */ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.html"),
-            styles: [__webpack_require__(/*! ./widget-iamge.component.css */ "./src/app/views/widget/widget-edit/widget-image/widget-iamge.component.css")]
+            template: __webpack_require__(/*! ./widget-image.component.html */ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.html"),
+            styles: [__webpack_require__(/*! ./widget-image.component.css */ "./src/app/views/widget/widget-edit/widget-image/widget-image.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], WidgetIamgeComponent);
-    return WidgetIamgeComponent;
+    ], WidgetImageComponent);
+    return WidgetImageComponent;
 }());
 
 
@@ -956,7 +1464,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-youtube works!\n</p>\n"
+module.exports = "<!----Top navbar--->\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a href=\"widget-list.html\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Widgets Edit\n      </a>\n    </div>\n    <div class=\"navbar-text pull-right\">\n      <a href=\"widget-list.html\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-check fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"container\">\n  <form>\n    <div class=\"form-group small-padding\">\n      <label for=\"youtube-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"youtube-name\" placeholder=\"Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"youtube-text\">Text</label>\n      <input type=\"text\" class=\"form-control\" id=\"youtube-text\" placeholder=\"Text\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"youtube-URL\">URL</label>\n      <input type=\"text\" class=\"form-control\" id=\"youtube-URL\" placeholder=\"URL\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"youtube-width\">Width</label>\n      <input type=\"text\" class=\"form-control\" id=\"youtube-width\" placeholder=\"100%\">\n    </div>\n  </form>\n  <a class=\"btn btn-danger btn-block\" href=\"widget-list.html\">Delete</a>\n</div>\n\n\n\n<!---- Bottom Navbar ----->\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a href=\"profile.html\"><i class=\"fas fa-user fontawsome_icon float-right\"></i></a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -964,12 +1472,13 @@ module.exports = "<p>\n  widget-youtube works!\n</p>\n"
 /*!*************************************************************************************!*\
   !*** ./src/app/views/widget/widget-edit/widget-youtube/widget-youtube.component.ts ***!
   \*************************************************************************************/
-/*! exports provided: WidgetYoutubeComponent */
+/*! exports provided: WidgetYoutubeComponent, YoutubeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetYoutubeComponent", function() { return WidgetYoutubeComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YoutubeComponent", function() { return YoutubeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
@@ -988,6 +1497,12 @@ var WidgetYoutubeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], WidgetYoutubeComponent);
     return WidgetYoutubeComponent;
+}());
+
+var YoutubeComponent = /** @class */ (function () {
+    function YoutubeComponent() {
+    }
+    return YoutubeComponent;
 }());
 
 
@@ -1012,7 +1527,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-list works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a [routerLink]=\"['/user/:uid/website/:wid/page']\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Widgets\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a [routerLink]=\"['/user/:uid/website/:wid/page:pid']\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container cl-container-padding\">\n  <div>\n    <div class=\"float-right\">\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"widget-heading.html\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n    </div>\n    <h1>John Mayer going to bring sweet love to your ears</h1>\n  </div>\n\n  <div>\n    <div class=\"float-right\">\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"widget-heading.html\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n    </div>\n    <h3>John is straight fire with his vocals and guitar.</h3>\n  </div>\n\n  <div>\n    <div>\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"widget-image.html\" class=\"float-right\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n      <img class=\"img-fluid img-rounded cl-widget-images\"\n           src=\"http://townsquare.media/site/204/files/2017/05/John-Mayer-COuntry.jpg\">\n    </div>\n  </div>\n  <div>\n    <div class=\"float-right\">\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"#\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n    </div>\n    <p>This is the song to know, I promise. It's set in an amateur recording studio which makes it even better</p>\n  </div>\n\n  <div>\n    <div class=\"float-right\">\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"widget-heading.html\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n    </div>\n    <h3>Report: John Mayer's new single hit</h3>\n  </div>\n\n  <div>\n    <div class=\"embed-responsive embed-responsive-16by9 above-below-space\">\n      <iframe width=\"300\" height=\"200\" src=\"https://www.youtube.com/embed/mQ055hHdxbE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n      <a href=\"#\" class=\"float-right\">\n        <span class=\"fas fa-bars fontawsome_icon\" style=\"background-color: white\"></span>\n      </a>\n      <a href=\"widget-youtube.html\" class=\"float-right\">\n        <span class=\"fas fa-cog fontawsome_icon\" style=\"background-color: white\"></span>\n      </a>\n    </div>\n  </div>\n\n  <div>\n    <div class=\"float-right\">\n      <a href=\"#\" class=\"float-right\">\n        <i class=\"fas fa-bars fontawsome_icon\"></i>\n      </a>\n      <a href=\"#\">\n        <i class=\"fas fa-cog fontawsome_icon\"></i>\n      </a>\n    </div>\n    <p>This is John Mayer's new song: New Light. It's amazing :D.</p>\n  </div>\n\n</div>\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left navbar-text\">\n    <a href=\"#\" class=\"cl-icon-padding\">\n      <span class=\"fas fa-play\"></span>\n    </a>\n    <a href=\"#\" class=\"cl-icon-padding pl-2\">\n      <span class=\"fas fa-eye\"></span>\n    </a>\n\n  </div>\n  <div class=\"float-right\">\n    <a href=\"profile.html\"><i class=\"fas fa-user fontawsome_icon float-right\"></i></a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
