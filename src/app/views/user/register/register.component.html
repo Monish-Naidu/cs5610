@@ -1,16 +1,47 @@
 <div class="container no-nav-top">
+
   <h1>Register</h1>
-  <input type="text"
-         class="form-control"
-         placeholder="username"/>
-  <input type="password"
-         class="form-control"
-         placeholder="password"/>
-  <input type="password"
-         class="form-control"
-         placeholder="verify password"/>
-  <a class="btn btn-primary btn-block"
-     routerLink="/user/{{uid}}">Register</a>
-  <a class="btn btn-danger  btn-block"
-     href="login.html">Cancel</a>
+
+  <div *ngIf="userErrorFlag" class="alert alert-danger">
+    {{userErrorMsg}}
+  </div>
+
+  <form (ngSubmit)="register()" #f="ngForm">
+
+    <!---- username--->
+
+
+    <div class="form-group">
+      <input id="username" name="username" placeholder="username" type="text" class="form-control" ngModel required #username="ngModel"/>
+    </div>
+
+
+
+    <!----password--->
+
+    <div class="form-group">
+      <input id="password" name="password" placeholder="password" type="password" class="form-control" ngModel required #password="ngModel"/>
+    </div>
+
+    <!---- verify password--->
+    <div class="form-group">
+      <input id="v_password" name="v_password" placeholder="verify password" type="password" class="form-control" ngModel required #v_password="ngModel"/>
+    </div>
+
+    <div *ngIf="pwErrorFlag" class="alert alert-danger">
+      {{pwErrorMsg}}
+    </div>
+
+    <!---- Register button--->
+
+
+    <a class="btn btn-primary btn-block" type="submit" [disabled]="!f.valid">Register</a>
+
+
+    <!---- Cancel button--->
+
+    <a class="btn btn-danger  btn-block" routerLink="/login">Cancel</a>
+
+  </form>
+
 </div>

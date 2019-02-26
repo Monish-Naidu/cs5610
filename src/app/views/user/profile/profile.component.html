@@ -1,6 +1,11 @@
+
+<!------Top navbar------>
+
+
+
 <nav class="navbar navbar-fixed-top cl-blue-navbar ">
   <div class="container-fluid">
-    <a class=" navbar-brand cl-text-bold text-white float-left" href="#">
+    <a class=" navbar-brand font-weight-bold text-white float-left" routerLink="">
       Profile
     </a>
     <a routerLink="/user/:uid" class="navbar-link float-left text-white">
@@ -9,25 +14,25 @@
   </div>
 </nav>
 
+<!------Title------>
+
 <div class="container above-below-space">
   <header>
   </header>
   <form>
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" placeholder="Username">
-    </div>
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
+
+
+      <input [(ngModel)]="user.username" type="text" class="form-control" id="username" placeholder="Username">
     </div>
     <div class="form-group">
       <label for="first-name">First Name</label>
-      <input type="text" class="form-control" id="first-name" placeholder="Alice">
+      <input [(ngModel)]="user.firstName" type="text" class="form-control" id="first-name" placeholder="Alice">
     </div>
     <div class="form-group">
       <label for="last-name">Last Name</label>
-      <input type="text" class="form-control" id="last-name" placeholder="Wonderland">
+      <input [(ngModel)]="user.lastName" type="text" class="form-control" id="last-name" placeholder="Wonderland">
     </div>
   </form>
   <a class="btn btn-primary btn-block"
@@ -35,19 +40,15 @@
   <a class="btn btn-danger  btn-block"
      routerLink="/login">Logout</a>
   <h1></h1>
+
+  <!------Bottom navbar------>
 </div>
-
-
-<!----Bottom navbar (blue)------>
 <nav class="navbar fixed-bottom float-right col-12">
-  <div class="container col-12">
+  <div class="container-fluid col-12">
     <div class="row navbar-text float-right col-12">
       <a routerLink="/user/:uid" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
       </a>
     </div>
   </div>
-
-
-
 </nav>

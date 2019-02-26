@@ -20,26 +20,26 @@
 
 
   <form (ngSubmit)="login()" #f="ngForm">
-
+    <h1 class = "cl-padding-top">Login</h1>
     <div class="form-group">
-      <input type="text" name="username" placeholder="username" class="form-control" ngModel required #username="ngModel">
+      <input type="text" name="username" placeholder="username" class="form-control cl-margin-bottom" ngModel required #username="ngModel">
     </div>
     <span class="help-block" *ngIf="!username.valid && username.touched">
       Please enter username!
     </span>
 
     <div class="form-group">
-      <input type="password" name="password" placeholder="password" class="form-control" ngModel required #password="ngModel">
+      <input type="password" name="password" placeholder="password" class="form-control cl-margin-bottom" ngModel required #password="ngModel">
     </div>
     <span class="help-block" *ngIf="!password.valid && password.touched">
       Please enter password!
     </span>
 
-    <div class="form-group">
+    <div class="form-group cl-margin-bottom">
       <button [disabled]="!f.valid" class="btn btn-primary btn-block" type="submit">Login</button>
     </div>
 
-    <div class="form-group">
+    <div class="form-group cl-margin-bottom">
       <a routerLink="/register" class="btn btn-success btn-block">Register</a>
     </div>
   </form>

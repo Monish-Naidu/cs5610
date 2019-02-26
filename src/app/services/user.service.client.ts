@@ -15,7 +15,7 @@ export class UserService {
   ];
 
   createUser(user: User) {
-    this.users.push(new User(user._id, user.username, user.password, user.firstName, user.lastName));
+    return this.users.push(new User(user._id, user.username, user.password, user.firstName, user.lastName));
   }
 
   findUserByCredential(username: String, password: String) {
@@ -38,6 +38,12 @@ export class UserService {
         return this.users[i];
       }
     }
+  }
+
+  findUserByUsername(username: String) {
+    return this.users.find(function(user) {
+      return user.username === username;
+    });
   }
 
   deleteUserById(userId: String) {
