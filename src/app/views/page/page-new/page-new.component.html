@@ -3,15 +3,15 @@
   <div class="container-fluid row">
 
     <div class="navbar-text float-left">
-      <a href="page-list.html" class="text-black icon-padding">
+      <a routerLink="/user/{{uId}}/website/{{wId}}/page" class="text-black icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
-      <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
+      <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="">
         New Page
       </a>
     </div>
     <div class="navbar-text float-right">
-      <a href="page-list.html" class="icon-padding text-black">
+      <a routerLink="/user/{{uId}}/website/{{wId}}/page" class="icon-padding text-black">
         <i class="fas fa-plus fontawsome_icon"></i>
       </a>
     </div>
@@ -37,7 +37,7 @@
 <nav class="navbar fixed-bottom float-right col-12  bg-light">
   <div class="container col-12">
     <div class="row navbar-text float-right col-12">
-      <a href="profile.html" class="float-right">
+      <a routerLink="/user/{{uId}}" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right col-12"></i>
       </a>
     </div>

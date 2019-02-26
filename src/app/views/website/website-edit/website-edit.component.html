@@ -5,20 +5,20 @@
     <a routerLink="/profile/{{uId}}/website" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
-    <a class="text-white navbar-brand font-weight-bold" href="#">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="">
       Websites
     </a>
-    <a href="website-new.html" class="navbar-link navbar-text float-right text-white cl-icon-padding">
+    <a routerLink="/user/{{uId}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
   </div>
 
 
   <div class="col-md-8 container-fluid">
-    <a class="text-white navbar-brand font-weight-bold" href="#">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="">
       Edit Websites
     </a>
-    <a href="website-list.html" class="navbar-link navbar-text float-right text-white cl-icon-padding">
+    <a routerLink="/user/{{uId}}/website" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-check fontawsome_icon"></i>
     </a>
   </div>
@@ -27,22 +27,35 @@
 <div class="row contain-fluid pt-2 px-3">
   <div class="col-md-4 d-none d-md-block border-right">
     <ul class="list-group list-group-flush">
+
+
+      <!------Blogging App -->
+
       <li class="list-group-item">
-        <a href="website-edit.html"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a href="page-list.html">Blogging App</a>
+        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Blogging App</a>
       </li>
+
+      <!------Address Book -->
+
       <li class="list-group-item">
-        <a href="website-edit.html"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a href="page-list.html">Address Book App</a>
+        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Address Book App</a>
       </li>
+
+      <!------Script Testing App -->
       <li class="list-group-item">
-        <a href="website-edit.html"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a href="page-list.html">Script Testing App</a>
+        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Script Testing App</a>
       </li>
+
+      <!------Blogger -->
+
       <li class="list-group-item">
-        <a href="website-edit.html"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a href="page-list.html">Blogger</a>
+        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Blogger</a>
       </li>
+
     </ul>
   </div>
   <div class="col-md-8">
@@ -56,7 +69,7 @@
         <textarea id="website-description" class="form-control" rows="5"
                   placeholder="Blog is a blog-publishing service."></textarea>
       </div>
-      <a class="btn btn-danger  btn-block" href="website-list.html">Delete</a>
+      <a class="btn btn-danger  btn-block" routerLink="/user/{{uId}}/website">Delete</a>
     </form>
   </div>
 </div>
@@ -64,7 +77,7 @@
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container-fluid col-12">
     <div class="row navbar-text float-right col-12">
-      <a href="profile.html" class="float-right">
+      <a routerLink="/user/{{uId}}" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
       </a>
     </div>

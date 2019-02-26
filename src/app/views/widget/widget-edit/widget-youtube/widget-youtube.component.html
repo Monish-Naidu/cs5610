@@ -3,7 +3,7 @@
   <div class="container-fluid row">
 
     <div class="navbar-text pull-left">
-      <a href="widget-list.html" class="text-black icon-padding">
+      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget" class="text-black icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
       <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="navbar-text pull-right">
-      <a href="widget-list.html" class="cl-icon-padding text-black">
+      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget" class="cl-icon-padding text-black">
         <i class="fas fa-check fontawsome_icon"></i>
       </a>
     </div>
@@ -39,7 +39,7 @@
       <input type="text" class="form-control" id="youtube-width" placeholder="100%">
     </div>
   </form>
-  <a class="btn btn-danger btn-block" href="widget-list.html">Delete</a>
+  <a class="btn btn-danger btn-block" routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">Delete</a>
 </div>
 
 
@@ -48,6 +48,6 @@
 <nav class="navbar navbar-default navbar-light bg-light fixed-bottom">
   <div class="float-left"> </div>
   <div class="float-right">
-    <a href="profile.html"><i class="fas fa-user fontawsome_icon float-right"></i></a>
+    <a routerLink="/user/{{uId}}"><i class="fas fa-user fontawsome_icon float-right"></i></a>
   </div>
 </nav>
