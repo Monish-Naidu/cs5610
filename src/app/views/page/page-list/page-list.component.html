@@ -20,35 +20,14 @@
 
 
 
-
-<div class="container-fluid container-padding">
-  <ul class="list-group list-group-flush list-group-borderless">
-    <li class="list-group-item list-item-borderless">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">Blog Post</a>
-    </li>
-    <li class="list-group-item list-item-borderless">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">Blogs</a>
-    </li>
-    <li class="list-group-item list-item-borderless">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">Home</a>
-    </li>
-    <li class="list-group-item list-item-borderless">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">About</a>
-    </li>
-    <li class="list-group-item list-item-borderless">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget">Contact Us</a>
+<div class="container-fluid cl-container-padding">
+  <ul *ngFor="let page of pages" class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a routerLink="/user/{{uId}}/website/{{wId}}/page/{{page._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+      <a routerLink="/user/{{uId}}/website/{{wId}}/page/{{page._id}}/widget">{{page.name}}</a>
     </li>
   </ul>
 </div>
-
-
-
-
 
 
 

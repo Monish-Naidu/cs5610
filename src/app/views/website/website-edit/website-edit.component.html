@@ -5,74 +5,62 @@
     <a routerLink="/profile/{{uId}}/website" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
-    <a class="text-white navbar-brand font-weight-bold" routerLink="">
+
+    <a class="text-white navbar-brand font-weight-bold" routerLink="/profile/{{uId}}/website">
       Websites
     </a>
+
+
     <a routerLink="/user/{{uId}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
+
   </div>
 
 
   <div class="col-md-8 container-fluid">
-    <a class="text-white navbar-brand font-weight-bold" routerLink="">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="/profile/{{uId}}/website/{{wId}}">
       Edit Websites
     </a>
-    <a routerLink="/user/{{uId}}/website" class="navbar-link navbar-text float-right text-white cl-icon-padding">
+    <button (click)="update()" routerLink="/user/{{uId}}/website"
+            class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-check fontawsome_icon"></i>
-    </a>
+    </button>
   </div>
 </nav>
 
 <div class="row contain-fluid pt-2 px-3">
-  <div class="col-md-4 d-none d-md-block border-right">
-    <ul class="list-group list-group-flush">
+  <ul class="col-md-4 d-none d-md-block border-right">
+    <li *ngFor = "let website of websites" class = "list-group list-group flush list-item-borderless">
+        <a routerLink="/user/{{uId}}/website/{{website._id}}">
+          <i class="fas fa-cog fontawsome_icon float-right"></i>
+        </a>
 
-
-      <!------Blogging App -->
-
-      <li class="list-group-item">
-        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Blogging App</a>
+          <a routerLink="/user/{{uId}}/website/{{website._id}}/page">{{website.name}}</a>
       </li>
-
-      <!------Address Book -->
-
-      <li class="list-group-item">
-        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Address Book App</a>
-      </li>
-
-      <!------Script Testing App -->
-      <li class="list-group-item">
-        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Script Testing App</a>
-      </li>
-
-      <!------Blogger -->
-
-      <li class="list-group-item">
-        <a routerLink="/user/{{uId}}/website{{wId}}/page/{{pId}}/widget/{{wgId}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
-        <a routerLink="/user/{{uId}}/website/{{wId}}/page">Blogger</a>
-      </li>
-
-    </ul>
+  </ul>
   </div>
+
   <div class="col-md-8">
     <form>
+
       <div class="form-group">
         <label for="website-name">Website Name</label>
-        <input type="text" class="form-control" id="website-name" placeholder="Blogger">
+        <input type="text" class="form-control" id="website-name" placeholder="Name"
+               [ngModelOptions]="{standalone: true}" [(ngModel)]="website.name"/>
       </div>
-      <div class="form-group">
+
+      <div class="form-group" *ngIf="website">
         <label for="website-description">Website Description</label>
-        <textarea id="website-description" class="form-control" rows="5"
-                  placeholder="Blog is a blog-publishing service."></textarea>
+        <textarea id="website-description" class="form-control" rows="5" placeholder="Description"
+                  [(ngModel)]="website.description" [ngModelOptions]="{standalone: true}"></textarea>
       </div>
-      <a class="btn btn-danger  btn-block" routerLink="/user/{{uId}}/website">Delete</a>
+
+      <button class="btn btn-danger  btn-block" (click)="delete()"
+              routerLink="/profile/{{uId}}/website">Delete</button>
+
     </form>
   </div>
-</div>
 
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container-fluid col-12">
