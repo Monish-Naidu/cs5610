@@ -761,7 +761,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a routerLink=\"/user/{{uId}}/website\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" routerLink=\"\">\n        Pages\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/new\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid container-padding\">\n  <ul class=\"list-group list-group-flush list-group-borderless\">\n    <li class=\"list-group-item list-item-borderless\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\">Blog Post</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\">Blogs</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\">Home</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\">About</a>\n    </li>\n    <li class=\"list-group-item list-item-borderless\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\">Contact Us</a>\n    </li>\n  </ul>\n</div>\n\n\n\n\n\n\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a routerLink=\"/user/{{uId}}\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
+module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a routerLink=\"/user/{{uId}}/website\" class=\"text-black cl-icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" routerLink=\"\">\n        Pages\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/new\" class=\"cl-icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"container-fluid cl-container-padding\">\n  <ul *ngFor=\"let page of pages\" class=\"list-group list-group-flush\">\n    <li class=\"list-group-item\">\n      <a routerLink=\"/user/{{uId}}/website/{{wId}}/page/{{page._id}}\"><i class=\"fas fa-cog fontawsome_icon float-right\"></i></a>\n      <a routerLink=\"/user/{{uId}}/website/{{wId}}/page/{{page._id}}/widget\">{{page.name}}</a>\n    </li>\n  </ul>\n</div>\n\n\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a routerLink=\"/user/{{uId}}\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
 
 /***/ }),
 
@@ -777,12 +777,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageListComponent", function() { return PageListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_page_service_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/page.service.client */ "./src/app/services/page.service.client.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var PageListComponent = /** @class */ (function () {
-    function PageListComponent() {
+    function PageListComponent(pageService, activatedRoute, router) {
+        this.pageService = pageService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.pages = [];
     }
     PageListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.uId = params['uId'];
+            _this.wId = params['wId'];
+        });
+        this.pages = this.pageService.findPageByWebsiteId(this.wId);
     };
     PageListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -790,7 +804,7 @@ var PageListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./page-list.component.html */ "./src/app/views/page/page-list/page-list.component.html"),
             styles: [__webpack_require__(/*! ./page-list.component.css */ "./src/app/views/page/page-list/page-list.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_page_service_client__WEBPACK_IMPORTED_MODULE_2__["PageService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], PageListComponent);
     return PageListComponent;
 }());
@@ -817,7 +831,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a routerLink=\"/user/{{uId}}/website/{{wId}}/page\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" routerLink=\"\">\n        New Page\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a routerLink=\"/user/{{uId}}/website/{{wId}}/page\" class=\"icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n\n<div class=\"container small-padding\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"page-name\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-name\" placeholder=\"Page Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"page-title\">Title</label>\n      <input type=\"text\" class=\"form-control\" id=\"page-title\" placeholder=\"Page Title\">\n    </div>\n  </form>\n</div>\n\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a routerLink=\"/user/{{uId}}\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
+module.exports = "\n<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text float-left\">\n      <a routerLink=\"/user/{{uId}}/website/{{wId}}/page\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" routerLink=\"\">\n        New Page\n      </a>\n    </div>\n    <div class=\"navbar-text float-right\">\n      <a (click)=\"create()\" class=\"icon-padding text-black\">\n        <i class=\"fas fa-plus fontawsome_icon\"></i>\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"page-name\">Name</label>\n      <input [(ngModel)] = \"page.name\" [ngModelOptions]=\"{standalone: true}\" type=\"text\"\n             class=\"form-control\" id=\"page-name\" placeholder=\"Page Name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"page-title\">Title</label>\n      <input [(ngModel)] = \"page.description\" [ngModelOptions]=\"{standalone: true}\" type=\"text\"\n             class=\"form-control\" id=\"page-title\" placeholder=\"Page Title\">\n    </div>\n  </form>\n</div>\n\n<!----Bottom navbar (grey)------>\n<nav class=\"navbar fixed-bottom float-right col-12  bg-light\">\n  <div class=\"container col-12\">\n    <div class=\"row navbar-text float-right col-12\">\n      <a routerLink=\"/user/{{uId}}\" class=\"float-right\">\n        <i class=\"fas fa-user fontawsome_icon float-right col-12\"></i>\n      </a>\n    </div>\n  </div>\n\n\n\n</nav>\n"
 
 /***/ }),
 
@@ -833,12 +847,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageNewComponent", function() { return PageNewComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_page_service_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/page.service.client */ "./src/app/services/page.service.client.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _models_page_model_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../models/page.model.client */ "./src/app/models/page.model.client.ts");
+
+
+
 
 
 var PageNewComponent = /** @class */ (function () {
-    function PageNewComponent() {
+    function PageNewComponent(pageservice, route, activatedRoute) {
+        this.pageservice = pageservice;
+        this.route = route;
+        this.activatedRoute = activatedRoute;
     }
+    PageNewComponent.prototype.create = function () {
+        this.pageservice.createWebsite(this.wId, this.page);
+        this.route.navigateByUrl('/user' + this.uId + '/website' + this.wId + '/page');
+    };
     PageNewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.uId = params['uId'];
+            _this.wId = params['wId'];
+            _this.page = new _models_page_model_client__WEBPACK_IMPORTED_MODULE_4__["Page"]('', 'name', _this.wId, _this.description);
+        });
     };
     PageNewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -846,7 +879,7 @@ var PageNewComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./page-new.component.html */ "./src/app/views/page/page-new/page-new.component.html"),
             styles: [__webpack_require__(/*! ./page-new.component.css */ "./src/app/views/page/page-new/page-new.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_page_service_client__WEBPACK_IMPORTED_MODULE_2__["PageService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
     ], PageNewComponent);
     return PageNewComponent;
 }());
@@ -1344,7 +1377,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Choose Widget\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container-fluid cl-container-padding\">\n  <ul class=\"list-group list-group-flush\">\n    <li class=\"list-group-item\">\n      <a href=\"widget-heading.html\">Header</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Label</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">HTML</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Text Input</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Link</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Button</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"widget-image.html\">Image</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"widget-youtube.html\">YouTube</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Data Table</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a href=\"#\">Repeater</a>\n    </li>\n  </ul>\n</div>\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a routerLink=\"/user/{{uId}}\" icon-padding>\n    <i class=\"fas fa-user fontawsome_icon float-right \"></i>\n    </a>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-light bg-light navbar-fixed-top\">\n  <div class=\"container-fluid row\">\n\n    <div class=\"navbar-text pull-left\">\n      <a routerLink=\"user/{{uId}}/website{{wId}}/page/{{pId}}/widget\" class=\"text-black icon-padding\">\n        <i class=\"fas fa-chevron-left fontawsome_icon\"></i>\n      </a>\n      <a class=\"navbar-brand text-black font-weight-bold pl-2\" href=\"#\">\n        Choose Widget\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container-fluid cl-container-padding\">\n  <ul class=\"list-group list-group-flush\">\n    <li class=\"list-group-item\">\n      <a routerLink=\"user/:uid/website/:wid/page/:pid/widget/new/header\">Header</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Label</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">HTML</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Text Input</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Link</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Button</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"user/:uid/website/:wid/page/:pid/widget/new/image\">Image</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"user/:uid/website/:wid/page/:pid/widget/new/youtube\">YouTube</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Data Table</a>\n    </li>\n    <li class=\"list-group-item\">\n      <a routerLink=\"\">Repeater</a>\n    </li>\n  </ul>\n</div>\n\n<nav class=\"navbar navbar-default navbar-light bg-light fixed-bottom\">\n  <div class=\"float-left\"> </div>\n  <div class=\"float-right\">\n    <a routerLink=\"/user/{{uId}}\" icon-padding>\n    <i class=\"fas fa-user fontawsome_icon float-right \"></i>\n    </a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
