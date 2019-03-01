@@ -7,13 +7,15 @@
       <a routerLink="/user/{{uId}}" class="navbar-brand text-white">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
-      <a class="text-white navbar-brand cl-text-bold" href="#">
+      <a class="text-white navbar-brand cl-text-bold" routerLink="">
         Websites
       </a>
     </div>
-    <a routerLink="/user/{{uId}}/website/new" class="navbar-brand navbar-text pull-right text-white cl-icon-padding">
+
+    <a routerLink="./new" class="navbar-link float-left text-white">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
+
   </div>
 </nav>
 
@@ -21,9 +23,9 @@
 <div class="container above-below-space">
   <ul *ngFor="let website of websites" class="list-group list-group-flush">
     <li class="list-group-item">
-      <a routerLink="/user/{{userId}}/website/{{website._id}}">
+      <a routerLink="/user/{{uId}}/website/{{website._id}}">
         <i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="/user/{{userId}}/website/{{website._id}}/page">{{website.name}}</a>
+      <a routerLink="/user/{{uId}}/website/{{website._id}}/page">{{website.name}}</a>
     </li>
   </ul>
 </div>
