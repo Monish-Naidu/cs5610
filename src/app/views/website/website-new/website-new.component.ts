@@ -11,7 +11,8 @@ import {WebsiteService} from '../../../services/website.service.client';
 })
 export class WebsiteNewComponent implements OnInit {
   @ViewChild('f') webForm: NgForm;
-  uId: string;
+  uid: string;
+  wid: string;
   websites: Website[] = [];
   website: Website;
 
@@ -21,15 +22,15 @@ export class WebsiteNewComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      console.log(params['uid']);
-      this.uId = params['uid'];
+      this.uid = params['uid'];
+      this.wid = params['wid'];
     });
-    this.websites = this.websiteService.findWebsitesByUser(this.uId);
+    this.websites = this.websiteService.findWebsitesByUser(this.uid);
   }
 
   create() {
     this.website.name = this.webForm.value.name;
-    this.websiteService.createWebsite(this.uId, this.website);
+    this.websiteService.createWebsite(this.uid, this.website);
   }
 
 }

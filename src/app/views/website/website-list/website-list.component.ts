@@ -9,17 +9,18 @@ import {Website} from '../../../models/website.model.client';
   styleUrls: ['./website-list.component.css']
 })
 export class WebsiteListComponent implements OnInit {
-  uId: string;
+  uid: String;
   website: Website;
   websites: Website[] = [];
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params['uId'];
+    this.activatedRoute.params.subscribe(
+      (params: any) => {
+      this.uid = params['uid'];
     });
-    this.websites = this.websiteService.findWebsitesByUser(this.uId);
+    this.websites = this.websiteService.findWebsitesByUser(this.uid);
   }
 
 }

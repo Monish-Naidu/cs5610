@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
 
 
+
   errorFlag: boolean;
   errorMsg = 'Registration failed!';
 
@@ -43,7 +44,7 @@ export class RegisterComponent implements OnInit {
       this.errorFlag = true;
     } else {
       this.userService.createUser(this.user);
-      this.router.navigate(['/profile', this.user._id]);
+      this.router.navigate(['/user', this.user._id]);
     }
   }
 

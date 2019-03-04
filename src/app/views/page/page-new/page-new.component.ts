@@ -9,24 +9,24 @@ import {Page} from '../../../models/page.model.client';
   styleUrls: ['./page-new.component.css']
 })
 export class PageNewComponent implements OnInit {
-  uId: string;
-  wId: string;
+  uid: string;
+  wid: string;
   page: Page;
   name: string;
   description: string;
 
   create() {
-    this.pageservice.createWebsite(this.wId, this.page);
-    this.route.navigateByUrl('/user' + this.uId + '/website' + this.wId + '/page');
+    this.pageservice.createWebsite(this.wid, this.page);
+    this.route.navigateByUrl('/user' + this.uid + '/website' + this.wid + '/page');
   }
 
   constructor(private pageservice: PageService, private route: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params['uId'];
-      this.wId = params['wId'];
-      this.page = new Page('', 'name', this.wId,this.description);
+      this.uid = params['uid'];
+      this.wid = params['wid'];
+      this.page = new Page('', 'name', this.wid, this.description);
     });
 
   }

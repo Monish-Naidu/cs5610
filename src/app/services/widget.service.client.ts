@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 @Injectable()
 export  class WidgetService {
 
-  // constructor(_id:String, type:String, pId:String, size= '1', text = 'text', url = 'url', width = '100%')
+  // constructor(_id:String, type:String, pid:String, size= '1', text = 'text', url = 'url', width = '100%')
   widgets: Widget[] = [
     new Widget('123', 'HEADER', '321', '2', 'GIZMODO' ),
     new Widget('123', 'HEADER', '321', '2', 'GIZMODO' ),

@@ -9,31 +9,35 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./website-edit.component.css']
 })
 export class WebsiteEditComponent implements OnInit {
-  uId: string;
-  wId: string;
-  website: Website;
+  uid: string;
+  wid: string;
+  name: string;
+  description: string;
   websites: Website[] = [];
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
 
+  ngOnInit() {
+    this.activatedRoute.params.subscribe((params: any) => {
+      this.uid = params['uid'];
+      this.wid = params['wid'];
+    });
+    const website: Website = this.websiteService.findWebsiteById(this.wid);
+    if (website) {
+      this.name = website.name;
+      this.description = website.description;
+    }
+    this.websites = this.websiteService.findWebsitesByUser(this.uid);
+  }
+
   update() {
-    console.log(this.website);
-    this.websiteService.updateWebsite(this.wId, this.website);
+    this.websiteService.updateWebsite(this.wid, new Website(this.wid, this.name, this.uid, this.description));
   }
 
 
   delete() {
-    this.websiteService.deleteWebsite(this.wId);
-  }
-
-  ngOnInit() {
-    this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params['uId'];
-      this.wId = params['wId'];
-    });
-    this.website = this.websiteService.findWebsiteById(this.wId);
-    this.websites = this.websiteService.findWebsitesByUser(this.uId);
+    this.websiteService.deleteWebsite(this.wid);
   }
 
 }

@@ -2,16 +2,16 @@
 
   <div class="col-md-4 d-none d-md-block container-fluid">
 
-    <a routerLink="/profile/{{uId}}/website" class="navbar-link text-white">
+    <a routerLink="/user/{{uid}}/website" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
 
-    <a class="text-white navbar-brand font-weight-bold" routerLink="/profile/{{uId}}/website">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website">
       Websites
     </a>
 
 
-    <a routerLink="/user/{{uId}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
+    <a routerLink="/user/{{uid}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
 
@@ -19,10 +19,10 @@
 
 
   <div class="col-md-8 container-fluid">
-    <a class="text-white navbar-brand font-weight-bold" routerLink="/profile/{{uId}}/website/{{wId}}">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website/{{wid}}">
       Edit Websites
     </a>
-    <button (click)="update()" routerLink="/user/{{uId}}/website"
+    <button (click)="update()" routerLink="/user/{{uid}}/website"
             class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-check fontawsome_icon"></i>
     </button>
@@ -30,13 +30,10 @@
 </nav>
 
 <div class="row contain-fluid pt-2 px-3">
-  <ul class="col-md-4 d-none d-md-block border-right">
+  <ul class="col-md-4 d-none d-md-block border-right list-borderless">
     <li *ngFor = "let website of websites" class = "list-group list-group flush list-item-borderless">
-        <a routerLink="/user/{{uId}}/website/{{website._id}}">
-          <i class="fas fa-cog fontawsome_icon float-right"></i>
-        </a>
-
-          <a routerLink="/user/{{uId}}/website/{{website._id}}/page">{{website.name}}</a>
+        <a routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+        <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
       </li>
   </ul>
   </div>
@@ -47,17 +44,17 @@
       <div class="form-group">
         <label for="website-name">Website Name</label>
         <input type="text" class="form-control" id="website-name" placeholder="Name"
-               [ngModelOptions]="{standalone: true}" [(ngModel)]="website.name"/>
+               [ngModelOptions]="{standalone: true}" [(ngModel)]="name"/>
       </div>
 
-      <div class="form-group" *ngIf="website">
+      <div class="form-group">
         <label for="website-description">Website Description</label>
         <textarea id="website-description" class="form-control" rows="5" placeholder="Description"
-                  [(ngModel)]="website.description" [ngModelOptions]="{standalone: true}"></textarea>
+                  [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></textarea>
       </div>
 
       <button class="btn btn-danger  btn-block" (click)="delete()"
-              routerLink="/profile/{{uId}}/website">Delete</button>
+              routerLink="/user/{{uid}}/website">Delete</button>
 
     </form>
   </div>
@@ -65,7 +62,7 @@
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container-fluid col-12">
     <div class="row navbar-text float-right col-12">
-      <a routerLink="/user/{{uId}}" class="float-right">
+      <a routerLink="/user/{{uid}}" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
       </a>
     </div>

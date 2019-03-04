@@ -9,30 +9,30 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./page-edit.component.css']
 })
 export class PageEditComponent implements OnInit {
-  wId: string;
-  uId: string;
-  pId: string;
+  wid: string;
+  uid: string;
+  pid: string;
   currentPage: Page;
 
   constructor(private pageService: PageService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   update() {
-    this.pageService.updatePage(this.pId, this.currentPage);
-    this.router.navigateByUrl('/user/' + this.uId + '/website/' + this.wId + '/page/' + this.pId);
+    this.pageService.updatePage(this.pid, this.currentPage);
+    this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid);
   }
 
   delete() {
-    this.pageService.deletePage(this.pId);
-    this.router.navigateByUrl('/user/' + this.uId + '/website/' + this.wId + '/page/');
+    this.pageService.deletePage(this.pid);
+    this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/');
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params['uid'];
-      this.wId = params['wid'];
-      this.pId = params['pid'];
+      this.uid = params['uid'];
+      this.wid = params['wid'];
+      this.pid = params['pid'];
     });
-    this.currentPage = this.pageService.findPageById(this.pId);
+    this.currentPage = this.pageService.findPageById(this.pid);
   }
 
 }

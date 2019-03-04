@@ -9,18 +9,18 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./page-list.component.css']
 })
 export class PageListComponent implements OnInit {
-  uId: string;
-  wId: string;
+  uid: string;
+  wid: string;
   pages: Page[] = [];
 
   constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uId = params['uId'];
-      this.wId = params['wId'];
+      this.uid = params['uid'];
+      this.wid = params['wid'];
     });
-    this.pages = this.pageService.findPageByWebsiteId(this.wId);
+    this.pages = this.pageService.findPageByWebsiteId(this.wid);
   }
 
 }
