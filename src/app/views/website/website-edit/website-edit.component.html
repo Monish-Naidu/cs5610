@@ -1,23 +1,15 @@
 <nav class="navbar navbar-fixed-top cl-blue-navbar">
-
-  <div class="col-md-4 d-none d-md-block container-fluid">
-
+  <div class="col-md-4 d-none d-md-block d-none d-sm-block container-fluid">
     <a routerLink="/user/{{uid}}/website" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
-
     <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website">
       Websites
     </a>
-
-
     <a routerLink="/user/{{uid}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
-
   </div>
-
-
   <div class="col-md-8 container-fluid">
     <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website/{{wid}}">
       Edit Websites
@@ -29,35 +21,33 @@
   </div>
 </nav>
 
-<div class="row contain-fluid pt-2 px-3">
-  <ul class="col-md-4 d-none d-md-block border-right list-borderless">
-    <li *ngFor = "let website of websites" class = "list-group list-group flush list-item-borderless">
-        <a routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+
+<div class="row contain-fluid pt-2 px-4">
+  <div class="col-md-4 d-none d-md-block border-right">
+    <ul *ngFor="let website of websites" class="list-group list-group-flush">
+      <li class="list-group-item">
+        <a routerLink="/user/{{uid}}/website/{{website._id}}">
+          <i class="fas fa-cog fontawsome_icon float-right"></i></a>
         <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
       </li>
-  </ul>
+    </ul>
   </div>
-
   <div class="col-md-8">
     <form>
-
       <div class="form-group">
         <label for="website-name">Website Name</label>
-        <input type="text" class="form-control" id="website-name" placeholder="Name"
-               [ngModelOptions]="{standalone: true}" [(ngModel)]="name"/>
+        <input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="website-name" placeholder= "name"/>
       </div>
-
       <div class="form-group">
         <label for="website-description">Website Description</label>
-        <textarea id="website-description" class="form-control" rows="5" placeholder="Description"
-                  [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></textarea>
+        <textarea [(ngModel)]="description" [ngModelOptions]="{standalone: true}" id="website-description" class="form-control" rows="5"
+                  placeholder="description"></textarea>
       </div>
-
-      <button class="btn btn-danger  btn-block" (click)="delete()"
-              routerLink="/user/{{uid}}/website">Delete</button>
-
+      <a (click)="delete()" class="btn btn-danger  btn-block" routerLink="/user/{{uid}}/website">Delete</a>
     </form>
   </div>
+</div>
+
 
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container-fluid col-12">

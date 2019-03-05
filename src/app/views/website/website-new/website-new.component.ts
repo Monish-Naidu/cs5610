@@ -13,8 +13,10 @@ export class WebsiteNewComponent implements OnInit {
   @ViewChild('f') webForm: NgForm;
   uid: string;
   wid: string;
+  name: string;
+  description: string;
   websites: Website[] = [];
-  website: Website;
+
 
   constructor(private websiteService: WebsiteService,
               private activatedRoute: ActivatedRoute) { }
@@ -29,8 +31,8 @@ export class WebsiteNewComponent implements OnInit {
   }
 
   create() {
-    this.website.name = this.webForm.value.name;
-    this.websiteService.createWebsite(this.uid, this.website);
+    const website = new Website(undefined, this.name, undefined, this.description)
+    this.websiteService.createWebsite(this.uid, website);
   }
 
 }

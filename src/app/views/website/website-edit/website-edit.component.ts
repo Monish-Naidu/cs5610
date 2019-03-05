@@ -13,6 +13,7 @@ export class WebsiteEditComponent implements OnInit {
   wid: string;
   name: string;
   description: string;
+  website: Website
   websites: Website[] = [];
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
