@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WebsiteService} from '../../../services/website.service.client';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Website} from '../../../models/website.model.client';
 
 @Component({
@@ -10,10 +10,9 @@ import {Website} from '../../../models/website.model.client';
 })
 export class WebsiteListComponent implements OnInit {
   uid: String;
-  website: Website;
   websites: Website[] = [];
 
-  constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute) { }
+  constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(

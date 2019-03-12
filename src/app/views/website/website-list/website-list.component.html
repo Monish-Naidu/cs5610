@@ -8,26 +8,26 @@
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
 
-      <a class="text-white navbar-brand cl-text-bold pull left col-11" routerLink="./">
+      <a class="text-white navbar-brand cl-text-bold pull left col-11" routerLink="/user/{{uid}}/website">
         Websites
       </a>
 
-    <a routerLink="./new" class="navbar-link float-left text-white">
+    <a routerLink="/user/{{uid}}/website/new" class="navbar-link float-left text-white">
       <i class="fas fa-plus fontawsome_icon"></i>
     </a>
   </div>
 </nav>
 
-'
-<div class="container above-below-space">
-  <ul *ngFor="let website of websites" class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a routerLink="/user/{{uid}}/website/{{website._id}}">
-        <i class="fas fa-cog fontawsome_icon float-right"></i></a>
-      <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
-    </li>
-  </ul>
-</div>
+<main>
+  <div class="container above-below-space">
+    <ul class="list-group list-borderless">
+      <li class="list-group-item list-borderless" *ngFor="let website of websites">
+        <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
+        <a routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i></a>
+      </li>
+    </ul>
+  </div>
+</main>
 
 <!------Bottom Navbar------>
 
