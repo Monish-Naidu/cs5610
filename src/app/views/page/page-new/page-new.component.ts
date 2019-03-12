@@ -11,12 +11,13 @@ import {Page} from '../../../models/page.model.client';
 export class PageNewComponent implements OnInit {
   uid: string;
   wid: string;
-  page: Page;
   name: string;
   description: string;
+  pages: Page[] = [];
 
-  create() {
-    this.pageservice.createWebsite(this.wid, this.page);
+  createPage() {
+    const newPage = new Page(undefined, this.name, undefined, this.description)
+    this.pageservice.createWebsite(this.wid, newPage);
     this.route.navigateByUrl('/user' + this.uid + '/website' + this.wid + '/page');
   }
 
@@ -26,7 +27,7 @@ export class PageNewComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: any) => {
       this.uid = params['uid'];
       this.wid = params['wid'];
-      this.page = new Page('', 'name', this.wid, this.description);
+      this.pages = this.pageservice.findPageByWebsiteId(this.wid);
     });
 
   }

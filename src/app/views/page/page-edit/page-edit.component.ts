@@ -12,16 +12,19 @@ export class PageEditComponent implements OnInit {
   wid: string;
   uid: string;
   pid: string;
-  currentPage: Page;
+  name: string;
+  description: string;
+  pages: Page[] = [];
 
   constructor(private pageService: PageService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  update() {
-    this.pageService.updatePage(this.pid, this.currentPage);
-    this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid);
+  updatePage() {
+    const newPage = new Page(this.pid, this.name, this.wid, this.description);
+    this.pageService.updatePage(this.pid, newPage);
+    this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/');
   }
 
-  delete() {
+  deletePage() {
     this.pageService.deletePage(this.pid);
     this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/');
   }
@@ -32,7 +35,6 @@ export class PageEditComponent implements OnInit {
       this.wid = params['wid'];
       this.pid = params['pid'];
     });
-    this.currentPage = this.pageService.findPageById(this.pid);
   }
 
 }
