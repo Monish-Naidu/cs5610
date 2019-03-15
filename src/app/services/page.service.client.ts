@@ -1,15 +1,23 @@
+import { Page } from '../models/page.model.client';
 import {Injectable} from '@angular/core';
-import {Page} from '../models/page.model.client';
+
 
 @Injectable()
 export class PageService {
+
   pages: Page[] = [
-    new Page ('321', 'Post 1','456', 'Lorem'),
-    new Page ('432', 'Post 2', '456', 'Lorem'),
-    new Page ( '543', 'Post 3', '456', 'Lorem'),
+    new Page('321', 'Post 1', '456', 'Lorem'),
+    new Page('432', 'Post 2', '456', 'Lorem'),
+    new Page('543', 'Post 3', '456', 'Lorem'),
+    new Page('111', 'Post 1', '123', 'Lorem'),
+    new Page('222', 'Post 2', '123', 'Lorem'),
+    new Page('333', 'Post 3', '123', 'Lorem'),
+    new Page('444', 'Post 1', '234', 'Lorem'),
+    new Page('555', 'Post 2', '234', 'Lorem'),
+    new Page('666', 'Post 3', '234', 'Lorem'),
   ];
 
-  createWebsite(websiteId: String, page: Page) {
+  createPage(pageId: String, page: Page) {
 
     const new_page = {
       _id: (new Date()).getTime() + '',
@@ -43,7 +51,7 @@ export class PageService {
     });
   }
 
-  updatePage(pageId: String, page: Page) {
+  updatePage(pageId, page) {
     for (const i in this.pages) {
       if (this.pages[i]._id === pageId) {
         this.pages[i].name = page.name;

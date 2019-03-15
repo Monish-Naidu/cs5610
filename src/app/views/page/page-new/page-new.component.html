@@ -6,25 +6,29 @@
       <a routerLink="/user/{{uid}}/website/{{wid}}/page" class="text-black icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
-      <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="">
+      <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="/user/{{uid}}/website/{{wid}}/page/new">
         New Page
       </a>
     </div>
     <div class="navbar-text float-right">
       <a (click)="createPage()" class="icon-padding text-black">
-        <i class="fas fa-plus fontawsome_icon"></i>
+        <i class="fas fa-check fontawsome_icon"></i>
       </a>
     </div>
   </div>
 </nav>
 
 <div class="container-fluid">
-  <div class="row row-div d-none d-sm-block col-sm-4 form-group">
+  <div class="row row-div">
+    <div class="d-none d-sm-block col-sm-4">
+      <ul class="list-group list-borderless">
         <li class="list-group-item list-borderless" *ngFor="let page of pages">
           <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{page._id}}/widget">{{page.name}}</a>
           <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{page._id}}">
             <i class="fas fa-cog fontawsome_icon float-right"></i></a>
         </li>
+      </ul>
+    </div>
     <div class="col-sm-8 right-content">
       <div class="text-padding-top">
         <label for="page-name" class="text-bold">Name</label>
@@ -36,7 +40,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <!----Bottom navbar (grey)------>
 <nav class="navbar fixed-bottom float-right col-12  bg-light">
@@ -47,7 +51,4 @@
       </a>
     </div>
   </div>
-
-
-
 </nav>

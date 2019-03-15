@@ -16,10 +16,10 @@ export class PageNewComponent implements OnInit {
   pages: Page[] = [];
 
   createPage() {
-    const newPage = new Page(undefined, this.name, undefined, this.description)
-    this.pageservice.createWebsite(this.wid, newPage);
-    this.route.navigateByUrl('/user' + this.uid + '/website' + this.wid + '/page');
+    this.pageservice.createPage(this.wid, new Page(undefined, this.name, undefined, this.description));
+    this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
   }
+
 
   constructor(private pageservice: PageService, private route: Router, private activatedRoute: ActivatedRoute) { }
 
