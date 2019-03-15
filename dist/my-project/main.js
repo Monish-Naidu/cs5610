@@ -723,11 +723,11 @@ var PageEditComponent = /** @class */ (function () {
     PageEditComponent.prototype.updatePage = function () {
         var newPage = new src_app_models_page_model_client__WEBPACK_IMPORTED_MODULE_2__["Page"](this.pid, this.name, this.wid, this.description);
         this.pageService.updatePage(this.pid, newPage);
-        this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/');
+        this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
     };
     PageEditComponent.prototype.deletePage = function () {
         this.pageService.deletePage(this.pid);
-        this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page/');
+        this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
     };
     PageEditComponent.prototype.ngOnInit = function () {
         var _this = this;
