@@ -6,9 +6,9 @@ import {Injectable} from '@angular/core';
 export class PageService {
 
   pages: Page[] = [
-    new Page('321', 'Post 1', '456', 'Lorem'),
-    new Page('432', 'Post 2', '456', 'Lorem'),
-    new Page('543', 'Post 3', '456', 'Lorem'),
+    new Page('321', 'Post 1', '678', 'Lorem'),
+    new Page('432', 'Post 2', '678', 'Lorem'),
+    new Page('543', 'Post 3', '678', 'Lorem'),
     new Page('111', 'Post 1', '123', 'Lorem'),
     new Page('222', 'Post 2', '123', 'Lorem'),
     new Page('333', 'Post 3', '123', 'Lorem'),

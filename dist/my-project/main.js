@@ -378,9 +378,9 @@ __webpack_require__.r(__webpack_exports__);
 var PageService = /** @class */ (function () {
     function PageService() {
         this.pages = [
-            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('321', 'Post 1', '456', 'Lorem'),
-            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('432', 'Post 2', '456', 'Lorem'),
-            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('543', 'Post 3', '456', 'Lorem'),
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('321', 'Post 1', '678', 'Lorem'),
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('432', 'Post 2', '678', 'Lorem'),
+            new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('543', 'Post 3', '678', 'Lorem'),
             new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('111', 'Post 1', '123', 'Lorem'),
             new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('222', 'Post 2', '123', 'Lorem'),
             new _models_page_model_client__WEBPACK_IMPORTED_MODULE_1__["Page"]('333', 'Post 3', '123', 'Lorem'),
@@ -859,6 +859,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_page_service_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/page.service.client */ "./src/app/services/page.service.client.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _models_page_model_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../models/page.model.client */ "./src/app/models/page.model.client.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
 
 
 
@@ -872,7 +874,7 @@ var PageNewComponent = /** @class */ (function () {
         this.pages = [];
     }
     PageNewComponent.prototype.createPage = function () {
-        this.pageservice.createPage(this.wid, new _models_page_model_client__WEBPACK_IMPORTED_MODULE_4__["Page"](undefined, this.name, undefined, this.description));
+        this.pageservice.createPage(this.uid, new _models_page_model_client__WEBPACK_IMPORTED_MODULE_4__["Page"](undefined, this.name, this.wid, this.description));
         this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
     };
     PageNewComponent.prototype.ngOnInit = function () {
@@ -883,6 +885,10 @@ var PageNewComponent = /** @class */ (function () {
             _this.pages = _this.pageservice.findPageByWebsiteId(_this.wid);
         });
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgForm"])
+    ], PageNewComponent.prototype, "pageForm", void 0);
     PageNewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-page-new',
