@@ -2,7 +2,7 @@
   <div class="container-fluid row">
 
     <div class="navbar-text pull-left">
-      <a routerLink="user/{{uId}}/website{{wId}}/page/{{pId}}/widget" class="text-black icon-padding">
+      <a routerLink="user/{{uid}}/website{{wid}}/page/{{pid}}/widget" class="text-black icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
       <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
@@ -12,37 +12,17 @@
   </div>
 </nav>
 
+
 <div class="container-fluid cl-container-padding">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a routerLink="user/:uid/website/:wid/page/:pid/widget/new/header">Header</a>
+  <ul class="list-group cl-list-group-borderless">
+    <li class="list-group-item cl-list-item-borderless cl-text-blue" >
+      <a (click)="toHeader()">Header</a>
     </li>
-    <li class="list-group-item">
-      <a routerLink="">Label</a>
+    <li class="list-group-item cl-list-item-borderless cl-text-blue" >
+      <a (click)="toImage()">Image</a>
     </li>
-    <li class="list-group-item">
-      <a routerLink="">HTML</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="">Text Input</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="">Link</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="">Button</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="user/:uid/website/:wid/page/:pid/widget/new/image">Image</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="user/:uid/website/:wid/page/:pid/widget/new/youtube">YouTube</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="">Data Table</a>
-    </li>
-    <li class="list-group-item">
-      <a routerLink="">Repeater</a>
+    <li class="list-group-item cl-list-item-borderless cl-text-blue">
+      <a (click)="toYoutube()">YouTube</a>
     </li>
   </ul>
 </div>
@@ -50,7 +30,7 @@
 <nav class="navbar navbar-default navbar-light bg-light fixed-bottom">
   <div class="float-left"> </div>
   <div class="float-right">
-    <a routerLink="/user/{{uId}}" icon-padding>
+    <a routerLink="/user/{{uid}}" icon-padding>
     <i class="fas fa-user fontawsome_icon float-right "></i>
     </a>
   </div>

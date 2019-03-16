@@ -12,9 +12,7 @@ import {PageEditComponent} from './views/page/page-edit/page-edit.component';
 import {WidgetListComponent} from './views/widget/widget-list/widget-list.component';
 import {WidgetChooserComponent} from './views/widget/widget-chooser/widget-chooser.component';
 import {WidgetEditComponent} from './views/widget/widget-edit/widget-edit.component';
-import {WidgetYoutubeComponent} from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
-import {WidgetHeaderComponent} from './views/widget/widget-edit/widget-header/widget-header.component';
-import {WidgetImageComponent} from './views/widget/widget-edit/widget-image/widget-image.component';
+
 
 
 
@@ -32,9 +30,6 @@ const routes: Routes = [
   {path: 'user/:uid/website/:wid/page/:pid/widget', component: WidgetListComponent},
   {path: 'user/:uid/website/:wid/page/:pid/widget/new', component: WidgetChooserComponent},
   {path: 'user/:uid/website/:wid/page/:pid/widget/:wgid', component: WidgetEditComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:header', component: WidgetHeaderComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:image', component: WidgetImageComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/:wgid/:youtube', component: WidgetYoutubeComponent}
 ];
 
 

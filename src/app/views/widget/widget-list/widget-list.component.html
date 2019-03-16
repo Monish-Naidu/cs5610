@@ -2,15 +2,15 @@
   <div class="container-fluid row">
 
     <div class="navbar-text float-left">
-      <a [routerLink]="['/user/:uid/website/:wid/page']" class="text-black cl-icon-padding">
+      <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}" class="text-black cl-icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
-      <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
+      <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="./">
         Widgets
       </a>
     </div>
     <div class="navbar-text float-right">
-      <a [routerLink]="['/user/:uid/website/:wid/page:pid']" class="cl-icon-padding text-black">
+      <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new" class="cl-icon-padding text-black">
         <i class="fas fa-plus fontawsome_icon"></i>
       </a>
     </div>
@@ -18,103 +18,60 @@
 </nav>
 
 <div class="container cl-container-padding">
-  <div>
-    <div class="float-right">
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="widget-heading.html">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-    </div>
-    <h1>John Mayer going to bring sweet love to your ears</h1>
-  </div>
-
-  <div>
-    <div class="float-right">
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="widget-heading.html">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-    </div>
-    <h3>John is straight fire with his vocals and guitar.</h3>
-  </div>
-
-  <div>
-    <div>
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="widget-image.html" class="float-right">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-      <img class="img-fluid img-rounded cl-widget-images"
-           src="http://townsquare.media/site/204/files/2017/05/John-Mayer-COuntry.jpg">
-    </div>
-  </div>
-  <div>
-    <div class="float-right">
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="#">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-    </div>
-    <p>This is the song to know, I promise. It's set in an amateur recording studio which makes it even better</p>
-  </div>
-
-  <div>
-    <div class="float-right">
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="widget-heading.html">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-    </div>
-    <h3>Report: John Mayer's new single hit</h3>
-  </div>
-
-  <div>
-    <div class="embed-responsive embed-responsive-16by9 above-below-space">
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/mQ055hHdxbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <a href="#" class="float-right">
-        <span class="fas fa-bars fontawsome_icon" style="background-color: white"></span>
-      </a>
-      <a href="widget-youtube.html" class="float-right">
-        <span class="fas fa-cog fontawsome_icon" style="background-color: white"></span>
-      </a>
+  <div *ngFor="let widget of widgets">
+    <div [ngSwitch]="widget.widgetType">
+      <div class="float-right">
+        <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{widget._id}}">
+          <i class="fas fa-cog fontawsome_icon"></i>
+        </a>
+      </div>
+      <div *ngSwitchCase="'HEADING'">
+        <div [ngSwitch]="widget.size">
+          <div *ngSwitchCase="1">
+            <h1>{{widget.text}}</h1>
+          </div>
+          <div *ngSwitchCase="2">
+            <h2>{{widget.text}}</h2>
+          </div>
+          <div *ngSwitchCase="3">
+            <h3>{{widget.text}}</h3>
+          </div>
+          <div *ngSwitchCase="4">
+            <h4>{{widget.text}}</h4>
+          </div>
+          <div *ngSwitchCase="5">
+            <h5>{{widget.text}}</h5>
+          </div>
+          <div *ngSwitchCase="6">
+            <h6>{{widget.text}}</h6>
+          </div>
+        </div>
+      </div>
+      <img *ngSwitchCase="'IMAGE'" src="{{widget.url}}">
+      <div *ngSwitchCase="'YOUTUBE'" >
+        <iframe width="640" height="360" [src]='sanitizer.bypassSecurityTrustResourceUrl(widget.url)' frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+      <p *ngSwitchDefault><br></p>
     </div>
   </div>
-
-  <div>
-    <div class="float-right">
-      <a href="#" class="float-right">
-        <i class="fas fa-bars fontawsome_icon"></i>
-      </a>
-      <a href="#">
-        <i class="fas fa-cog fontawsome_icon"></i>
-      </a>
-    </div>
-    <p>This is John Mayer's new song: New Light. It's amazing :D.</p>
-  </div>
-
 </div>
 
-<nav class="navbar navbar-default navbar-light bg-light fixed-bottom">
+
+<nav class="navbar navbar-inverse navbar-light bg-light fixed-bottom float-right col-12">
   <div class="float-left navbar-text">
-    <a href="#" class="cl-icon-padding">
+    <a routerLink="./" class="cl-icon-padding">
       <span class="fas fa-play"></span>
     </a>
-    <a href="#" class="cl-icon-padding pl-2">
+    <a routerLink="./" class="cl-icon-padding pl-2">
       <span class="fas fa-eye"></span>
     </a>
 
   </div>
-  <div class="float-right">
-    <a routerLink="/user/{{uId}}"><i class="fas fa-user fontawsome_icon float-right"></i></a>
+  <div class="row navbar-text float-right">
+    <a routerLink="/user/{{uid}}" class="float-right steelblue-icon">
+      <span class="fas fa-user fontawsome_icon float-right steelblue-icon"></span>
+    </a>
   </div>
 </nav>
