@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WidgetService } from 'src/app/services/widget.service.client';
+import { WidgetService } from 'src/app/services/widget.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Widget, WidgetYoutube } from 'src/app/models/widget.model.client';
 
@@ -43,5 +43,9 @@ export class WidgetYoutubeComponent implements OnInit {
   onDelete() {
     this.widgetService.deleteWidget(this.wgid);
     this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
+  handleUpload(e: any): void {
+    this.localPath. e.target.value;
   }
 }

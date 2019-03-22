@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Website} from '../../../models/website.model.client';
 import {NgForm} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {WebsiteService} from '../../../services/website.service.client';
+import {WebsiteService} from '../../../services/website.service';
 
 @Component({
   selector: 'app-website-new',

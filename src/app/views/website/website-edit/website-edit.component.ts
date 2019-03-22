@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Website} from '../../../models/website.model.client';
-import {WebsiteService} from '../../../services/website.service.client';
+import {WebsiteService} from '../../../services/website.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

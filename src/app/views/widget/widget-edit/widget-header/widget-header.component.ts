@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {WidgetService} from '../../../../services/widget.service.client';
+import {WidgetService} from '../../../../services/widget.service';
 import {inject} from '@angular/core';
 
 

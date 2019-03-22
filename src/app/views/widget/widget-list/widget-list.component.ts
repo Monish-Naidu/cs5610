@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Widget } from 'src/app/models/widget.model.client';
-import { WidgetService } from 'src/app/services/widget.service.client';
+import { WidgetService } from 'src/app/services/widget.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 

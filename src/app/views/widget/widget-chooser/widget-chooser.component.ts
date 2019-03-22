@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {WidgetService} from '../../../services/widget.service.client';
+import {WidgetService} from '../../../services/widget.service';
 import {Widget, WidgetHeading, WidgetImage, WidgetYoutube} from '../../../models/widget.model.client';
 
 @Component({
