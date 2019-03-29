@@ -36,10 +36,12 @@ export class WidgetChooserComponent implements OnInit {
 
 
   goToWidgetEdit(widget: Widget) {
-    this.widgetService.createWidget(this.pid, widget);
-    this.router.navigate(['../' + widget._id], {relativeTo: this.activateRoute});
-
+    this.widgetService.createWidget(this.pid, widget).subscribe((data: any) => {
+      this.router.navigate(['../' + widget._id], {relativeTo: this.activateRoute});
+    });
   }
+
+
 toHeader() {
   const widget = new WidgetHeading(undefined, undefined, 'HEADING', this.pid, undefined, undefined);
   this.goToWidgetEdit(widget);

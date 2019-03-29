@@ -41,22 +41,28 @@ export class WidgetHeaderComponent implements OnInit {
           this.wgid = params['wgid'];
           this.pid = params['pid'];
           this.wid = params['wid'];
-          this.widget = this.widgetService.findWidgetsByID(this.wgid);
-        }
-      );
+        });
+    this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
+      this.widget = widget;
+      console.log(widget);
+    });
 
   }
 
   updateWidget() {
       this.newWidget = new WidgetHeading(this.widgetName, undefined, 'HEADING', this.pid, this.widgetSize, this.widgetText);
-      this.widgetService.createWidget(this.pid, this.newWidget);
-    this.router.navigate(['../'], {relativeTo: this.route});
-  }
+      this.widgetService.createWidget(this.pid, this.newWidget)
+        .subscribe(
+          (data: any) => {
+          this.router.navigate(['../'], {relativeTo: this.route});
+        });}
 
   delete() {
-    this.widgetService.deleteWidget(this.wgid);
-    this.router.navigate(['../'], {relativeTo: this.route});
-  }
+    this.widgetService.deleteWidget(this.wgid)
+      .subscribe(
+        (data: any) => {
+      this.router.navigate(['../'], {relativeTo: this.route});
+    });}
 
 }
 

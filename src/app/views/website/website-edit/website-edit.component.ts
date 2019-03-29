@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Website} from '../../../models/website.model.client';
 import {WebsiteService} from '../../../services/website.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {log} from 'util';
 
 @Component({
   selector: 'app-website-edit',
@@ -13,8 +14,8 @@ export class WebsiteEditComponent implements OnInit {
   wid: string;
   name: string;
   description: string;
-  website: Website
-  websites: Website[] = [];
+  website = new Website('', '', '', '');
+  websites: Website[];
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -24,21 +25,36 @@ export class WebsiteEditComponent implements OnInit {
       this.uid = params['uid'];
       this.wid = params['wid'];
     });
-    const website: Website = this.websiteService.findWebsiteById(this.wid);
-    if (website) {
-      this.name = website.name;
-      this.description = website.description;
+    this.websiteService.findWebsitesById(this.wid)
+      .subscribe((website: Website) => {
+        this.website = website;
+        },
+        (error: any) => console.log(error)
+        );
+    if (this.website) {
+      this.name = this.website.name;
+      this.description = this.website.description;
     }
-    this.websites = this.websiteService.findWebsitesByUser(this.uid);
+    this.websiteService.findWebsitesById(this.uid)
+      .subscribe((websites: Website[]) => {
+        this.websites = websites;
+      },
+        (error: any) => console.log(error)
+        );
   }
 
   update() {
-    this.websiteService.updateWebsite(this.wid, new Website(this.wid, this.name, this.uid, this.description));
+    this.websiteService.updateWebsite(this.wid, new Website(this.wid, this.name, this.uid, this.description))
+      .subscribe((data: any) => {
+        this.router.navigateByUrl('/user/' + this.uid + '/website');
+      });
   }
 
 
   delete() {
-    this.websiteService.deleteWebsite(this.wid);
+    this.websiteService.deleteWebsite(this.wid).subscribe((data: any) => {
+      this.router.navigate(['../'], {relativeTo: this.activatedRoute});
+    });
   }
 
 }

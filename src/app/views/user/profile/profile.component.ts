@@ -13,7 +13,7 @@ import {User} from '../../../models/user.model.client';
 export class ProfileComponent implements OnInit {
   @ViewChild('f') profileForm: NgForm;
   username: string;
-  user: User;
+  user = new User('', '', '', '', '');
   uid: string;
 
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
@@ -25,7 +25,13 @@ export class ProfileComponent implements OnInit {
         console.log('user id:' + this.uid);
       });
 
-    this.user = this.userService.findUserById(this.uid);
+    this.userService.findUserById(this.uid)
+      .subscribe((user: User) => {
+        this.user = user;
+      });
     this.username = this.user['username'];
   }
+
+
+
 }

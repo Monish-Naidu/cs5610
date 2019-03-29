@@ -32,19 +32,24 @@ export class WidgetImageComponent implements OnInit {
       this.wgid = params['wgid'];
     });
     if (this.wgid !== 'undefined') {
-      this.widget = this.widgetService.findWidgetsByID(this.wgid);
+      this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
+        this.widget = widget;
+        console.log(widget);
+      });
     }
   }
 
   updateWidget() {
     this.newWidget = new WidgetImage(this.widgetName, undefined, 'IMAGE', this.pid, this.widgetWidth, this.widgetUrl)
-    this.widgetService.updateWidget(this.wgid, this.newWidget);
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.widgetService.updateWidget(this.wgid, this.newWidget).subscribe((data: any) => {
+      this.router.navigate(['../'], {relativeTo: this.route});
+    });
   }
 
   onDelete() {
-    this.widgetService.deleteWidget(this.wgid);
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.widgetService.deleteWidget(this.wgid).subscribe((data: any) => {
+      this.router.navigate(['../'], {relativeTo: this.route});
+    });
   }
 
   handleUpload(e: any): void {

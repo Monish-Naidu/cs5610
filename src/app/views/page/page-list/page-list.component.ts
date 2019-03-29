@@ -11,16 +11,24 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PageListComponent implements OnInit {
   uid: string;
   wid: string;
-  pages: Page[] = [];
+  pages: Page[];
 
   constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params: any) => {
+    this.activatedRoute.params
+      .subscribe(
+      (params: any) => {
       this.uid = params['uid'];
       this.wid = params['wid'];
     });
-    this.pages = this.pageService.findPageByWebsiteId(this.wid);
+    this.pageService.findAllPagesForWebsite(this.wid)
+      .subscribe(
+        (data: any) => {
+          this.pages = data;
+    });
+    console.log(this.pages);
+    console.log(this.wid);
   }
 
 }

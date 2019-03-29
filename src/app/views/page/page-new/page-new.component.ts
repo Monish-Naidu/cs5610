@@ -18,18 +18,28 @@ export class PageNewComponent implements OnInit {
   pages: Page[] = [];
 
   createPage() {
-    this.pageservice.createPage(this.uid, new Page(undefined, this.name, this.wid, this.description));
-    this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
+    console.log('this is the name:' + this.name);
+    console.log('this is the description:' + this.description)
+    const page = new Page(undefined, this.name, this.wid, this.description);
+    this.pageService.createPage(this.wid, page)
+      .subscribe(
+      (data: any) => {
+      this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
+    },
+    (error: any) => console.log(error));
   }
 
 
-  constructor(private pageservice: PageService, private route: Router, private activatedRoute: ActivatedRoute) { }
+
+  constructor(private pageService: PageService, private route: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
       this.uid = params['uid'];
       this.wid = params['wid'];
-      this.pages = this.pageservice.findPageByWebsiteId(this.wid);
+      this.pageService.findAllPagesForWebsite(this.wid).subscribe((pages: Page[]) => {
+        this.pages = pages;
+      });
     });
 
   }

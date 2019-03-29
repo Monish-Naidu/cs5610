@@ -9,8 +9,8 @@ import {Website} from '../../../models/website.model.client';
   styleUrls: ['./website-list.component.css']
 })
 export class WebsiteListComponent implements OnInit {
-  uid: String;
-  websites: Website[] = [];
+  uid: string;
+  websites: Website[];
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -19,7 +19,12 @@ export class WebsiteListComponent implements OnInit {
       (params: any) => {
       this.uid = params['uid'];
     });
-    this.websites = this.websiteService.findWebsitesByUser(this.uid);
+    this.websiteService.findAllWebsitesForUser(this.uid)
+      .subscribe((websites: Website[]) => {
+        this.websites = websites;
+      },
+        (error: any) => console.log(error)
+      );
   }
 
 }

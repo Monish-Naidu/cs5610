@@ -23,15 +23,17 @@ export class WidgetEditComponent implements OnInit {
   ngOnInit() {
     this.activateRoute.params.subscribe(
       (params: any) => {
-        console.log('widget edit params:" ');
         console.log(params);
         this.uid = params['uid'];
         this.wid = params['wid'];
         this.pid = params['pid'];
         this.wgid = params['wgid'];
-        this.widget = this.widgetService.findWidgetsByID(this.wgid);
-        console.log(this.widget);
+
       });
+    this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
+      this.widget = widget;
+      console.log(widget);
+    });
   }
 
 }

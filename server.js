@@ -9,10 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Point static path to dist -- For building -- REMOVE
-//app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'dist/my-project')));
 
 // CORS
@@ -32,21 +29,4 @@ const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
 
 
-//require('./helloworld')(app);
-
-//require('/assignment/app')(app);
 require('./Assignment/app')(app)
-//
-// //refactor api calls
-// app.get("/api/test", test);
-//
-// function test(req, res) {
-//   console.log("Hit test api....")
-//   res.status(400).send('Bad request...');
-// }
-//
-// require('./helloworld')(app);
-//
-// //require('./assignment/app-demo')(app);
-//
-// require('./assignment/app')(app);

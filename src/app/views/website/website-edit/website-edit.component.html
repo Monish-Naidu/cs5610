@@ -14,7 +14,7 @@
     <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website/{{wid}}">
       Edit Websites
     </a>
-    <button (click)="update()" routerLink="/user/{{uid}}/website"
+    <button (click)="update()"
             class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-check fontawsome_icon"></i>
     </button>
@@ -38,12 +38,12 @@
         <label for="website-name">Website Name</label>
         <input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="website-name" placeholder= "name"/>
       </div>
-      <div class="form-group">
+      <div class="form-group ">
         <label for="website-description">Website Description</label>
         <textarea [(ngModel)]="description" [ngModelOptions]="{standalone: true}" id="website-description" class="form-control" rows="5"
                   placeholder="description"></textarea>
       </div>
-      <a (click)="delete()" class="btn btn-danger  btn-block" routerLink="/user/{{uid}}/website">Delete</a>
+      <a (click)="delete()" class="btn btn-danger  btn-block">Delete</a>
     </form>
   </div>
 </div>
