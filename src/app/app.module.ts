@@ -25,6 +25,8 @@ import {UserService} from './services/user.service';
 import {WebsiteService} from './services/website.service';
 import {PageService} from './services/page.service';
 import {WidgetService} from './services/widget.service';
+import {OrderByPipe} from './views/widget/widget-list/order-by-pipe';
+import {SafeUrlPipe} from './pipes/safe-url-pipe';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import {WidgetService} from './services/widget.service';
     WidgetListComponent,
     WidgetHeaderComponent,
     WidgetImageComponent,
-    WidgetYoutubeComponent
+    WidgetYoutubeComponent,
+    OrderByPipe,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

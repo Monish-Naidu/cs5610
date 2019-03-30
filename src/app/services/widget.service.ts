@@ -11,7 +11,7 @@ export  class WidgetService {
   constructor(private _http: HttpClient) {}
   baseUrl = environment.baseUrl;
 
-  createWidget(pageId: string, widget: Widget) {
+  createWidget(pageId: string, widget: any) {
     const url = this.baseUrl + '/api/page/' + pageId + '/widget';
     return this._http.post(url, widget);
   }
@@ -25,7 +25,7 @@ export  class WidgetService {
     const url = this.baseUrl + '/api/widget/' + widgetId;
     return this._http.get(url);
   }
-  updateWidget(widgetId: string, widget: Widget) {
+  updateWidget(widgetId: string, widget: any) {
     const url = this.baseUrl + '/api/widget/' + widgetId;
     return this._http.put(url, widget);
   }

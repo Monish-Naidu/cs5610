@@ -1,23 +1,22 @@
 <nav class="navbar navbar-fixed-top cl-blue-navbar">
-  <div class="col-md-4 d-none d-md-block d-none d-sm-block container-fluid">
-    <a routerLink="/user/{{uid}}/website" class="navbar-link text-white">
+  <div class="col-md-4 d-none d-md-block container-fluid">
+    <a routerLink="/user/{{uid}}/" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
-    <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website">
+    <a routerLink="/user/{{uid}}/website" class="text-white navbar-brand font-weight-bold">
       Websites
     </a>
     <a routerLink="/user/{{uid}}/website/new" class="navbar-link navbar-text float-right text-white cl-icon-padding">
-      <i class="fas fa-plus fontawsome_icon"></i>
+      <i class="fas fa-plus fontawsome_icon text-white"></i>
     </a>
   </div>
   <div class="col-md-8 container-fluid">
     <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website/{{wid}}">
-      Edit Websites
+      Edit Website
     </a>
-    <button (click)="update()"
-            class="navbar-link navbar-text float-right text-white cl-icon-padding">
+    <a (click)="update()" class="navbar-link navbar-text float-right text-white cl-icon-padding">
       <i class="fas fa-check fontawsome_icon"></i>
-    </button>
+    </a>
   </div>
 </nav>
 

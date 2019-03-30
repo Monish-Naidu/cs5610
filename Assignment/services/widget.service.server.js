@@ -24,6 +24,8 @@ module.exports = function (app) {
   //UPLOAD
   app.post ("/api/upload", upload.single('myFile'), uploadImage);
 
+
+
   function createWidget(req, res) {
     var widget = req.body;
     var pid = req.params.pageId

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Widget } from 'src/app/models/widget.model.client';
-import { WidgetService } from 'src/app/services/widget.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Widget} from '../../../models/widget.model.client';
+import {ActivatedRoute} from '@angular/router';
+import {WidgetService} from '../../../services/widget.service';
 import { DomSanitizer } from '@angular/platform-browser';
+
+
+
 
 @Component({
   selector: 'app-widget-list',
@@ -10,24 +13,36 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./widget-list.component.css']
 })
 export class WidgetListComponent implements OnInit {
-  uid: string;
-  pid: string;
-  wid: string;
+  widget: Widget;
   widgets: Widget[] = [];
+  uid: string;
+  wid: string;
+  pid: string;
 
-  constructor(private sanitizer: DomSanitizer, private widgetService: WidgetService, private route: Router,
-              private activatedRoute: ActivatedRoute) { }
-
+  constructor(private activateRoute: ActivatedRoute, private widgetService: WidgetService, public sanitizer: DomSanitizer) {
+  }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params: any) => {
+    console.log('start of the function');
+    this.activateRoute.params.subscribe((params: any) => {
       this.uid = params['uid'];
       this.wid = params['wid'];
       this.pid = params['pid'];
+      this.widgetService.findAllWidgetsForPage(this.pid).subscribe((data: any) => {
+        this.widgets = data;
+        console.log(this.widgets);
+      });
     });
-    this.widgetService.findAllWidgetsForPage(this.pid).subscribe((widgets: Widget[]) => {
-      this.widgets = widgets;
+
+  }
+
+
+  reorderWidgets(indexes) {
+    this.widgetService.reorderWidgets(indexes.startIndex, indexes.endIndex, this.pid).subscribe((data: any) => {
+      console.log('reorder' + data);
+      this.widgets = data;
     });
   }
 
 }
+

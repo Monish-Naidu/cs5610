@@ -37,23 +37,26 @@ export class WidgetChooserComponent implements OnInit {
 
   goToWidgetEdit(widget: Widget) {
     this.widgetService.createWidget(this.pid, widget).subscribe((data: any) => {
-      this.router.navigate(['../' + widget._id], {relativeTo: this.activateRoute});
+      this.wgid = data._id;
+      this.router.navigate(['../' + this.wgid], {relativeTo: this.activateRoute});
     });
   }
 
 
+
+
 toHeader() {
-  const widget = new WidgetHeading(undefined, undefined, 'HEADING', this.pid, undefined, undefined);
+  const widget = new WidgetHeading(undefined, this.wgid, 'HEADING', this.pid, undefined, undefined);
   this.goToWidgetEdit(widget);
 }
 
 toImage() {
-  const widget = new WidgetImage(undefined, undefined, 'IMAGE', this.pid, undefined, undefined);
+  const widget = new WidgetImage(undefined, this.wgid, 'IMAGE', this.pid, undefined, undefined);
   this.goToWidgetEdit(widget);
 
 }
 toYoutube() {
-  const widget = new WidgetYoutube(undefined, undefined, 'YOUTUBE', this.pid, undefined, undefined);
+  const widget = new WidgetYoutube(undefined, this.wgid, 'YOUTUBE', this.pid, undefined, undefined);
   this.goToWidgetEdit(widget);
 
 }

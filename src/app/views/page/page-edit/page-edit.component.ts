@@ -14,12 +14,25 @@ export class PageEditComponent implements OnInit {
   pid: string;
   name: string;
   description: string;
+  page: Page;
 
   constructor(private pageService: PageService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe((params: any) => {
+      this.uid = params['uid'];
+      this.wid = params['wid'];
+      this.pid = params['pid'];
+      this.pageService.findPageById(this.pid).subscribe((data: any) => {
+        this.page = data;
+        console.log(this.page);
+      });
+    });
+  }
+
   updatePage() {
-    const newPage = new Page(this.pid, this.name, this.wid, this.description);
-    this.pageService.updatePage(this.pid, newPage)
+    this.pageService.updatePage(this.pid, this.page)
       .subscribe((data: any) => {
       this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
     });
@@ -31,12 +44,6 @@ export class PageEditComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe((params: any) => {
-      this.uid = params['uid'];
-      this.wid = params['wid'];
-      this.pid = params['pid'];
-    });
-  }
+
 
 }
