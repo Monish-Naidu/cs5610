@@ -19,7 +19,7 @@ export class PageNewComponent implements OnInit {
 
   createPage() {
     console.log('this is the name:' + this.name);
-    console.log('this is the description:' + this.description)
+    console.log('this is the description:' + this.description);
     const page = new Page(undefined, this.name, this.wid, this.description);
     this.pageService.createPage(this.wid, page)
       .subscribe(

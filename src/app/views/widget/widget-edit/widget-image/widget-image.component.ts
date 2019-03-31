@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WidgetService} from '../../../../services/widget.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Widget, WidgetImage} from '../../../../models/widget.model.client';
+import {Widget} from '../../../../models/widget.model.client';
 
 @Component({
   selector: 'app-widget-image',
@@ -13,12 +13,7 @@ export class WidgetImageComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  widgetName: string;
-  widgetText: string;
-  widgetUrl: string;
-  widgetWidth: string;
-  widget: Widget;
-  newWidget: WidgetImage;
+  widget: Widget = new Widget('', '', '', '', undefined, '', undefined, '');
   localPath: string;
 
 
@@ -30,25 +25,22 @@ export class WidgetImageComponent implements OnInit {
       this.wid = params['wid'];
       this.pid = params['pid'];
       this.wgid = params['wgid'];
-    });
-    if (this.wgid !== 'undefined') {
-      this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
-        this.widget = widget;
-        console.log(widget);
+      this.widgetService.findWidgetById(this.wgid).subscribe((data: any) => {
+        this.widget = data;
       });
-    }
+    });
   }
 
+
   updateWidget() {
-    this.newWidget = new WidgetImage(this.widgetName, undefined, 'IMAGE', this.pid, this.widgetWidth, this.widgetUrl)
-    this.widgetService.updateWidget(this.wgid, this.newWidget).subscribe((data: any) => {
-      this.router.navigate(['../'], {relativeTo: this.route});
+    this.widgetService.updateWidget(this.wgid, this.widget).subscribe((data: any) => {
+      this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
     });
   }
 
   onDelete() {
     this.widgetService.deleteWidget(this.wgid).subscribe((data: any) => {
-      this.router.navigate(['../'], {relativeTo: this.route});
+      this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
     });
   }
 

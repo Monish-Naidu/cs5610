@@ -3,6 +3,7 @@ import {Widget} from '../../../models/widget.model.client';
 import {ActivatedRoute} from '@angular/router';
 import {WidgetService} from '../../../services/widget.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import {Page} from '../../../models/page.model.client';
 
 
 
@@ -13,11 +14,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./widget-list.component.css']
 })
 export class WidgetListComponent implements OnInit {
-  widget: Widget;
-  widgets: Widget[] = [];
+  widgets: Widget[];
   uid: string;
   wid: string;
   pid: string;
+  widget: Widget;
+
+
+
 
   constructor(private activateRoute: ActivatedRoute, private widgetService: WidgetService, public sanitizer: DomSanitizer) {
   }
@@ -40,7 +44,6 @@ export class WidgetListComponent implements OnInit {
   reorderWidgets(indexes) {
     this.widgetService.reorderWidgets(indexes.startIndex, indexes.endIndex, this.pid).subscribe((data: any) => {
       console.log('reorder' + data);
-      this.widgets = data;
     });
   }
 

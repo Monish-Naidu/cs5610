@@ -13,24 +13,25 @@
 </nav>
 
 
-<div class="container-fluid cl-container-padding">
+<div class="container-fluid cl-container-padding-more">
   <ul class="list-group cl-list-group-borderless">
-    <li class="list-group-item cl-list-item-borderless cl-text-blue" >
-      <a (click)="toHeader()">Header</a>
+    <li class="list-group-item cl-list-item-borderless">
+      <a routerLink="./header">Header</a>
     </li>
-    <li class="list-group-item cl-list-item-borderless cl-text-blue" >
-      <a (click)="toImage()">Image</a>
+    <li class="list-group-item cl-list-item-borderless">
+      <a routerLink="./image">Image</a>
     </li>
-    <li class="list-group-item cl-list-item-borderless cl-text-blue">
-      <a (click)="toYoutube()">YouTube</a>
+    <li class="list-group-item cl-list-item-borderless">
+      <a routerLink="./youtube">Youtube</a>
     </li>
   </ul>
 </div>
 
+
 <nav class="navbar navbar-default navbar-light bg-light fixed-bottom">
   <div class="float-left"> </div>
   <div class="float-right">
-    <a routerLink="/user/{{uid}}" icon-padding>
+    <a routerLink="/user/{{uid}}">
     <i class="fas fa-user fontawsome_icon float-right "></i>
     </a>
   </div>

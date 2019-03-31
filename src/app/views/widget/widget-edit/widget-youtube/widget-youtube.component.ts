@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WidgetService } from 'src/app/services/widget.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Widget, WidgetYoutube } from 'src/app/models/widget.model.client';
+import { Widget } from 'src/app/models/widget.model.client';
 
 @Component({
   selector: 'app-widget-youtube',
@@ -13,12 +13,8 @@ export class WidgetYoutubeComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  widget: Widget;
-  newWidget: WidgetYoutube;
-  widgetName: string;
-  widgetText: string;
-  widgetUrl: string;
-  widgetWidth: string;
+  widget: Widget = new Widget('', '', '', '', undefined, '', undefined, '');
+
 
   constructor(private widgetService: WidgetService, private router: Router, private route: ActivatedRoute) { }
 
@@ -28,25 +24,26 @@ export class WidgetYoutubeComponent implements OnInit {
       this.wid = params['wid'];
       this.wgid = params['wgid'];
       this.pid = params['pid'];
-    });
-    if (this.wgid !== 'undefined') {
       this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
         this.widget = widget;
         console.log(widget);
       });
-    }
+    });
   }
 
   updateWidget() {
-    this.newWidget = new WidgetYoutube(this.widgetName, undefined, this.wgid, this.pid, this.widgetWidth, this.widgetUrl);
-    this.widgetService.updateWidget(this.wgid, this.newWidget).subscribe((data: any) => {
-      this.router.navigate(['../'], {relativeTo: this.route});
+    this.widgetService.updateWidget(this.wgid, this.widget)
+      .subscribe(
+        (data: any) => {
+      this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
     });
   }
 
   onDelete() {
-    this.widgetService.deleteWidget(this.wgid).subscribe((data: any) => {
-      this.router.navigate(['../'], {relativeTo: this.route});
+    this.widgetService.deleteWidget(this.wgid)
+      .subscribe(
+        (data: any) => {
+      this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
     });
   }
 

@@ -12,7 +12,7 @@ import {ActivatedRoute} from '@angular/router';
 export class WidgetEditComponent implements OnInit {
   wgid: string;
   widget: Widget;
-  widgets: Widget[] = [];
+  widgets: Widget[];
   uid: string;
   wid: string;
   pid: string;

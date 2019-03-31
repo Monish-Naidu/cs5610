@@ -28,7 +28,7 @@
         class="form-control"
         name="widgetName"
         placeholder="Widget Name"
-        [(ngModel)]="widgetName">
+        [(ngModel)]="widget.name">
     </div>
     <div class="form-group">
       <label>Text</label>
@@ -37,7 +37,7 @@
         class="form-control"
         name="widgetText"
         placeholder="Widget Text"
-        [(ngModel)]="widgetText">
+        [(ngModel)]="widget.text">
     </div>
     <div class="form-group">
       <label>URL</label>
@@ -46,7 +46,7 @@
         class="form-control"
         name="widgetURL"
         placeholder="Widget URL"
-        [(ngModel)]="widgetUrl">
+        [(ngModel)]="widget.url">
     </div>
     <div class="form-group">
       <label>Width</label>
@@ -55,7 +55,7 @@
         class="form-control"
         name="widgetWidth"
         placeholder="Widget Width"
-        [(ngModel)]="widgetWidth">
+        [(ngModel)]="widget.width">
     </div>
     <div class="form-group">
       <button class="btn btn-danger btn-block" (click)="onDelete()">Delete</button>

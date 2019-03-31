@@ -2,7 +2,7 @@
   <div class="container-fluid row">
 
     <div class="navbar-text float-left">
-      <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}" class="text-black cl-icon-padding">
+      <a routerLink="/user/{{uid}}/website/{{wid}}/page" class="text-black cl-icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
       <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="./">
@@ -17,48 +17,81 @@
   </div>
 </nav>
 
-<div class="container cl-container-padding">
-  <div class="widget-list" appSortable (newIndexes)="reorderWidgets($event)">
-    <div *ngFor="let widget of widgets | orderBy">
-      <div [ngSwitch]="widget.widgetType">
+
+
+
+  <div class="container cl-container-padding">
+  <div appSortable (newIndexes)="reorderWidgets($event)">
+    <div *ngFor="let widget of widgets | orderBy" [ngSwitch]="widget.widgetType">
+      <div *ngSwitchCase="'HEADER'">
         <div class="float-right">
-          <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{widget._id}}">
-            <i class="fas fa-cog fontawsome_icon"></i>
+          <a [routerLink]="['/user/'+uid +'/website/'+wid +'/page/'+ pid +'/widget']"
+             class="float-right">
+            <span class="fas fa-bars fontawsome_icon cl-text-blue"></span>
+          </a>
+          <a routerLink="./{{widget._id}}" class="pull-right">
+            <span class="fa fa-cog"></span>
           </a>
         </div>
-        <div *ngSwitchCase="'HEADING'">
-          <div [ngSwitch]="widget.size">
-            <div *ngSwitchCase="1">
-              <h1>{{widget.text}}</h1>
-            </div>
-            <div *ngSwitchCase="2">
-              <h2>{{widget.text}}</h2>
-            </div>
-            <div *ngSwitchCase="3">
-              <h3>{{widget.text}}</h3>
-            </div>
-            <div *ngSwitchCase="4">
-              <h4>{{widget.text}}</h4>
-            </div>
-            <div *ngSwitchCase="5">
-              <h5>{{widget.text}}</h5>
-            </div>
-            <div *ngSwitchCase="6">
-              <h6>{{widget.text}}</h6>
-            </div>
+        <div [ngSwitch]="widget.size">
+          <div *ngSwitchCase="1">
+            <h1>{{ widget.text }}</h1>
+          </div>
+          <div *ngSwitchCase="2">
+            <h2>{{ widget.text }}</h2>
+          </div>
+          <div *ngSwitchCase="3">
+            <h3>{{ widget.text }}</h3>
+          </div>
+          <div *ngSwitchCase="4">
+            <h4>{{ widget.text }}</h4>
+          </div>
+          <div *ngSwitchCase="5">
+            <h5>{{ widget.text }}</h5>
+          </div>
+          <div *ngSwitchCase="6">
+            <h6>{{ widget.text }}</h6>
           </div>
         </div>
-        <img *ngSwitchCase="'IMAGE'" src="{{widget.url}}">
-        <div *ngSwitchCase="'YOUTUBE'">
-          <iframe width="640" height="360" [src]='widget.url | safeUrl' frameborder="0"
+      </div>
+      <div *ngSwitchCase="'YOUTUBE'">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="640" height="360"
+                  [src]="widget.url | safeUrl"
+                  frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
+          <a [routerLink]="['/user/'+ uid+'/website/'+ wid +'/page/'+ pid +'/widget']"
+             class="float-right">
+            <span class="fas fa-bars fontawsome_icon cl-text-blue bg-white-position"></span>
+          </a>
+          <a
+            [routerLink]="['/user/'+ uid +'/website/'+ wid +'/page/'+ pid +'/widget/'+widget._id]"
+            class="float-right">
+            <span class="fas fa-cog fontawsome_icon cl-text-blue bg-white-position"></span>
+          </a>
         </div>
-        <p *ngSwitchDefault><br></p>
+      </div>
+      <div *ngSwitchCase="'IMAGE'">
+        <div>
+          <a [routerLink]="['/user/'+ uid +'/website/'+ wid +'/page/'+ pid +'/widget']"
+             class="float-right">
+            <span class="fas fa-bars fontawsome_icon cl-text-blue"></span>
+          </a>
+          <a
+            [routerLink]="['/user/'+uid +'/website/'+wid +'/page/'+ pid +'/widget/'+widget._id]"
+            class="float-right">
+            <span class="fas fa-cog fontawsome_icon cl-text-blue"></span>
+          </a>
+          <img class="responsive-img img-rounded cl-widget-images"
+               [src]="widget.url">
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <nav class="navbar navbar-inverse navbar-light bg-light fixed-bottom float-right col-12">
   <div class="float-left navbar-text">

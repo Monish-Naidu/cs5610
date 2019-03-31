@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WidgetService} from '../../../services/widget.service';
-import {Widget, WidgetHeading, WidgetImage, WidgetYoutube} from '../../../models/widget.model.client';
+import {Widget} from '../../../models/widget.model.client';
 
 @Component({
   selector: 'app-widget-chooser',
@@ -35,29 +35,29 @@ export class WidgetChooserComponent implements OnInit {
   }
 
 
-  goToWidgetEdit(widget: Widget) {
-    this.widgetService.createWidget(this.pid, widget).subscribe((data: any) => {
-      this.wgid = data._id;
-      this.router.navigate(['../' + this.wgid], {relativeTo: this.activateRoute});
-    });
-  }
+  // goToWidgetEdit(widget: Widget) {
+  //   this.widgetService.createWidget(this.pid, widget).subscribe((data: any) => {
+  //     this.wgid = data._id;
+  //     this.router.navigate(['../' + this.wgid], {relativeTo: this.activateRoute});
+  //   });
+  // }
 
 
 
 
-toHeader() {
-  const widget = new WidgetHeading(undefined, this.wgid, 'HEADING', this.pid, undefined, undefined);
-  this.goToWidgetEdit(widget);
-}
-
-toImage() {
-  const widget = new WidgetImage(undefined, this.wgid, 'IMAGE', this.pid, undefined, undefined);
-  this.goToWidgetEdit(widget);
-
-}
-toYoutube() {
-  const widget = new WidgetYoutube(undefined, this.wgid, 'YOUTUBE', this.pid, undefined, undefined);
-  this.goToWidgetEdit(widget);
-
-}
+// toHeader() {
+//   const widget = new WidgetHeading(undefined, this.wgid, 'HEADING', this.pid, undefined, undefined);
+//   this.goToWidgetEdit(widget);
+// }
+//
+// toImage() {
+//   const widget = new WidgetImage(undefined, this.wgid, 'IMAGE', this.pid, undefined, undefined);
+//   this.goToWidgetEdit(widget);
+//
+// }
+// toYoutube() {
+//   const widget = new WidgetYoutube(undefined, this.wgid, 'YOUTUBE', this.pid, undefined, undefined);
+//   this.goToWidgetEdit(widget);
+//
+// }
 }

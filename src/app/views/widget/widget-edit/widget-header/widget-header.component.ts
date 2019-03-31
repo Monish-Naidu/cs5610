@@ -8,7 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {Widget, WidgetHeading} from '../../../../models/widget.model.client';
+import {Widget} from '../../../../models/widget.model.client';
+import {WidgetListComponent} from '../../widget-list/widget-list.component';
 
 
 @Component({
@@ -22,12 +23,7 @@ export class WidgetHeaderComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  widget: Widget;
-  newWidget: WidgetHeading;
-  widgetName: string;
-  widgetSize: number;
-  widgetText: string;
-
+  widget: Widget = new Widget('', '', '', '', undefined, '', undefined, '');
 
 
   constructor(private route: ActivatedRoute, private widgetService: WidgetService, private router: Router) {
@@ -41,28 +37,29 @@ export class WidgetHeaderComponent implements OnInit {
           this.wgid = params['wgid'];
           this.pid = params['pid'];
           this.wid = params['wid'];
+          this.widgetService.findWidgetById(this.wgid).subscribe((data: any) => {
+            this.widget = data;
+            console.log(this.widget);
+          });
         });
-    this.widgetService.findWidgetById(this.wgid).subscribe((widget: any) => {
-      this.widget = widget;
-      console.log(widget);
-    });
-
   }
 
+
   updateWidget() {
-      this.newWidget = new WidgetHeading(this.widgetName, undefined, 'HEADING', this.pid, this.widgetSize, this.widgetText);
-      this.widgetService.createWidget(this.pid, this.newWidget)
-        .subscribe(
-          (data: any) => {
-          this.router.navigate(['../'], {relativeTo: this.route});
-        });}
+    this.widgetService.updateWidget(this.wgid, this.widget)
+      .subscribe(
+        (data: any) => {
+          this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
+        });
+  }
 
   delete() {
     this.widgetService.deleteWidget(this.wgid)
       .subscribe(
         (data: any) => {
-      this.router.navigate(['../'], {relativeTo: this.route});
-    });}
+          this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
+        });
+  }
 
 }
 

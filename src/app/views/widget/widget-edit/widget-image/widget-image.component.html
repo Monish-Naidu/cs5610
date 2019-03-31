@@ -21,7 +21,7 @@
   <form>
     <div class="form-group">
       <label for="image-name">Name</label>
-      <input [(ngModel)]="widgetName" [ngModelOptions]="{standalone: true}"
+      <input [(ngModel)]="widget.name" [ngModelOptions]="{standalone: true}"
              type="text"
              class="form-control"
              id="image-name"
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group">
       <label for="image-text">Text</label>
-      <input [(ngModel)]="widgetText"
+      <input [(ngModel)]="widget.text"
              [ngModelOptions]="{standalone: true}"
              type="text" class="form-control"
              id="image-text"
@@ -37,7 +37,7 @@
     </div>
     <div class="form-group">
       <label for="image-URL">URL</label>
-      <input [(ngModel)]="widgetUrl"
+      <input [(ngModel)]="widget.url"
              [ngModelOptions]="{standalone: true}"
              type="text"
              class="form-control"

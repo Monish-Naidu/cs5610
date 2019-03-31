@@ -2,7 +2,7 @@ export class Page {
   _id: string;
   name: string;
   websiteId: string;
-  description: string;
+  description: string; //this project uses description and title interchangeably
 
 
   constructor(id: string, name: string, websiteId: string, description: string) {
