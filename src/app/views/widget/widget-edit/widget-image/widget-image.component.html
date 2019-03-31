@@ -2,7 +2,7 @@
   <div class="container-fluid row">
 
     <div class="navbar-text pull-left">
-      <a routerLink="user/{{uid}}/website{{wid}}/page/{{pid}}/widget" class="text-black cl-icon-padding">
+      <a routerLink="../" class="text-black cl-icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
       <a class="navbar-brand text-black font-weight-bold pl-2" href="#">
@@ -21,7 +21,8 @@
   <form>
     <div class="form-group">
       <label for="image-name">Name</label>
-      <input [(ngModel)]="widget.name" [ngModelOptions]="{standalone: true}"
+      <input [(ngModel)]="widget.name"
+             [ngModelOptions]="{standalone: true}"
              type="text"
              class="form-control"
              id="image-name"
@@ -46,7 +47,7 @@
     </div>
     <div class="form-group">
       <label for="image-width">Width</label>
-      <input [(ngModel)]="widgetWidth"
+      <input [(ngModel)]="widget.width"
              [ngModelOptions]="{standalone: true}"
              type="text"
              class="form-control"
@@ -54,13 +55,24 @@
              placeholder="100%">
     </div>
     <div class="form-group">
-      <label for="exampleInputFile">Upload</label>
-      <input type="file" class="form-control" id="exampleInputFile">
+      <label for="WidgetImageUpload">Upload</label>
+      <form ngNoForm action="{{baseUrl}}/api/upload" method="post" enctype="multipart/form-data">
+        <input  name="myFile" id="WidgetImageUpload" placeholder="No file chosen" type="file" class="form-control"/>
+        <input  name="widgetId" value="{{wgid}}"   style="display: none"/>
+        <input  name="websiteId" value="{{wid}}"   style="display: none"/>
+        <input  name="pageId" value="{{pid}}"   style="display: none"/>
+        <input  name="userId" value="{{uid}}"   style="display: none"/>
+        <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+      </form>
+      <button class="btn btn-danger btn-block" (click)="deleteWidget()">Delete</button>
     </div>
   </form>
-  <a class="btn btn-primary btn-block" >Upload Image</a>
-  <a class="btn btn-danger  btn-block" (click)="delete()">Delete</a>
 </div>
+
+
+
+
+
 
 
 <nav class="navbar navbar-default navbar-light bg-light fixed-bottom">

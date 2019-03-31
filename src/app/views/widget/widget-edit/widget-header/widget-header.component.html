@@ -2,7 +2,7 @@
   <div class="container-fluid row">
 
     <div class="navbar-text float-left">
-      <a routerLink="/user/{{uid}}/website/{{wid}}/page" class="text-black cl-icon-padding">
+      <a routerLink="../" class="text-black cl-icon-padding">
         <i class="fas fa-chevron-left fontawsome_icon"></i>
       </a>
       <a class="navbar-brand text-black font-weight-bold pl-2" routerLink="./">
@@ -17,40 +17,52 @@
   </div>
 </nav>
 
+<div class="container cl-container-padding">
 
-<div class="container">
+
   <form>
-    <div class="form-group">
-      <label>Name</label>
-      <input
-        type="text"
-        class="form-control"
-        name="widgetName"
-        placeholder="Name"
-        [(ngModel)]="widget.name"
-        [ngModelOptions]="{standalone: true}">
+    <div class="form-group" *ngIf="widget">
+      <label for="heading-name">Name</label>
+      <input [(ngModel)]="widget.name"
+             name="name"
+             type="text"
+             class="form-control"
+             id="heading-name"
+             placeholder="name"
+             [ngModelOptions]="{standalone: true}"/>
     </div>
-    <div class="form-group">
-      <label>Text</label>
-      <input
-        type="text"
-        class="form-control"
-        name="widgetText"
-        placeholder="Text"
-        [(ngModel)]="widget.text"
-        [ngModelOptions]="{standalone: true}">
+
+    <div class="form-group" *ngIf="widget">
+      <label for="text">Text</label>
+      <input type="text"
+             name="text"
+             class="form-control"
+             id="text"
+             placeholder="{{widget.text}}"
+             [(ngModel)]="widget.text"
+             ngModel required
+             #text="ngModel""/>
     </div>
+
+
     <div class="form-group">
-      <label>Size</label>
-      <input
-        type="number"
-        class="form-control"
-        name="widgetSize"
-        placeholder="Size" [(ngModel)]="widget.size"
-        [ngModelOptions]="{standalone: true}">
+      <label for="heading-size">Size</label>
+      <input [(ngModel)]="widget.size"
+             name="name"
+             type="text"
+             class="form-control"
+             id="heading-size"
+             placeholder="3"
+             ngModel required
+             #size="ngModel"
+             [ngModelOptions]="{standalone: true}"/>
     </div>
-    <button class="btn btn-danger btn-block" (click)="delete()">Delete</button>
+
+    <button class="btn btn-danger btn-block"
+            (click)="deleteWidget()">Delete</button>
+
   </form>
+
 </div>
 
 <nav class="navbar navbar-inverse navbar-light bg-light fixed-bottom float-right col-12">

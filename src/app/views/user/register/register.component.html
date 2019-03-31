@@ -2,8 +2,8 @@
 
   <h1>Register</h1>
 
-  <div *ngIf="userErrorFlag" class="alert alert-danger">
-    {{userErrorMsg}}
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{errorMsg}}
   </div>
 
   <form (ngSubmit)="register()" #f="ngForm">
@@ -28,9 +28,9 @@
       <input id="v_password" name="v_password" placeholder="verify password" type="password" class="form-control" ngModel required #v_password="ngModel"/>
     </div>
 
-    <div *ngIf="pwErrorFlag" class="alert alert-danger">
-      {{pwErrorMsg}}
-    </div>
+    <!--<div *ngIf="pwErrorFlag" class="alert alert-danger">-->
+      <!--{{pwErrorMsg}}-->
+    <!--</div>-->
 
     <!---- Register button--->
 

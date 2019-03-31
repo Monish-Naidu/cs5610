@@ -11,6 +11,8 @@ module.exports = function (app) {
 
   var multer = require('multer'); // npm install multer --save
   var upload = multer({ dest: __dirname+'/../../src/assets/uploads' });
+  const baseUrl = "";
+
 
 
   app.post("/api/page/:pageId/widget", createWidget);
@@ -109,45 +111,58 @@ module.exports = function (app) {
   }
 
   function uploadImage(req, res) {
-    upload(req, res, (err) => {
-      if (err) {
-        res.render('index', {msg: err});
-      } else {
-        if (req.file === undefined) {
-          res.render('index', {
-            msg: 'no file selected'
-          });
-        } else {
-          var curwidget = req.body;
-          var widgetId = req.body['widgetId'];
-          console.log('uploading file');
-          console.log('widgetId is :' + widgetId);
-          var userId = req.body.userId;
-          var websiteId = req.body.websiteId;
-          var pageId = req.body.pageId;
-          var widgetId = req.body.widgetId;
-          var myFile = req.file;
-          var originalname = myFile.originalname; // file name on user's computer
-          var filename = myFile.filename;     // new file name in upload folder
-          var path = myFile.path;         // full path of uploaded file
-          var destination = myFile.destination;  // folder where file is saved to
-          var size = myFile.size;
-          var mimetype = myFile.mimetype;
-          var myurl = '/assets/uploads/' + filename;
-          for (var i in widgets) {
-            if (widgets[i]._id === widgetId) {
-              widgets[i].url = myurl;
-              widgets[i].size = size;
-              return;
-            }
-          }
-          res.render({
-            msg: 'file uploaded'
-          });
-          res.send("test");
-        }
+    const userId = req.body.userId;
+    const websiteId = req.body.websiteId;
+    const pageId = req.body.pageId;
+    const widgetId = req.body.widgetId;
+    const width = req.body.width;
+    const name = req.body.name;
+    const text = req.body.text;
+
+    const myFile = req.file;
+
+    console.log(req.file);
+
+    const callbackUrl = baseUrl + '/user/' + userId + "/website/" + websiteId
+      + "/page/" + pageId + "/widget";
+    if(myFile == null) {
+      res.redirect(callbackUrl + '/' + widgetId);
+      return;
+    }
+
+    const originalname = myFile.originalname; // file name on user's computer
+    const filename = myFile.filename;     // new file name in upload folder
+    const path = myFile.path;         // full path of uploaded file
+    const destination = myFile.destination;  // folder where file is saved to
+    const size = myFile.size;
+    const mimetype = myFile.mimetype;
+
+    if (widgetId === '') {
+      const widget =
+        {_id: '', type: 'IMAGE', pageId: pageId, size: '', text: '', width: '', url: '', name: ''};
+      widget._id = (new Date()).getTime().toString();
+      widget.url = 'uploads/' + filename;
+      /*      widget.name = name;
+            widget.text = text;
+            widget.width = width;*/
+      console.log('create widget image: ' + widget._id);
+      widgets.push(widget);
+      res.redirect(callbackUrl + '/' + widget._id);
+      return;
+    }
+
+    for (let i = 0; i < widgets.length; i++) {
+      if (widgets[i]._id === widgetId) {
+        widgets[i].url = 'uploads/' + filename;
+        /*        widgets[i].name = name;
+                widgets[i].text = text;
+                widgets[i].width = width;*/
+        break;
       }
-    })
+    }
+
+    res.redirect(callbackUrl + '/' + widgetId);
   }
-}
+};
+
 

@@ -14,7 +14,7 @@ import {Page} from '../../../models/page.model.client';
   styleUrls: ['./widget-list.component.css']
 })
 export class WidgetListComponent implements OnInit {
-  widgets: Widget[];
+  widgets: Widget[] = [];
   uid: string;
   wid: string;
   pid: string;
