@@ -3,7 +3,7 @@ import {Widget} from '../../../models/widget.model.client';
 import {ActivatedRoute} from '@angular/router';
 import {WidgetService} from '../../../services/widget.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import {Page} from '../../../models/page.model.client';
+
 
 
 

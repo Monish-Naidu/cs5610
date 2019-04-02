@@ -14,7 +14,7 @@ export class WidgetImageComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  widget: Widget = new Widget('', '', '', '', undefined, '', undefined, '');
+  widget: Widget;
   localPath: string;
   baseUrl = environment.baseUrl;
 
@@ -37,7 +37,8 @@ export class WidgetImageComponent implements OnInit {
     console.log('header page id: ' + this.pid);
     console.log('header widget id: ' + this.wgid);
     if (this.wgid === undefined) {
-      this.widget = new Widget(undefined, undefined, 'HEADER', '', undefined, undefined, undefined, undefined);
+      this.widget = new Widget(undefined, undefined, 'HEADER', '',
+        undefined, undefined, undefined, undefined, undefined, undefined, undefined);
     } else {
       this.widgetService.findWidgetById(this.wgid).subscribe(
         (data: Widget) => {

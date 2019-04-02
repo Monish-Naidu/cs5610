@@ -28,6 +28,9 @@ import {WidgetService} from './services/widget.service';
 import {OrderByPipe} from './views/widget/widget-list/order-by-pipe';
 import {SafeUrlPipe} from './pipes/safe-url-pipe';
 import { SortableDirective } from './directives/sortable.directive';
+import {QuillEditorModule} from 'ngx-quill-editor';
+import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widget-html.component';
+import { WidgetTextComponent } from './views/widget/widget-edit/widget-text/widget-text.component';
 
 
 @NgModule({
@@ -50,13 +53,16 @@ import { SortableDirective } from './directives/sortable.directive';
     WidgetYoutubeComponent,
     OrderByPipe,
     SafeUrlPipe,
-    SortableDirective
+    SortableDirective,
+    WidgetHtmlComponent,
+    WidgetTextComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    QuillEditorModule
   ],
   providers: [UserService, WebsiteService, PageService, WidgetService],
   bootstrap: [AppComponent]

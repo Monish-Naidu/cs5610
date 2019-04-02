@@ -6,6 +6,9 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
 
+var mongoose = require('mongoose');
+var db = mongoose.createConnection('mongodb://localhost:27017/wu')
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

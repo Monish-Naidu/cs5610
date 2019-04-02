@@ -23,7 +23,6 @@ export class WidgetHeaderComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  errorFlag = false;
   widget: Widget;
 
 
@@ -46,7 +45,8 @@ export class WidgetHeaderComponent implements OnInit {
     console.log('header page id: ' + this.pid);
     console.log('header widget id: ' + this.wgid);
     if (this.wgid === undefined) {
-      this.widget = new Widget(undefined, undefined, 'HEADER', '', undefined, undefined, undefined, undefined);
+      this.widget = new Widget(undefined, undefined, 'HEADER', '',
+        undefined, undefined, undefined, undefined, undefined, undefined, undefined);
     } else {
     this.widgetService.findWidgetById(this.wgid).subscribe(
       (data: Widget) => {
@@ -106,28 +106,7 @@ export class WidgetHeaderComponent implements OnInit {
 
 
 
-  // updateWidget() {
-  //   this.widgetService.updateWidget(this.wgid, this.widget)
-  //     .subscribe(
-  //       (data: any) => {
-  //         this.widget = data;
-  //         console.log('Updating widget with the widgetId' + this.wgid);
-  //         this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
-  //       },
-  //       (error: any) => {
-  //         console.log('updating failed');
-  //       });
-  // }
 
-
-
-  // delete() {
-  //   this.widgetService.deleteWidget(this.wgid)
-  //     .subscribe(
-  //       (data: any) => {
-  //         this.router.navigateByUrl('user/' + this.uid + '/website/' + this.wid + '/page/' + this.pid + '/widget');
-  //       });
-  // }
 
 
 
