@@ -45,7 +45,7 @@ export class WebsiteNewComponent implements OnInit {
     this.website.name = this.name;
     this.websiteService.createWebsite(this.userId, this.website).subscribe(
       (data: any) => {
-      console.log('its working!!!');
+      //console.log('its working!!!');
       this.website = data;
       console.log('created website: ' + this.website._id + ' ' + this.website.name);
       this.router.navigate(['../'], {relativeTo: this.activatedRoute});

@@ -11,53 +11,45 @@ module.exports = function (app) {
 
 
   var websiteModel = require('../model/website/website.model.server');
-
+  var userModel = require('../model/user/user.model.server');
 
   function createWebsite(req, res) {
-    const userId = req.params['userId'];
-    const website = req.body;
-    website._userId = userId;
-   // console.log('made it to website.serice.server.js');
-    websiteModel.createWebsite(userId,website)
-      .then(function(website) {
-        console.log('created website: ' + website);
-      }, function(err){
+    console.log('website.service.server.js');
+    // console.log('req.params._userId:' + req.params._userId);
+    // console.log('req.params.uid'+ req.params.uid);
+    // console.log('all the params' + req.params);
+    console.log('trying to get userId ' + req.params['userId']);
+    var userId = req.params['userId'];
+    var website = req.body;
+
+    console.log(website);
+    websiteModel.createWebsite(userId,website).then(
+      function (newWebsite) {
+        console.log(newWebsite);
+        res.status(200).json(newWebsite);
+      }, function (err) {
         console.log(err);
-        res.status(400);
-      });
+        res.status(404).json(err);
+      }
+    );
   }
 
-  // delete the one below
-
-  // function createWebsite(req, res) {
-  //   const userId = req.params['userId'];
-  //   const website = req.body;
-  //   website._userId = userId;
-  //   websiteModel.createWebsiteForUser(website)
-  //     .then(function(response) {
-  //       console.log('created website: ' + response);
-  //       websiteModel.findAllWebsitesForUser(userId)
-  //         .then(function (websites){
-  //           res.status(200).json(websites);
-  //         })
-  //     }, function(err){
-  //       console.log(err);
-  //       res.status(500);
-  //     });
-  // }
 
   function findAllWebsitesForUser(req, res) {
-    const userId = req.params['userId'];
+    var userId = req.params['userId'];
     websiteModel
       .findAllWebsitesForUser(userId)
-      .then(function(websites){
-        res.json(websites);
+      .then(function(websitesFound){
+        res.status(200).json(websitesFound);
         console.log('websites found for given user' + websites);
+
       }, function(err) {
         console.log(err);
         res.status(400);
       });
   }
+
+
 
 
   function findWebsiteById(req, res) {

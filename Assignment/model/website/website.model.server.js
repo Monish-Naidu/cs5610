@@ -1,63 +1,56 @@
-var mongoose = require('mongoose');
-
+var mongoose = new require('mongoose');
 var websiteSchema = require('./website.schema.server');
-var websiteModel = mongoose.model("Website",websiteSchema);
-
+var websiteModel = mongoose.model("websiteModel", websiteSchema);
 var userModel = require('../user/user.model.server');
-
+mongoose.set('useFindAndModify', false);
 
 websiteModel.createWebsite = createWebsite;
-websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.findAllWebsitesForUser = findAllWebsitesForUser;
+websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.updateWebsite = updateWebsite;
 websiteModel.deleteWebsite = deleteWebsite;
 
 
+
 module.exports = websiteModel;
 
-//
-// function createWebsite(userId,website) {
-//   const createdWebsite = websiteModel.create(website);
-//     createdWebsite.then(
-//       function (website) {
-//         userModel.findUserById(website._userId)
-//           .then(
-//             function (user) {
-//               user.websites.push(website);
-//               return user.save();
-//             })
-//       });
-//         return website;
+function findAllWebsitesForUser(userId) {
+  return websiteModel.find({_user:userId});
+}
+
+
+// function findWebsitesForUser(userId){
+//   // return WebsiteModel.find({"developerId": userId})
+//   // .populate('developerId')
+//   //   .populate('developerId', 'username')
+//   //   .exec();
+//   return websiteModel.find({_user: userId});
 // }
 
-function createWebsite(req, res) {
-  console.log('made it to website.model.server.js');
-  var userId = req.params.userId;
-  var website = req.body;
-  websiteModel.createWebsite(userId,website)
+function createWebsite(userId,website) {
+  return websiteModel.create(website)
     .then(
       function (website) {
-        res.json(website);
-      },
-      function (error) {
-        res.statusCode(400).send(error);
+        userModel.findUserById(userId)
+          .then(
+            function (user) {
+              user.websites.push(website);
+              userModel.updateUser(userId,user);
+            }
+          );
+        return website;
       }
-    );
+    )
 }
 
-function findAllWebsitesForUser(userId) {
-  return websiteModel.find({userId:userId});
+function findWebsiteById(websiteId) {
+  return websiteModel.findById(websiteId);
 }
 
-function findWebsiteById(id) {
-  return websiteModel.findById(id);
+function updateWebsite(websiteId, website) {
+  return websiteModel.findByIdAndUpdate(websiteId, website);
 }
 
-function updateWebsite(id,website) {
-  return websiteModel.findByIdAndUpdate(id,website);
+function deleteWebsite(websiteId) {
+  return websiteModel.findByIdAndRemove(websiteId);
 }
-
-function deleteWebsite(id){
-  return websiteModel.findByIdAndRemove(id);
-}
-
