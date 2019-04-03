@@ -1,54 +1,59 @@
-import { Injectable } from '@angular/core';
 import { User } from '../models/user.model.client';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-// import { environment } from '../../environments/environment.prod';
+import {Injectable} from '@angular/core';
+import {Website} from '../models/website.model.client';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
+
+// import { Observable } from 'rxjs/Observable ';
+import {environment} from '../../environments/environment';
+import {Router} from '@angular/router';
+
+
 
 
 @Injectable()
+
 export class UserService {
+  constructor(private http: HttpClient) {
+  }
 
-  // users: User[] = [
-  //   new User('123', 'alice', 'qq', 'alice', 'alice'),
-  //   new User('234', 'bob', 'qq', 'bob', 'bob'),
-  //   new User('345', 'charlie', 'qq', 'charlie', 'charlie'),
-  //   new User('456', 'john', 'good4u', 'john', 'smith')
-  //
-  // ];
-
-  constructor(private _http: HttpClient) { }
-  baseUrl = environment.baseUrl;
+  base_url = environment.baseUrl;
 
   createUser(user: User) {
-    const newUser = {
-      _id: '',
-      username: user.username,
-      password: user.password,
-      firstName: user.firstName,
-      lastName: user.lastName
-    };
-    return this._http.post(this.baseUrl + '/api/user', newUser);
-  }
-
-  findUserById(uid: string) {
-    return this._http.get(this.baseUrl + '/api/user/' + uid);
-  }
-
-  findUserByUsername(username: string) {
-    return this._http.get(this.baseUrl + '/api/username?username=' + username);
-  }
-
-  findUserByCredentials(username: string, password: string) {
-    return this._http.get(this.baseUrl + '/api/user?username=' + username + '&password=' + password);
-  }
-
-  updateUser(userId: string, user: User) {
-    return this._http.put(this.baseUrl + '/api/user/' + userId, user);
-  }
-
-  deleteUser(userId: string) {
-    return this._http.delete(this.baseUrl + '/api/user' + userId);
+    const url = this.base_url + '/api/user/';
+    return this.http.post(url, user);
   }
 
 
+
+
+  findUserByUsername(username: String) {
+    return this.http.get(this.base_url + '/api/user?username=' + username);
+  }
+
+
+
+  findUserByCredentials(username, password) {
+    const url = this.base_url + '/api/user?username=' + username + '&password=' + password;
+    console.log(url);
+    return this.http.get(url);
+  }
+
+
+
+  findUserById(userId) {
+    const url = this.base_url + '/api/user/' + userId;
+    return this.http.get(url);
+  }
+
+  updateUser(userId: String, user) {
+    const url = this.base_url + '/api/user/' + userId;
+    return this.http.put(url, user);
+  }
+
+  deleteUserById(userId: String) {
+    const url = this.base_url + '/api/user/' + userId;
+    return this.http.delete(url);
+  }
 }
+

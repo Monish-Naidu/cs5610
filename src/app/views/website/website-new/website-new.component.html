@@ -1,9 +1,9 @@
 <nav class="navbar navbar-fixed-top cl-blue-navbar">
   <div class="col-md-4 d-none d-md-block container-fluid">
-    <a routerLink="/user/{{uid}}" class="navbar-link text-white">
+    <a routerLink="/user/{{userId}}" class="navbar-link text-white">
       <i class="fas fa-chevron-left fontawsome_icon"></i>
     </a>
-    <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{uid}}/website">
+    <a class="text-white navbar-brand font-weight-bold" routerLink="/user/{{userId}}/website">
       Websites
     </a>
 
@@ -29,8 +29,8 @@
   <div class="col-md-4 d-none d-md-block border-right">
     <ul class="list-group cl-list-group-borderless">
      <li class="list-group-item list-borderless" *ngFor="let website of websites">
-       <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
-       <a routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i> </a>
+       <a routerLink="/user/{{userId}}/website/{{website._id}}/page">{{website.name}}</a>
+       <a routerLink="/user/{{userId}}/website/{{website._id}}"><i class="fas fa-cog fontawsome_icon float-right"></i> </a>
      </li>
     </ul>
   </div>
@@ -50,7 +50,7 @@
 <nav class="navbar fixed-bottom float-right col-12">
   <div class="container-fluid col-12">
     <div class="row navbar-text float-right col-12">
-      <a routerLink="/user/{{uid}}" class="float-right">
+      <a routerLink="/user/{{userId}}" class="float-right">
         <i class="fas fa-user fontawsome_icon float-right text-white col-12"></i>
       </a>
     </div>

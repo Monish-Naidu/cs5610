@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ViewChild } from '@angular/core';
-
-
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model.client';
 import {UserService} from '../../../services/user.service';
-import {User} from '../../../models/user.model.client';
 
 @Component({
   selector: 'app-login',
@@ -16,14 +13,16 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('f') loginForm: NgForm;
 
-  username: string; // see usage as two-way data binding
-  password: string; // see usage as two-way data binding
-
+  username: string;
+  password: string;
   errorFlag: boolean;
-  errorMsg = 'Invalid username or password !';
+  errorMsg = 'Invalid username or password';
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     this.errorFlag = false;
+  }
+
+  ngOnInit() {
   }
 
   login() {
@@ -38,10 +37,6 @@ export class LoginComponent implements OnInit {
           }
         }
       );
-  }
-
-
-  ngOnInit() {
   }
 
 }

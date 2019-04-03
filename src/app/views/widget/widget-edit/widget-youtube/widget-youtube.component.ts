@@ -21,7 +21,7 @@ export class WidgetYoutubeComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.uid = params['uid'];
+          this.uid = params['userId'];
           this.wgid = params['wgid'];
           this.pid = params['pid'];
           this.wid = params['wid'];

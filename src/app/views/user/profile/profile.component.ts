@@ -13,7 +13,7 @@ import {User} from '../../../models/user.model.client';
 export class ProfileComponent implements OnInit {
   @ViewChild('f') profileForm: NgForm;
   username: string;
-  user = new User('', '', '', '', '');
+  user = new User(undefined, undefined, undefined, undefined, undefined);
   uid: string;
 
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params: any) => {
-        this.uid = params['uid'];
+        this.uid = params['userId'];
         console.log('user id:' + this.uid);
       });
 

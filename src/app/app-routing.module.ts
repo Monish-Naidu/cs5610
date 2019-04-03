@@ -15,24 +15,30 @@ import {WidgetEditComponent} from './views/widget/widget-edit/widget-edit.compon
 import {WidgetImageComponent} from './views/widget/widget-edit/widget-image/widget-image.component';
 import {WidgetHeaderComponent} from './views/widget/widget-edit/widget-header/widget-header.component';
 import {WidgetYoutubeComponent} from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
+import {WidgetTextComponent} from './views/widget/widget-edit/widget-text/widget-text.component';
+import {WidgetHtmlComponent} from './views/widget/widget-edit/widget-html/widget-html.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'user/:uid', component: ProfileComponent},
+  {path: 'user/:userId', component: ProfileComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'user/:uid/website', component: WebsiteListComponent},
-  {path: 'user/:uid/website/new', component: WebsiteNewComponent},
-  {path: 'user/:uid/website/:wid', component: WebsiteEditComponent},
-  {path: 'user/:uid/website/:wid/page', component: PageListComponent},
-  {path: 'user/:uid/website/:wid/page/new', component: PageNewComponent},
-  {path: 'user/:uid/website/:wid/page/:pid', component: PageEditComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget', component: WidgetListComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/new', component: WidgetChooserComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/:wgid', component: WidgetEditComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/new/header', component: WidgetHeaderComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/new/image', component: WidgetImageComponent},
-  {path: 'user/:uid/website/:wid/page/:pid/widget/new/youtube', component: WidgetYoutubeComponent}
+  {path: 'user/:userId/website', component: WebsiteListComponent},
+  {path: 'user/:userId/website/new', component: WebsiteNewComponent},
+  {path: 'user/:userId/website/:wid', component: WebsiteEditComponent},
+  {path: 'user/:userId/website/:wid/page', component: PageListComponent},
+  {path: 'user/:userId/website/:wid/page/new', component: PageNewComponent},
+  {path: 'user/:userId/website/:wid/page/:pid', component: PageEditComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget', component: WidgetListComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new', component: WidgetChooserComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/:wgid', component: WidgetEditComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/header', component: WidgetHeaderComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/image', component: WidgetImageComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/youtube', component: WidgetYoutubeComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/text', component: WidgetTextComponent},
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/html', component: WidgetTextComponent}
+
+
 ];
 
 

@@ -11,10 +11,11 @@ import {WebsiteService} from '../../../services/website.service';
 })
 export class WebsiteNewComponent implements OnInit {
   @ViewChild('f') webForm: NgForm;
-  uid: string;
+  userId: string;
   wid: string;
   name: string;
   description: string;
+  website: Website;
   websites: Website[] = [];
 
 
@@ -25,23 +26,32 @@ export class WebsiteNewComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uid = params['uid'];
+      this.userId = params['userId'];
       this.wid = params['wid'];
     });
-    this.websiteService.findAllWebsitesForUser(this.uid)
-      .subscribe((websites: Website[]) => {
+    this.websiteService.findAllWebsitesForUser(this.userId)
+      .subscribe((websites: any) => {
           this.websites = websites;
         },
         (error: any) => console.log(error)
       );
+    this.website = new Website(undefined, undefined, undefined, undefined);
+
   }
 
   create() {
-    const website = new Website(undefined, this.name, undefined, this.description)
-    this.websiteService.createWebsite(this.uid, website).subscribe((data: any) => {
-      this.router.navigateByUrl('/user/' + this.uid + '/website');
+    console.log('trying to create website...');
+    console.log('the name given was:' + this.name);
+    this.website.name = this.name;
+    this.websiteService.createWebsite(this.userId, this.website).subscribe(
+      (data: any) => {
+      console.log('its working!!!');
+      this.website = data;
+      console.log('created website: ' + this.website._id + ' ' + this.website.name);
+      this.router.navigate(['../'], {relativeTo: this.activatedRoute});
     });
   }
+
 
 
 }

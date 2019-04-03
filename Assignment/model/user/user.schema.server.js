@@ -1,12 +1,22 @@
 var mongoose = require('mongoose');
+var websiteSchema = require('../website/website.schema.server');
 
 var userSchema = new mongoose.Schema({
-  userName: String,
+  username: String,
   password: String,
   firstName: String,
   lastName: String,
   email: String,
-  websites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Website'}]
-},{collection:'Users'});
+  facebook : {
+    token: String,
+    id: String,
+    displayName: String
+  },
+  websites: [websiteSchema]
+},{collection:'user'});
 
 module.exports = userSchema;
+
+
+
+

@@ -12,3 +12,4 @@ export class Page {
     this.description = description;
   }
 }
+
