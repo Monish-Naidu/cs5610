@@ -19,7 +19,9 @@ export class PageListComponent implements OnInit {
     this.activatedRoute.params
       .subscribe(
       (params: any) => {
-      this.uid = params['uid'];
+        console.log('on page-list');
+        console.log(params);
+      this.uid = params['userId'];
       this.wid = params['wid'];
     });
     this.pageService.findAllPagesForWebsite(this.wid)

@@ -7,16 +7,10 @@ var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  facebook : {
-    token: String,
-    id: String,
-    displayName: String
-  },
+  phone: String,
+  dateCreated:{type: Date, default: Date.now()},
   websites: [websiteSchema]
-},{collection:'user'});
+},{collection:'Users'});
 
 module.exports = userSchema;
-
-
-
 

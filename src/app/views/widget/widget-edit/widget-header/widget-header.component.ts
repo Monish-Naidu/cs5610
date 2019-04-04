@@ -33,19 +33,19 @@ export class WidgetHeaderComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe(
-        (params: Params) => {
+        (params: any) => {
           this.uid = params['userId'];
           this.wgid = params['wgid'];
           this.pid = params['pid'];
           this.wid = params['wid'];
-          }
+        }
           );
     console.log('header user id: ' + this.uid);
     console.log('header web id: ' + this.wid);
     console.log('header page id: ' + this.pid);
     console.log('header widget id: ' + this.wgid);
     if (this.wgid === undefined) {
-      this.widget = new Widget(undefined, undefined, 'HEADER', '',
+      this.widget = new Widget(undefined, undefined, 'HEADING', undefined,
         undefined, undefined, undefined, undefined, undefined, undefined, undefined);
     } else {
     this.widgetService.findWidgetById(this.wgid).subscribe(
@@ -68,9 +68,11 @@ export class WidgetHeaderComponent implements OnInit {
       this.widget.widgetType = 'HEADING';
       this.widget.pageId = this.pid;
       this.widgetService.createWidget(this.pid, this.widget).subscribe(
-        (widget: Widget) => {
-          console.log('create widget header: ' + widget._id + ', name: ' + widget.name
-            + ', text: ' + widget.text + ', size: ' + widget.size);        },
+        (data: any) => {
+          this.widget = data;
+          console.log('create widget header: ' + this.widget._id + ', name: ' + this.widget.name
+            + ', text: ' + this.widget.text + ', size: ' + this.widget.size + ', widgetType: ' + this.widget.widgetType);
+          },
         (error: any) => console.log(error)
       );
     } else {

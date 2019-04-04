@@ -35,7 +35,7 @@ export class PageNewComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uid = params['uid'];
+      this.uid = params['userId'];
       this.wid = params['wid'];
       this.pageService.findAllPagesForWebsite(this.wid).subscribe((pages: Page[]) => {
         this.pages = pages;

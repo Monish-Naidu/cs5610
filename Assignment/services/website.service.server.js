@@ -14,15 +14,8 @@ module.exports = function (app) {
   var userModel = require('../model/user/user.model.server');
 
   function createWebsite(req, res) {
-    console.log('website.service.server.js');
-    // console.log('req.params._userId:' + req.params._userId);
-    // console.log('req.params.uid'+ req.params.uid);
-    // console.log('all the params' + req.params);
-    console.log('trying to get userId ' + req.params['userId']);
     var userId = req.params['userId'];
     var website = req.body;
-
-    console.log(website);
     websiteModel.createWebsite(userId,website).then(
       function (newWebsite) {
         console.log(newWebsite);
@@ -41,8 +34,6 @@ module.exports = function (app) {
       .findAllWebsitesForUser(userId)
       .then(function(websitesFound){
         res.status(200).json(websitesFound);
-        console.log('websites found for given user' + websites);
-
       }, function(err) {
         console.log(err);
         res.status(400);

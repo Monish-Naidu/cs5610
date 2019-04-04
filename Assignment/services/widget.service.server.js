@@ -32,10 +32,12 @@ module.exports = function (app) {
   function createWidget(req, res) {
     const pageId = req.params['pageId'];
     var widget = req.body;
+    console.log('creating widget in widget.service.server');
+    console.log(widget);
     widgetModel
       .createWidget(pageId, widget)
       .then(function (widget) {
-          log.console('new widget created:' + widget);
+          console.log('new widget created:' + widget);
           res.status(200).json(widget);
         },
         function (error) {
@@ -46,9 +48,9 @@ module.exports = function (app) {
 
   function findAllWidgetsForPage(req, res) {
     const pageId = req.params['pageId'];
+    console.log('made it to widget.service.server');
     widgetModel.findAllWidgetsForPage(pageId).then(
       function (widgets) {
-        console.log("found all widgets by pageId:" + widgets);
         res.status(200).json(widgets);
       }, function (err) {
         res.status(404).json(err);
@@ -113,12 +115,19 @@ module.exports = function (app) {
   }
 
   function reorderWidgets(req, res) {
+    var pageId = req.params['pageId'];
     var startIndex = parseInt(req.query["start"]);
     var endIndex = parseInt(req.query["end"]);
-    array_swap(widgets, startIndex, endIndex);
-    // res.sendStatus(200);
-  }
+    widgetModel.reorderWidget(pageId,startIndex,endIndex).then(
+      function (widgets){
+        res.send(widgets);
+      },
+      function(error) {
+        res.send(error);
+      }
+    );
 
+  }
   function uploadImage(req, res) {
     const userId = req.body.userId;
     const websiteId = req.body.websiteId;

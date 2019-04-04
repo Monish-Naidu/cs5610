@@ -25,7 +25,6 @@ export class WebsiteListComponent implements OnInit {
     this.websiteService.findAllWebsitesForUser(this.uid)
       .subscribe((data: any) => {
         this.websites = data;
-        console.log('all the websites so far: ' + this.websites);
       },
         (error: any) => console.log(error)
       );

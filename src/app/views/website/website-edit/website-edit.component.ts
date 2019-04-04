@@ -22,22 +22,26 @@ export class WebsiteEditComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      this.uid = params['uid'];
+      this.uid = params['userId'];
+      console.log(this.uid);
+      console.log(params);
       this.wid = params['wid'];
     });
     this.websiteService.findWebsitesById(this.wid)
       .subscribe((website: Website) => {
         this.website = website;
+          if (this.website) {
+            this.name = this.website.name;
+            this.description = this.website.description;
+          }
         },
         (error: any) => console.log(error)
         );
-    if (this.website) {
-      this.name = this.website.name;
-      this.description = this.website.description;
-    }
-    this.websiteService.findWebsitesById(this.uid)
+
+    this.websiteService.findAllWebsitesForUser(this.uid)
       .subscribe((websites: Website[]) => {
         this.websites = websites;
+        console.log(websites);
       },
         (error: any) => console.log(error)
         );

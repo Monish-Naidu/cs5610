@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var userSchema = require('./user.schema.server');
-var userModel = mongoose.model("User",userSchema);
+var userModel = mongoose.model("userModel",userSchema);
 
 userModel.createUser = createUser;
 userModel.findUserById = findUserById;
@@ -27,11 +27,11 @@ function findUserById(id) {
 }
 
 function findUserByUserName(userName) {
-  return userModel.findOne({userName:userName});
+  return userModel.findOne({username:userName});
 }
 
 function findByCredential(userName,password){
-  return userModel.findOne({userName:userName,password:password});
+  return userModel.findOne({username:userName,password:password});
 }
 
 function updateUser(userId,user) {

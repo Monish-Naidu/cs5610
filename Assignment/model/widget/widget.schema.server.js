@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var widgetModel = new mongoose.Schema({
   pageId:{type: mongoose.Schema.ObjectId, ref:"Page"},
-  type:{type: String, enum: ['HEADING', 'IMAGE', 'YOUTUBE', 'HTML', 'INPUT','TEXT']},
+  widgetType:{type: String, enum: ['HEADING', 'IMAGE', 'YOUTUBE', 'HTML', 'INPUT','TEXT']},
   name: String,
   text: String,
   placeholder: String,
@@ -23,11 +23,7 @@ var widgetModel = new mongoose.Schema({
 
 module.exports = widgetModel;
 
-widgetModel.createWidget = createWidget;
 
-function createWidget(pageId, widget) {
-  return widgetModel.create(widget);
-}
 
 
 

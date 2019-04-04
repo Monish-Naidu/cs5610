@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params: any) => {
+        console.log('profile component: ' + params);
         this.uid = params['userId'];
         console.log('user id:' + this.uid);
       });

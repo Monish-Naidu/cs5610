@@ -30,7 +30,7 @@ module.exports = function (app) {
     pageModel.createPage(websiteId, page).then(
       function (page) {
         res.status(200).json(page);
-        log.console('new page created:' + page);
+        console.log('new page created:' + page);
       }, function (err) {
         res.status(404).json(err);
       }
@@ -43,7 +43,7 @@ module.exports = function (app) {
     pageModel.findAllPagesForWebsite(webId).then(
       function(pages){
         res.send(pages);
-        log.console('found all pages for website:' + pages);
+        console.log('found all pages for website:' + pages);
       },
       function(error){
         res.status(400).send(error);
@@ -53,13 +53,15 @@ module.exports = function (app) {
 
   function findPageById(req, res) {
     var pageId = req.params['pageId'];
-    for (var i = 0; i < pages.length; i++) {
-      if (pages[i]._id === pageId) {
-        return res.json(pages[i]);
-      }
-    }
-    res.status(404).send("Cannot find page.");
+    pageModel.findPageById(pageId).then(
+      function(page){
+        res.send(page);
+      },
+      function(error){
+        res.status(400).send(error);
+      });
   }
+
 
   function updatePage(req, res) {
     var page = req.body;

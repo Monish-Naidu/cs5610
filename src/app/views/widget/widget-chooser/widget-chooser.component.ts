@@ -25,7 +25,7 @@ export class WidgetChooserComponent implements OnInit {
       (params: any) => {
         console.log('widget edit params:" ');
         console.log(params);
-        this.uid = params['uid'];
+        this.uid = params['userId'];
         this.wid = params['wid'];
         this.pid = params['pid'];
         this.wgid = params['wgid'];

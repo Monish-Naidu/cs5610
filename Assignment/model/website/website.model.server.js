@@ -15,17 +15,11 @@ websiteModel.deleteWebsite = deleteWebsite;
 module.exports = websiteModel;
 
 function findAllWebsitesForUser(userId) {
-  return websiteModel.find({_user:userId});
+  return websiteModel.find({developerId:userId});
 }
 
 
-// function findWebsitesForUser(userId){
-//   // return WebsiteModel.find({"developerId": userId})
-//   // .populate('developerId')
-//   //   .populate('developerId', 'username')
-//   //   .exec();
-//   return websiteModel.find({_user: userId});
-// }
+
 
 function createWebsite(userId,website) {
   return websiteModel.create(website)

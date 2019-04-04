@@ -39,7 +39,10 @@ module.exports = function(app) {
   function findByCredentials(req, res) {
     const username = req.query["username"];
     const password = req.query["password"];
+    //console.log(username);
+    //console.log(password);
     userModel.findByCredential(username, password).then(function(user){
+      //console.log(user);
       res.send(user);
     }, function(error){
       res.status(400);

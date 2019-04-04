@@ -29,12 +29,13 @@ export class WidgetListComponent implements OnInit {
   ngOnInit() {
     console.log('start of the function');
     this.activateRoute.params.subscribe((params: any) => {
-      this.uid = params['uid'];
+      this.uid = params['userId'];
       this.wid = params['wid'];
       this.pid = params['pid'];
       this.widgetService.findAllWidgetsForPage(this.pid).subscribe((data: any) => {
         this.widgets = data;
-        console.log(this.widgets);
+        console.log('these were all the widgets found:');
+        console.log( this.widgets);
       });
     });
 

@@ -2,12 +2,23 @@ var mongoose = require('mongoose');
 
 var widgetSchema = require('./widget.schema.server');
 var widgetModel = mongoose.model("Widgets", widgetSchema);
+var pageModel = require('../page/page.model.server')
+
+
 
 module.exports = widgetModel;
 
 
-function createWidget(pageId,widget) {
+widgetModel.createWidget = createWidget;
+widgetModel.findAllWidgetsForPage = findAllWidgetsForPage;
+widgetModel.findWidgetById = findWidgetById;
+widgetModel.deleteWidget = deleteWidget;
+widgetModel.updateWidget = updateWidget;
+widgetModel.reorderWidget = reorderWidget;
 
+
+function createWidget(pageId,widget) {
+  console.log('creating widget in widget.model.server');
   return widgetModel.create(widget)
     .then(
       function (widget) {
@@ -22,10 +33,11 @@ function createWidget(pageId,widget) {
               page.save();
             }
           );
-        return createdWidget;
+        return widget;
       }
     );
 }
+
 
 function findAllWidgetsForPage(pageId) {
   return widgetModel.find({pageId:pageId});
@@ -40,11 +52,16 @@ function updateWidget(widgetId, widget) {
 }
 
 function deleteWidget(widgetId) {
+  return widgetModel.findByIdAndDelete(widgetId);
 }
 
-function updatePosition (pageId, position) {
-}
 
 function reorderWidget(pageId,start,end) {
-
+  return pageModel.findPageById(pageId)
+    .then(function (page) {
+      const widgetToMove = page.widgets[start];
+      page.widgets.splice(start, 1);
+      page.widgets.splice(end, 0, widgetToMove);
+      return page.save();
+    });
 }
