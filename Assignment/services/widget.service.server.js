@@ -129,6 +129,7 @@ module.exports = function (app) {
 
   }
   function uploadImage(req, res) {
+    console.log("we are in upload image in widget.service.server");
     const userId = req.body.userId;
     const websiteId = req.body.websiteId;
     const pageId = req.body.pageId;
@@ -156,7 +157,7 @@ module.exports = function (app) {
     const mimetype = myFile.mimetype;
 
     if (widgetId === '') {
-      let widget = {type: 'IMAGE', _pageId: pageId, url: 'uploads/' + filename};
+      let widget = {type: 'IMAGE', _pageId: pageId, url: '/uploads/' + filename};
       widgetModel.createWidget(pageId, widget).then(function(newWidget) {
         console.log('created widget image (from upload image)');
         res.redirect(callbackUrl + '/' + newWidget._id);
@@ -164,7 +165,7 @@ module.exports = function (app) {
       return;
     }
 
-    const widget =  {url: 'uploads/' + filename};
+    const widget =  {url: '/uploads/' + filename};
     widgetModel.updateWidget(widgetId, widget)
       .then(function (response) {
         console.log('updated widget image (from upload image): widgetId=' + widgetId);
