@@ -32,13 +32,14 @@ export class WidgetImageComponent implements OnInit {
           this.wid = params['wid'];
         }
       );
-    console.log('header user id: ' + this.uid);
-    console.log('header web id: ' + this.wid);
-    console.log('header page id: ' + this.pid);
-    console.log('header widget id: ' + this.wgid);
     if (this.wgid === undefined) {
-      this.widget = new Widget(undefined, undefined, 'HEADER', '',
+      this.widget = new Widget(undefined, undefined, 'IMAGE', '',
         undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+      this.widgetService.createWidget(this.pid, this.widget).subscribe(
+        (data: any) => {
+        this.widget = data;
+        this.wgid = this.widget._id;
+      });
     } else {
       this.widgetService.findWidgetById(this.wgid).subscribe(
         (data: Widget) => {
