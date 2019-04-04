@@ -2378,7 +2378,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     //baseUrl: 'http://localhost:3200'
-    baseUrl: 'https://webdev-monish-cs5610.herokuapp.com/',
+    baseUrl: 'https://webdev-monish-cs5610.herokuapp.com',
 };
 /*
  * For easier debugging in development mode, you can import the following file
