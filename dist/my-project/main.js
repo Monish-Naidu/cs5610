@@ -1948,6 +1948,7 @@ var WidgetImageComponent = /** @class */ (function () {
             this.widget = new _models_widget_model_client__WEBPACK_IMPORTED_MODULE_4__["Widget"](undefined, undefined, 'IMAGE', '', undefined, undefined, undefined, undefined, undefined, undefined, undefined);
             this.widgetService.createWidget(this.pid, this.widget).subscribe(function (data) {
                 _this.widget = data;
+                console.log(_this.widget);
                 _this.wgid = _this.widget._id;
             });
         }

@@ -38,6 +38,7 @@ export class WidgetImageComponent implements OnInit {
       this.widgetService.createWidget(this.pid, this.widget).subscribe(
         (data: any) => {
         this.widget = data;
+        console.log(this.widget);
         this.wgid = this.widget._id;
       });
     } else {

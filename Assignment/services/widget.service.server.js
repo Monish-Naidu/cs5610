@@ -140,7 +140,7 @@ module.exports = function (app) {
     const myFile = req.file;
 
     console.log(req.file);
-
+callbackUrl
     const callbackUrl = baseUrl + '/user/' + userId + "/website/" + websiteId
       + "/page/" + pageId + "/widget";
 
@@ -161,6 +161,7 @@ module.exports = function (app) {
       widgetModel.createWidget(pageId, widget).then(function(newWidget) {
         console.log('created widget image (from upload image)');
         res.redirect(callbackUrl + '/' + newWidget._id);
+        console.log()
       });
       return;
     }

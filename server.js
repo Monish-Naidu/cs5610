@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 var mongoose = require('mongoose');
-var db = mongoose.createConnection('mongodb://localhost:27017/wu')
+var db = mongoose.createConnection('mongodb://localhost:27017/webdev')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,7 +32,6 @@ const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
 
 //var connectionString = 'mongodb://127.0.0.1:27017/webdev';
-//var connectionString = 'mongodb://the string provided by mlab';
 var connectionString = 'mongodb://monish:abc123@ds347665.mlab.com:47665/heroku_sbxtf05b';
 
 var mongoose = require("mongoose");
