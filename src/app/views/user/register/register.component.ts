@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   userErrorMsg: String;
   pwErrorFlag: boolean;
   pwErrorMsg: String;
+  error: string;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -27,23 +28,19 @@ export class RegisterComponent implements OnInit {
     this.v_password = this.registerForm.value.v_password;
 
     this.userErrorFlag = false;
-    this.pwErrorFlag = false;
 
-    this.userService.findUserByUsername(this.user.username).subscribe(
-      (user: any) => {
-        if (user != null) {
-          this.userErrorFlag = true;
-        } else if (this.v_password !== this.user.password) {
-          this.pwErrorFlag = true;
-        } else {
-          return this.userService.createUser(this.user).subscribe(
-            (newUser: any) => {
-              this.router.navigate(['/user', newUser._id]);
-            }
-          );
-        }
+    this.pwErrorFlag = this.user.password !== this.v_password; // true or false depending if they are equal
+
+    this.userService.register(this.user.username, this.user.password).subscribe((newUser: any) => {
+      alert('Successful registration');
+        this.router.navigate(['/user', newUser._id]);
+    },
+      (error: any) => {
+      this.error = error._body;
       });
   }
+
+
 
   cancel() {
     this.router.navigate(['/login']);

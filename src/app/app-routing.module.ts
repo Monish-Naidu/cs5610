@@ -17,11 +17,13 @@ import {WidgetHeaderComponent} from './views/widget/widget-edit/widget-header/wi
 import {WidgetYoutubeComponent} from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
 import {WidgetTextComponent} from './views/widget/widget-edit/widget-text/widget-text.component';
 import {WidgetHtmlComponent} from './views/widget/widget-edit/widget-html/widget-html.component';
+import {AuthGuard} from './services/auth-guard.service';
+
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'user/:userId', component: ProfileComponent},
+  {path: 'user/:userId', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent},
   {path: 'user/:userId/website', component: WebsiteListComponent},
   {path: 'user/:userId/website/new', component: WebsiteNewComponent},
@@ -36,17 +38,18 @@ const routes: Routes = [
   {path: 'user/:userId/website/:wid/page/:pid/widget/new/image', component: WidgetImageComponent},
   {path: 'user/:userId/website/:wid/page/:pid/widget/new/youtube', component: WidgetYoutubeComponent},
   {path: 'user/:userId/website/:wid/page/:pid/widget/new/text', component: WidgetTextComponent},
-  {path: 'user/:userId/website/:wid/page/:pid/widget/new/html', component: WidgetTextComponent}
+  {path: 'user/:userId/website/:wid/page/:pid/widget/new/html', component: WidgetHtmlComponent}
 
 
 ];
 
+export const routing = RouterModule.forRoot(routes, { useHash: true });
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
 
 

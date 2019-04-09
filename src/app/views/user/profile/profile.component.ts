@@ -16,7 +16,22 @@ export class ProfileComponent implements OnInit {
   user = new User(undefined, undefined, undefined, undefined, undefined);
   uid: string;
 
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private userService: UserService, private activatedRoute: ActivatedRoute) { }
+
+  logout() {
+    this.userService.logout().subscribe((data: any) => {
+      this.router.navigate(['/login']);
+    });
+  }
+
+  update() {
+    this.userService.updateUser(this.uid, this.user).subscribe((data: any) => {
+        this.user = data;
+      },
+      (error: any) => {
+        alert('update failed');
+      });
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(

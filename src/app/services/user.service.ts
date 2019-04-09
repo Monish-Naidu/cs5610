@@ -4,17 +4,58 @@ import {Website} from '../models/website.model.client';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 //import { environment } from '../../environments/environment.prod';
-
+import {Router} from '@angular/router';
+import {SharedService} from './shared.service';
+import {map} from 'rxjs/operators';
+import 'rxjs';
 
 
 
 @Injectable()
 
 export class UserService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient, private sharedService: SharedService, private router: Router) {}
 
   base_url = environment.baseUrl;
+
+
+  login(username: String, password: String) {
+
+    const body = {
+      username: username,
+      password: password
+    };
+    return this.http.post(this.base_url + '/api/login', body, {withCredentials: true});
+  }
+
+  logout() {
+    return this.http.post(this.base_url + '/api/logout', '', {withCredentials: true});
+  }
+
+  register(username: String, password: String) {
+    const user = {
+      username : username,
+      password : password
+    };
+    return this.http.post(this.base_url + '/api/register', user, {withCredentials: true});
+  }
+
+  loggedIn() {
+    return this.http.post(this.base_url + '/api/loggedIn', '', {withCredentials: true})
+      .pipe(
+        map(
+          (user: any) => {
+            if (user !== 0) {
+              this.sharedService.user = user;
+              return true;
+            } else {
+              this.router.navigate(['/login']);
+              return false;
+            }
+          }
+        )
+      );
+  }
 
   createUser(user: User) {
     const url = this.base_url + '/api/user/';

@@ -44,4 +44,26 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+
+app.use(session({
+  secret: 'this is a secret',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(cookieParser());
+app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// body-parsers
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
 require('./Assignment/app')(app);
