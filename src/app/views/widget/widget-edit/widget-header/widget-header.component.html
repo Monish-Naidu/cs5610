@@ -18,8 +18,9 @@
 </nav>
 
 <div class="container cl-container-padding">
-
-
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{error}}
+  </div>
   <form>
     <div class="form-group" *ngIf="widget">
       <label for="heading-name">Name</label>

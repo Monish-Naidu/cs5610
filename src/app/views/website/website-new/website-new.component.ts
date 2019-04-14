@@ -17,6 +17,8 @@ export class WebsiteNewComponent implements OnInit {
   description: string;
   website: Website;
   websites: Website[] = [];
+  errorFlag = false;
+  error = 'Please enter a name for the website';
 
 
   constructor(private websiteService: WebsiteService,
@@ -42,15 +44,19 @@ export class WebsiteNewComponent implements OnInit {
   create() {
     console.log('trying to create website...');
     console.log('the name given was:' + this.name);
-    this.website.name = this.name;
+    if (this.website.name === '') {
+      this.errorFlag = true;
+    } else {
+      this.website.name = this.name;
     this.website.developerId = this.userId;
     this.website.description = this.description;
     this.websiteService.createWebsite(this.userId, this.website).subscribe(
       (data: any) => {
-      this.website = data;
-      console.log('created website: ' + this.website._id + ' ' + this.website.name);
-      this.router.navigate(['../'], {relativeTo: this.activatedRoute});
-    });
+        this.website = data;
+        console.log('created website: ' + this.website._id + ' ' + this.website.name);
+        this.router.navigate(['../'], {relativeTo: this.activatedRoute});
+      });
+    }
   }
 
 

@@ -16,6 +16,8 @@ export class WebsiteEditComponent implements OnInit {
   description: string;
   website = new Website('', '', '', '');
   websites: Website[];
+  errorFlag = false;
+  error = 'Please enter a name for the website';
 
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -48,10 +50,13 @@ export class WebsiteEditComponent implements OnInit {
   }
 
   update() {
+    if (this.website.name === '') {
+      this.errorFlag = true;
+    } else {
     this.websiteService.updateWebsite(this.wid, new Website(this.wid, this.name, this.uid, this.description))
       .subscribe((data: any) => {
         this.router.navigateByUrl('/user/' + this.uid + '/website');
-      });
+      });}
   }
 
 

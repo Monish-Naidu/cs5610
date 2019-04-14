@@ -24,7 +24,8 @@ export class WidgetHeaderComponent implements OnInit {
   pid: string;
   wgid: string;
   widget: Widget;
-
+  errorFlag = false;
+  error = 'Please enter a widget name';
 
 
   constructor(private route: ActivatedRoute, private widgetService: WidgetService, private router: Router) {
@@ -75,6 +76,9 @@ export class WidgetHeaderComponent implements OnInit {
           },
         (error: any) => console.log(error)
       );
+    }
+    if (this.widget['name'] === '') {
+      this.errorFlag = true;
     } else {
       this.widgetService.updateWidget(this.widget._id, this.widget).subscribe(
         (widget: Widget) => {

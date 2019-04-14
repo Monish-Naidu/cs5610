@@ -16,17 +16,23 @@ export class PageNewComponent implements OnInit {
   name: string;
   description: string;
   pages: Page[] = [];
+  errorFlag = false;
+  error = 'Please enter a page name';
 
   createPage() {
     console.log('this is the name:' + this.name);
     console.log('this is the description:' + this.description);
     const page = new Page(undefined, this.name, this.wid, this.description);
+    if (this.name === '') {
+      this.errorFlag = true;
+    } else {
     this.pageService.createPage(this.wid, page)
       .subscribe(
-      (data: any) => {
-      this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
-    },
-    (error: any) => console.log(error));
+        (data: any) => {
+          this.route.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
+        },
+        (error: any) => console.log(error));
+    }
   }
 
 

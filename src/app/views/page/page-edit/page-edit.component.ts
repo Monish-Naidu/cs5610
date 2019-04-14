@@ -16,6 +16,8 @@ export class PageEditComponent implements OnInit {
   name: string;
   description: string; //title
   page: Page;
+  errorFlag = false;
+  error = 'Please enter a page name';
 
   constructor(private pageService: PageService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -30,7 +32,7 @@ export class PageEditComponent implements OnInit {
         console.log(this.page);
         if (this.page) {
           this.name = this.page.name;
-          console.log('this is the name:' + this.name)
+          console.log('this is the name:' + this.name);
           this.description = this.page.description;
           console.log('this is the description:' + this.description);
         }
@@ -39,10 +41,14 @@ export class PageEditComponent implements OnInit {
   }
 
   updatePage() {
-    this.pageService.updatePage(this.pid, new Page(this.pid, this.name, this.wid, this.description))
-      .subscribe((data: any) => {
-      this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
-    });
+    if (this.page.name === '') {
+      this.errorFlag = true;
+    } else {
+      this.pageService.updatePage(this.pid, new Page(this.pid, this.name, this.wid, this.description))
+        .subscribe((data: any) => {
+          this.router.navigateByUrl('/user/' + this.uid + '/website/' + this.wid + '/page');
+        });
+    }
   }
 
   deletePage() {

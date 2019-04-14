@@ -18,6 +18,9 @@
 </nav>
 
 <div class="container">
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{error}}
+  </div>
   <form>
     <div class="form-group">
       <label for="image-name">Name</label>

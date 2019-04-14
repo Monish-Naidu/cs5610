@@ -18,6 +18,9 @@
 </nav>
 
 <div class="container">
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{error}}
+  </div>
   Text
   <input [(ngModel)]="widget.text" class="form-control"/>
   Rows

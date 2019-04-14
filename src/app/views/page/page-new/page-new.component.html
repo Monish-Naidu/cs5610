@@ -19,6 +19,9 @@
 </nav>
 
 <div class="container-fluid">
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{error}}
+  </div>
   <div class="row row-div">
     <div class="d-none d-sm-block col-sm-4">
       <ul class="list-group list-borderless">
@@ -40,6 +43,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <!----Bottom navbar (grey)------>

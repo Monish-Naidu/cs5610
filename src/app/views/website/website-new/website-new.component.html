@@ -26,6 +26,9 @@
 </nav>
 
 <div class="row container-fluid pt-2">
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{error}}
+  </div>
   <div class="col-md-4 d-none d-md-block border-right">
     <ul class="list-group cl-list-group-borderless">
      <li class="list-group-item list-borderless" *ngFor="let website of websites">
@@ -34,9 +37,11 @@
      </li>
     </ul>
   </div>
+</div>
 
 
-  <div class="col-sm-8 right-content">
+
+<div class="col-sm-8 right-content">
     <div class="text-padding-top">
       <label for="website-name" class="text-bold">Name</label>
       <input id="website-name" type="text" class="form-control" placeholder="Name" [(ngModel)]="name"/>

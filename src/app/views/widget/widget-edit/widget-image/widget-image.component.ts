@@ -17,7 +17,8 @@ export class WidgetImageComponent implements OnInit {
   widget: Widget;
   localPath: string;
   baseUrl = environment.baseUrl;
-
+  errorFlag = false;
+  error = 'Please enter a widget name';
 
 
   constructor(private widgetService: WidgetService, private router: Router, private route: ActivatedRoute) { }
@@ -63,6 +64,9 @@ export class WidgetImageComponent implements OnInit {
             + ', text: ' + widget.text + ', width: ' + widget.width);        },
         (error: any) => console.log(error)
       );
+    }
+    if (this.widget['name'] === '') {
+      this.errorFlag = true;
     } else {
       this.widgetService.updateWidget(this.widget._id, this.widget).subscribe(
         (widget: Widget) => {
